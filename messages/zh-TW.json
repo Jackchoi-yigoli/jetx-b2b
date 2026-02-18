@@ -1,0 +1,3001 @@
+{
+  "common": {
+    "actions": {
+      "save": "儲存變更",
+      "cancel": "取消",
+      "export": "匯出",
+      "edit": "編輯",
+      "delete": "刪除",
+      "add": "新增",
+      "create": "建立",
+      "view": "檢視",
+      "viewAll": "查看全部",
+      "search": "搜尋",
+      "filter": "篩選",
+      "apply": "套用",
+      "reset": "重設",
+      "close": "關閉",
+      "back": "返回",
+      "next": "下一步",
+      "previous": "上一步",
+      "confirm": "確認",
+      "download": "下載",
+      "upload": "上傳",
+      "refresh": "重新整理",
+      "retry": "重試",
+      "send": "傳送",
+      "submit": "提交",
+      "saveAsDraft": "儲存為草稿",
+      "configure": "設定",
+      "disconnect": "斷開連線",
+      "enable": "啟用",
+      "disable": "停用",
+      "viewDetails": "查看詳情",
+      "viewFullReport": "查看完整報告",
+      "manage": "管理",
+      "remove": "移除"
+    },
+    "status": {
+      "active": "啟用中",
+      "inactive": "未啟用",
+      "online": "線上",
+      "offline": "離線",
+      "pending": "待處理",
+      "suspended": "已停權",
+      "maintenance": "維護中",
+      "alert": "警示",
+      "error": "錯誤",
+      "open": "開啟",
+      "closed": "已關閉",
+      "inProgress": "處理中",
+      "resolved": "已解決",
+      "completed": "已完成",
+      "scheduled": "已排程",
+      "draft": "草稿",
+      "paused": "已暫停",
+      "archived": "已封存",
+      "expired": "已過期",
+      "connected": "已連線",
+      "available": "可用",
+      "enabled": "已啟用",
+      "disabled": "已停用",
+      "verified": "已驗證",
+      "revoked": "已撤銷",
+      "sent": "已傳送",
+      "delivered": "已送達",
+      "failed": "失敗",
+      "running": "執行中",
+      "setup": "設定中"
+    },
+    "priority": {
+      "urgent": "緊急",
+      "critical": "嚴重",
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    },
+    "filters": {
+      "all": "全部",
+      "allStatus": "所有狀態",
+      "allTypes": "所有類型",
+      "allRegions": "所有區域",
+      "allSites": "所有站點",
+      "allOperators": "所有營運商",
+      "allCategories": "所有分類",
+      "allPriorities": "所有優先級",
+      "allRoles": "所有角色",
+      "dateRange": "日期範圍",
+      "last7Days": "最近 7 天",
+      "last30Days": "最近 30 天",
+      "thisMonth": "本月",
+      "lastMonth": "上月",
+      "thisQuarter": "本季",
+      "custom": "自訂"
+    },
+    "pagination": {
+      "showing": "顯示",
+      "of": "共",
+      "page": "頁",
+      "perPage": "每頁",
+      "rowsPerPage": "每頁列數"
+    },
+    "table": {
+      "name": "名稱",
+      "status": "狀態",
+      "type": "類型",
+      "date": "日期",
+      "actions": "操作",
+      "email": "電子郵件",
+      "phone": "電話",
+      "amount": "金額",
+      "description": "說明",
+      "noResults": "沒有找到結果",
+      "loading": "載入中..."
+    },
+    "time": {
+      "today": "今天",
+      "yesterday": "昨天",
+      "daysAgo": "{count} 天前",
+      "hoursAgo": "{count} 小時前",
+      "minutesAgo": "{count} 分鐘前",
+      "justNow": "剛才"
+    },
+    "breadcrumbs": {
+      "partners": "合作夥伴",
+      "business": "業務管理",
+      "technical": "技術管理",
+      "settings": "設定"
+    },
+    "days": {
+      "monday": "星期一",
+      "tuesday": "星期二",
+      "wednesday": "星期三",
+      "thursday": "星期四",
+      "friday": "星期五",
+      "saturday": "星期六",
+      "sunday": "星期日"
+    }
+  },
+  "nav": {
+    "sections": {
+      "partners": "合作夥伴",
+      "business": "業務管理",
+      "technical": "技術管理",
+      "settings": "設定"
+    },
+    "items": {
+      "welcome": "首頁",
+      "operators": "營運商",
+      "sites": "站點",
+      "customers": "客戶",
+      "memberships": "會員方案",
+      "transactions": "交易紀錄",
+      "pricing": "定價",
+      "marketing": "行銷",
+      "reports": "報表",
+      "hardware": "硬體設備",
+      "cctv": "監控系統",
+      "tickets": "工單",
+      "knowledgeBase": "知識庫",
+      "team": "團隊",
+      "account": "帳戶"
+    }
+  },
+  "topbar": {
+    "searchPlaceholder": "搜尋任何內容...",
+    "userRole": "區域代表",
+    "notifications": "通知"
+  },
+  "dashboard": {
+    "breadcrumb": "首頁",
+    "title": "首頁",
+    "greeting": "早安，{name}",
+    "subtitle": "以下是您本月的區域總覽。",
+    "kpi": {
+      "regionRevenue": "區域營收（本月至今）",
+      "equipmentOnline": "設備上線數",
+      "openTickets": "待處理工單",
+      "totalDowntime": "總停機時間（本月至今）",
+      "machinesOffline": "{count} 台機器離線",
+      "machinesOfflinePlural": "{count} 台機器離線",
+      "ticketsSummary": "{critical} 嚴重，{high} 高優先"
+    },
+    "cards": {
+      "revenueTrend": "營收趨勢（7 天）",
+      "equipmentHealth": "設備健康狀況",
+      "openTickets": "待處理工單",
+      "upcomingSites": "即將開幕站點",
+      "viewAllSites": "查看所有站點",
+      "operatorPerformance": "營運商績效（本月至今）",
+      "recentActivity": "近期活動"
+    },
+    "health": {
+      "online": "線上",
+      "needsAttention": "需要關注",
+      "offline": "離線"
+    },
+    "activity": {
+      "ticketResolved": "工單 #{id} 已解決",
+      "newSiteAdded": "新增站點「{name}」",
+      "equipmentAlert": "{location} 設備警示",
+      "autoResetSuccess": "{machine} 自動重設成功",
+      "autoTicketCreated": "已自動建立工單"
+    }
+  },
+  "sites": {
+    "breadcrumb": {
+      "business": "業務管理",
+      "sites": "站點",
+      "equipment": "設備",
+      "customers": "客戶",
+      "transactions": "交易紀錄",
+      "pricing": "定價",
+      "cctv": "監控系統",
+      "maintenance": "維護",
+      "addNewSite": "新增站點"
+    },
+    "tabs": {
+      "overview": "總覽",
+      "equipment": "設備",
+      "customers": "客戶",
+      "transactions": "交易紀錄",
+      "pricing": "定價",
+      "cctv": "監控系統",
+      "maintenance": "維護"
+    },
+    "list": {
+      "title": "所有站點",
+      "subtitle": "{siteCount} 個站點，涵蓋 {operatorCount} 位營運商",
+      "addSite": "新增站點",
+      "searchPlaceholder": "搜尋站點...",
+      "table": {
+        "siteName": "站點名稱",
+        "operator": "營運商",
+        "type": "類型",
+        "machines": "機器數",
+        "status": "狀態",
+        "todaysRevenue": "今日營收",
+        "actions": "操作"
+      },
+      "pagination": {
+        "showing": "顯示第 1-{count} 筆，共 {total} 個站點"
+      },
+      "kpi": {
+        "totalSites": "站點總數",
+        "totalSitesChange": "涵蓋 {count} 位營運商",
+        "newThisMonth": "本月新增",
+        "avgWashesPerDay": "平均每日洗車數",
+        "avgRevenuePerSite": "平均每站點營收"
+      },
+      "status": {
+        "online": "線上",
+        "alert": "警示",
+        "offline": "離線",
+        "maintenance": "維護中"
+      }
+    },
+    "detail": {
+      "viewOnMap": "在地圖上查看",
+      "editSite": "編輯站點",
+      "kpi": {
+        "todaysRevenue": "今日營收",
+        "transactions": "交易筆數",
+        "avgTicket": "平均客單價",
+        "equipmentUptime": "設備正常運行率",
+        "allOnline": "全部上線"
+      },
+      "cards": {
+        "siteInformation": "站點資訊",
+        "equipmentStatus": "設備狀態",
+        "revenueTrend": "營收趨勢（30 天）",
+        "recentTransactions": "近期交易"
+      },
+      "info": {
+        "status": "狀態",
+        "equipmentType": "設備類型",
+        "totalMachines": "機器總數",
+        "operatingHours": "營業時間",
+        "contact": "聯絡人",
+        "phone": "電話"
+      },
+      "table": {
+        "machine": "機器",
+        "type": "類型",
+        "status": "狀態",
+        "lastService": "上次維修"
+      }
+    },
+    "equipment": {
+      "runDiagnostics": "執行診斷",
+      "addEquipment": "新增設備",
+      "kpi": {
+        "totalEquipment": "設備總數",
+        "online": "線上",
+        "needsAttention": "需要關注",
+        "offline": "離線"
+      },
+      "sections": {
+        "washBays": "洗車槽",
+        "vacuumStations": "吸塵站",
+        "otherEquipment": "其他設備"
+      },
+      "stats": {
+        "today": "今日",
+        "revenue": "營收",
+        "avgTime": "平均時間",
+        "avgDuration": "平均時長",
+        "offlineSince": "離線時間",
+        "lastWash": "上次洗車",
+        "estRepair": "預計維修",
+        "successRate": "成功率"
+      },
+      "sensors": {
+        "waterPressure": "水壓",
+        "soapLevel": "皂液量",
+        "waxLevel": "蠟量",
+        "brushWear": "刷具磨損",
+        "motorStatus": "馬達狀態",
+        "filterStatus": "濾網狀態",
+        "waterLevel": "水位",
+        "temperature": "溫度",
+        "pumpPressure": "泵浦壓力",
+        "connection": "連線",
+        "receiptPaper": "收據紙"
+      },
+      "alerts": {
+        "soapLowRefill": "皂液量剩 15%，建議補充",
+        "motorFailure": "偵測到馬達故障，工單 #1234 已指派"
+      },
+      "actions": {
+        "requestUrgentRepair": "申請緊急維修"
+      },
+      "badges": {
+        "lowSoap": "皂液不足",
+        "normal": "正常"
+      }
+    },
+    "customers": {
+      "exportList": "匯出名單",
+      "addCustomer": "新增客戶",
+      "kpi": {
+        "totalCustomers": "客戶總數",
+        "activeMembers": "活躍會員",
+        "avgVisitsPerMonth": "平均每月造訪次數",
+        "customerLtv": "客戶終身價值"
+      },
+      "cards": {
+        "customerSegments": "客戶分群",
+        "visitFrequency": "造訪頻率（最近 30 天）",
+        "topCustomers": "本月頂尖客戶"
+      },
+      "segments": {
+        "premiumMembers": "高級會員",
+        "premiumMembersDesc": "無限洗車方案",
+        "standardMembers": "標準會員",
+        "standardMembersDesc": "每月 4 次洗車方案",
+        "regularCustomers": "固定客戶",
+        "regularCustomersDesc": "每月 3 次以上造訪",
+        "occasionalVisitors": "偶爾造訪",
+        "occasionalVisitorsDesc": "每月 1-2 次造訪"
+      },
+      "frequency": {
+        "oneVisit": "1 次",
+        "twoVisits": "2 次",
+        "threeVisits": "3 次",
+        "fourVisits": "4 次",
+        "fivePlusVisits": "5 次以上"
+      },
+      "table": {
+        "customer": "客戶",
+        "membership": "會員方案",
+        "visits30d": "造訪次數（30天）",
+        "totalSpent": "總消費",
+        "avgTicket": "平均客單價",
+        "lastVisit": "上次造訪",
+        "preferredService": "偏好服務"
+      },
+      "viewAllCustomers": "查看所有客戶"
+    },
+    "transactions": {
+      "exportCsv": "匯出 CSV",
+      "manualEntry": "手動輸入",
+      "kpi": {
+        "todaysRevenue": "今日營收",
+        "transactions": "交易筆數",
+        "avgTicket": "平均客單價",
+        "memberTransactions": "會員交易"
+      },
+      "filters": {
+        "dateRange": "日期範圍",
+        "paymentMethod": "付款方式",
+        "serviceType": "服務類型",
+        "equipment": "設備",
+        "allMethods": "所有方式",
+        "allServices": "所有服務",
+        "allEquipment": "所有設備",
+        "today": "今天",
+        "yesterday": "昨天",
+        "last7Days": "最近 7 天",
+        "last30Days": "最近 30 天",
+        "thisMonth": "本月",
+        "customRange": "自訂範圍"
+      },
+      "table": {
+        "title": "交易紀錄",
+        "time": "時間",
+        "transactionId": "交易編號",
+        "customer": "客戶",
+        "service": "服務",
+        "equipment": "設備",
+        "payment": "付款",
+        "amount": "金額",
+        "status": "狀態"
+      },
+      "pagination": {
+        "showing": "顯示第 1-10 筆，共 {total} 筆交易"
+      }
+    },
+    "pricing": {
+      "previewPrices": "預覽價格",
+      "saveChanges": "儲存變更",
+      "kpi": {
+        "membershipRevenue": "會員營收",
+        "activeMembers": "活躍會員",
+        "promoRedemptions": "促銷兌換次數",
+        "avgTransaction": "平均交易額"
+      },
+      "cards": {
+        "pricingConfiguration": "定價設定",
+        "dynamicPricingRules": "動態定價規則",
+        "acceptedMemberships": "接受的會員方案",
+        "activeCampaigns": "進行中的活動",
+        "revenueByPaymentType": "按付款方式劃分的營收（最近 30 天）"
+      },
+      "config": {
+        "pricingTemplate": "定價範本",
+        "editOverrides": "編輯覆寫"
+      },
+      "table": {
+        "service": "服務",
+        "templatePrice": "範本價格",
+        "siteOverride": "站點覆寫",
+        "effectivePrice": "實際價格"
+      },
+      "dynamicRules": {
+        "peakHoursPricing": "尖峰時段定價",
+        "peakHoursDesc": "上午 8-10 點及下午 5-7 點加價 20%",
+        "weekendPricing": "週末定價",
+        "weekendDesc": "週六、週日加價 10%",
+        "holidayPricing": "假日定價",
+        "holidayDesc": "國定假日加價 15%",
+        "rainyDayDiscount": "雨天折扣",
+        "rainyDayDesc": "下雨時折扣 15%（天氣 API）",
+        "currentModifier": "目前價格調整",
+        "manageRules": "管理規則"
+      },
+      "memberships": {
+        "totalActiveMembers": "活躍會員總數",
+        "monthlyMembershipRevenue": "每月會員營收",
+        "noOverride": "無覆寫",
+        "notEnabled": "未啟用",
+        "managePlans": "管理方案"
+      },
+      "campaigns": {
+        "manageCampaigns": "管理活動"
+      },
+      "revenue": {
+        "membership": "會員",
+        "payPerWash": "單次付費",
+        "promotions": "促銷",
+        "addOns": "加購服務"
+      }
+    },
+    "cctv": {
+      "downloadClips": "下載片段",
+      "fullScreenView": "全螢幕檢視",
+      "kpi": {
+        "totalCameras": "攝影機總數",
+        "online": "線上",
+        "recording": "錄影中",
+        "storageUsed": "已用儲存空間"
+      },
+      "feed": {
+        "liveFeed": "即時畫面",
+        "live": "直播"
+      },
+      "cards": {
+        "recentMotionEvents": "近期移動事件",
+        "savedRecordings": "已儲存錄影",
+        "cameraStatus": "攝影機狀態"
+      },
+      "motionFilter": {
+        "allCameras": "所有攝影機"
+      },
+      "eventActions": {
+        "view": "檢視",
+        "review": "審查"
+      },
+      "table": {
+        "camera": "攝影機",
+        "location": "位置",
+        "status": "狀態",
+        "resolution": "解析度",
+        "storageUsed": "已用儲存空間",
+        "lastMotion": "上次移動",
+        "actions": "操作",
+        "settings": "設定"
+      },
+      "badges": {
+        "flagged": "已標記",
+        "incident": "事件",
+        "training": "訓練",
+        "support": "支援"
+      }
+    },
+    "maintenance": {
+      "scheduleMaintenance": "排程維護",
+      "createTicket": "建立工單",
+      "kpi": {
+        "openTickets": "待處理工單",
+        "avgResolutionTime": "平均解決時間",
+        "uptime30Days": "正常運行率（30 天）",
+        "nextScheduled": "下次排程"
+      },
+      "cards": {
+        "openIssues": "待處理問題",
+        "scheduledMaintenance": "已排程維護",
+        "recentHistory": "近期紀錄",
+        "equipmentHealthOverview": "設備健康總覽"
+      },
+      "issues": {
+        "viewDetails": "查看詳情",
+        "updateStatus": "更新狀態",
+        "markResolved": "標記為已解決"
+      },
+      "schedule": {
+        "viewCalendar": "查看行事曆",
+        "planned": "已計劃"
+      },
+      "history": {
+        "viewAll": "查看全部"
+      },
+      "table": {
+        "equipment": "設備",
+        "status": "狀態",
+        "healthScore": "健康分數",
+        "lastService": "上次維修",
+        "nextService": "下次維修",
+        "totalRuntime": "總運行時間",
+        "issues90d": "問題數（90天）"
+      },
+      "badges": {
+        "active": "啟用中"
+      }
+    },
+    "add": {
+      "breadcrumbLabel": "新增站點",
+      "pageTitle": "新增站點",
+      "pageSubtitle": "建立新的洗車站位置",
+      "steps": {
+        "basicInfo": "基本資訊",
+        "location": "位置",
+        "equipment": "設備",
+        "review": "確認"
+      },
+      "sections": {
+        "basicInformation": "基本資訊",
+        "locationDetails": "位置詳情",
+        "operatingHours": "營業時間",
+        "equipmentConfiguration": "設備設定",
+        "siteManagement": "站點管理"
+      },
+      "fields": {
+        "siteName": "站點名稱 *",
+        "siteCode": "站點代碼 *",
+        "operator": "營運商 *",
+        "siteType": "站點類型 *",
+        "openingDate": "開幕日期",
+        "status": "狀態",
+        "address": "地址 *",
+        "district": "區 *",
+        "city": "城市 *",
+        "postalCode": "郵遞區號 *",
+        "country": "國家",
+        "latitude": "緯度",
+        "longitude": "經度",
+        "vacuumStations": "吸塵站",
+        "paymentKiosks": "付款機台",
+        "siteManager": "站點管理員",
+        "contactPhone": "聯絡電話",
+        "contactEmail": "聯絡電子郵件",
+        "pricingTemplate": "定價範本"
+      },
+      "placeholders": {
+        "siteName": "例如：JetX 信義站",
+        "siteCode": "例如：XINYI-001",
+        "selectOperator": "選擇營運商",
+        "selectType": "選擇類型",
+        "streetAddress": "街道地址",
+        "district": "例如：信義區",
+        "city": "例如：台北市",
+        "postalCode": "例如：110",
+        "latitude": "例如：25.0330",
+        "longitude": "例如：121.5654",
+        "contactPhone": "+886-2-XXXX-XXXX",
+        "contactEmail": "site@operator.com",
+        "selectMachineModel": "選擇機器型號",
+        "selectOrInvite": "選擇或邀請"
+      },
+      "statusOptions": {
+        "setup": "設定中 / 籌備中",
+        "active": "啟用中",
+        "underMaintenance": "維護中"
+      },
+      "siteTypeOptions": {
+        "fullService": "全服務",
+        "selfService": "自助式",
+        "hybrid": "混合式"
+      },
+      "equipmentTypeOptions": {
+        "tunnelWash": "隧道式洗車",
+        "rolloverWash": "回轉式洗車",
+        "selfServiceBay": "自助洗車槽"
+      },
+      "hours": {
+        "to": "至",
+        "open": "開放",
+        "allDayOperation": "24 小時全天候營業"
+      },
+      "equipment": {
+        "addBay": "+ 新增洗車槽",
+        "remove": "移除"
+      },
+      "map": {
+        "placeholder": "地圖將顯示於此",
+        "hint": "輸入地址以自動定位於地圖"
+      },
+      "actions": {
+        "cancel": "取消",
+        "saveAsDraft": "儲存為草稿",
+        "createSite": "建立站點"
+      }
+    }
+  },
+  "operators": {
+    "title": "營運商",
+    "subtitle": "管理合作營運商及其站點",
+    "addOperator": "新增營運商",
+    "searchPlaceholder": "搜尋營運商...",
+    "kpi": {
+      "totalOperators": "營運商總數",
+      "activeSites": "活躍站點",
+      "totalRevenueMtd": "總營收（本月至今）",
+      "avgSitesPerOperator": "平均每位營運商站點數"
+    },
+    "table": {
+      "operatorName": "營運商名稱",
+      "contactPerson": "聯絡人",
+      "region": "區域",
+      "sites": "站點",
+      "mtdRevenue": "本月至今營收",
+      "contract": "合約",
+      "since": "合作起始"
+    },
+    "filters": {
+      "allContractTypes": "所有合約類型",
+      "north": "北部",
+      "central": "中部",
+      "south": "南部",
+      "east": "東部",
+      "franchise": "加盟",
+      "license": "授權",
+      "partnership": "合作"
+    },
+    "pagination": {
+      "showing": "顯示第 {from}-{to} 筆，共 {total} 位營運商"
+    },
+    "tabs": {
+      "overview": "總覽",
+      "sites": "站點（{count}）",
+      "financial": "財務",
+      "team": "團隊",
+      "documents": "文件",
+      "activity": "活動"
+    },
+    "detail": {
+      "subtitle": "營運商自 {date} 起 · {contractType} 合約",
+      "editOperator": "編輯營運商",
+      "addSite": "新增站點",
+      "activePartner": "活躍合作夥伴",
+      "contractValidUntil": "合約有效期至 {date}",
+      "kpi": {
+        "totalSites": "站點總數",
+        "mtdRevenue": "本月至今營收",
+        "ytdRevenue": "年至今營收",
+        "activeMembers": "活躍會員"
+      },
+      "contactInfo": {
+        "title": "聯絡資訊",
+        "primaryContact": "主要聯絡人",
+        "position": "職位",
+        "address": "地址",
+        "taxId": "統一編號"
+      },
+      "contractDetails": {
+        "title": "合約詳情",
+        "viewContract": "查看合約",
+        "contractType": "合約類型",
+        "startDate": "開始日期",
+        "endDate": "結束日期",
+        "revenueShare": "收益分潤",
+        "territory": "轄區",
+        "siteLimit": "站點上限",
+        "siteLimitValue": "{count} 個站點"
+      },
+      "sitesOverview": {
+        "title": "站點總覽",
+        "table": {
+          "siteName": "站點名稱",
+          "location": "位置",
+          "machines": "機器數"
+        }
+      },
+      "revenueTrend": {
+        "title": "營收趨勢（12 個月）",
+        "chartPlaceholder": "營收趨勢圖"
+      },
+      "recentActivity": {
+        "title": "近期活動"
+      }
+    },
+    "financial": {
+      "subtitle": "收益分潤：15% · 合約：加盟",
+      "exportReport": "匯出報告",
+      "generateInvoice": "產生發票",
+      "kpi": {
+        "mtdGrossRevenue": "本月至今毛收入",
+        "mtdJetxShare": "本月至今 JetX 份額（15%）",
+        "ytdGrossRevenue": "年至今毛收入",
+        "ytdJetxShare": "年至今 JetX 份額"
+      },
+      "revenueBySite": {
+        "title": "各站點營收 - 2024 年 12 月",
+        "otherSites": "其他站點（{count}）",
+        "table": {
+          "site": "站點",
+          "grossRevenue": "毛收入",
+          "transactions": "交易筆數",
+          "avgTransaction": "平均交易額",
+          "jetxShare": "JetX 份額（15%）",
+          "vsLastMonth": "對比上月",
+          "total": "合計"
+        }
+      },
+      "paymentHistory": {
+        "title": "付款紀錄",
+        "paid": "已付款"
+      },
+      "pendingInvoices": {
+        "title": "待付發票",
+        "totalPending": "待付總額"
+      },
+      "monthlyRevenueTrend": {
+        "title": "月度營收趨勢（2024 年）",
+        "grossRevenue": "毛收入",
+        "jetxShare": "JetX 份額"
+      }
+    },
+    "sites": {
+      "subtitle": "北部區域 12 個站點",
+      "allSites": "所有站點",
+      "kpi": {
+        "totalMachines": "機器總數",
+        "avgRevenueSite": "平均每站點營收"
+      },
+      "stats": {
+        "machines": "機器數",
+        "mtdWashes": "本月至今洗車數"
+      },
+      "types": {
+        "fullService": "全服務",
+        "selfService": "自助式",
+        "hybrid": "混合式"
+      },
+      "equipment": {
+        "lowSoap": "皂液不足"
+      }
+    },
+    "add": {
+      "breadcrumb": "新增",
+      "title": "新增營運商",
+      "subtitle": "建立新的合作營運商帳戶",
+      "createOperator": "建立營運商",
+      "steps": {
+        "companyInfo": "公司資訊",
+        "contactDetails": "聯絡詳情",
+        "contractTerms": "合約條款",
+        "review": "確認"
+      },
+      "companyInfo": {
+        "title": "公司資訊",
+        "companyName": "公司名稱 *",
+        "companyNamePlaceholder": "輸入公司名稱",
+        "businessRegNumber": "營業登記號碼 *",
+        "taxId": "統一編號 *",
+        "businessAddress": "營業地址 *",
+        "streetAddress": "街道地址",
+        "city": "城市 *",
+        "regionState": "區域/縣市",
+        "selectRegion": "選擇區域",
+        "postalCode": "郵遞區號 *",
+        "country": "國家 *"
+      },
+      "primaryContact": {
+        "title": "主要聯絡人",
+        "firstName": "名字 *",
+        "lastName": "姓氏 *",
+        "positionTitle": "職位/頭銜 *",
+        "positionPlaceholder": "例如：執行長、營運經理",
+        "mobile": "手機"
+      },
+      "contractTerms": {
+        "title": "合約條款",
+        "contractType": "合約類型 *",
+        "selectType": "選擇類型",
+        "territory": "轄區 *",
+        "selectTerritory": "選擇轄區",
+        "northRegion": "北部區域",
+        "centralRegion": "中部區域",
+        "southRegion": "南部區域",
+        "eastRegion": "東部區域",
+        "exclusiveTerritory": "獨家轄區",
+        "exclusive": "是 - 獨家",
+        "nonExclusive": "否 - 非獨家",
+        "siteLimit": "站點上限",
+        "siteLimitPlaceholder": "最多站點數量",
+        "contractStartDate": "合約開始日期 *",
+        "contractEndDate": "合約結束日期 *",
+        "revenueShare": "收益分潤（%）*",
+        "minAnnualRevenue": "最低年度營收"
+      },
+      "userAccount": {
+        "title": "初始用戶帳戶",
+        "subtitle": "為營運商建立登入憑證",
+        "username": "使用者名稱 *",
+        "usernamePlaceholder": "登入使用者名稱",
+        "emailForLogin": "電子郵件（用於登入）*",
+        "sendWelcomeEmail": "傳送含登入說明的歡迎電子郵件"
+      },
+      "documents": {
+        "title": "文件",
+        "dragDrop": "拖放檔案至此或點擊瀏覽",
+        "hint": "營業登記、合約、身分證件",
+        "browseFiles": "瀏覽檔案"
+      }
+    }
+  },
+  "account": {
+    "breadcrumb": "帳戶",
+    "title": "帳戶設定",
+    "subtitle": "管理您的個人資料和偏好設定",
+    "tabs": {
+      "profile": "個人資料",
+      "security": "安全性",
+      "notifications": "通知",
+      "integrations": "整合",
+      "apiKeys": "API 金鑰"
+    },
+    "profile": {
+      "sectionTitle": "個人資料",
+      "changePhoto": "更換照片",
+      "firstName": "名字",
+      "lastName": "姓氏",
+      "email": "電子郵件",
+      "phone": "電話",
+      "role": "角色",
+      "department": "部門",
+      "saveChanges": "儲存變更"
+    },
+    "securityOverview": {
+      "sectionTitle": "安全性設定",
+      "password": "密碼",
+      "passwordDesc": "45 天前上次變更",
+      "changePassword": "變更密碼",
+      "twoFactor": "雙重驗證",
+      "twoFactorDesc": "新增額外的安全防護層",
+      "activeSessions": "活躍工作階段",
+      "activeSessionsDesc": "其他裝置上有 3 個活躍工作階段",
+      "manageSessions": "管理工作階段",
+      "loginHistory": "登入紀錄",
+      "loginHistoryDesc": "查看近期登入活動",
+      "viewHistory": "查看紀錄"
+    },
+    "notificationOverview": {
+      "sectionTitle": "通知偏好設定",
+      "emailNotifications": "電子郵件通知",
+      "pushNotifications": "推播通知",
+      "savePreferences": "儲存偏好設定"
+    },
+    "notifItems": {
+      "dailySummary": "每日摘要",
+      "dailySummaryDesc": "接收每日活動摘要",
+      "criticalAlerts": "嚴重警示",
+      "criticalAlertsDesc": "設備故障、系統問題",
+      "newTickets": "新工單",
+      "newTicketsDesc": "建立新支援工單時",
+      "weeklyReports": "每週報告",
+      "weeklyReportsDesc": "績效和營收報告",
+      "urgentAlerts": "緊急警示",
+      "urgentAlertsDesc": "需要立即處理的嚴重問題",
+      "ticketUpdates": "工單更新",
+      "ticketUpdatesDesc": "您負責的工單有更新時",
+      "equipmentStatus": "設備狀態",
+      "equipmentStatusDesc": "機器狀態變更和警示"
+    },
+    "preferences": {
+      "sectionTitle": "偏好設定",
+      "language": "語言",
+      "timezone": "時區",
+      "dateFormat": "日期格式",
+      "currencyDisplay": "貨幣顯示",
+      "defaultDashboard": "預設儀表板",
+      "theme": "主題",
+      "savePreferences": "儲存偏好設定"
+    },
+    "security": {
+      "breadcrumb": "安全性",
+      "passwordSectionTitle": "密碼",
+      "passwordStrong": "密碼強度：強",
+      "passwordLastChanged": "45 天前上次變更",
+      "currentPassword": "目前密碼",
+      "currentPasswordPlaceholder": "輸入目前密碼",
+      "newPassword": "新密碼",
+      "newPasswordPlaceholder": "輸入新密碼",
+      "confirmPassword": "確認新密碼",
+      "confirmPasswordPlaceholder": "確認新密碼",
+      "requireAtLeast8": "至少 8 個字元",
+      "requireUppercase": "包含大寫字母",
+      "requireLowercase": "包含小寫字母",
+      "requireNumber": "包含數字",
+      "requireSpecial": "包含特殊字元",
+      "updatePassword": "更新密碼",
+      "twoFactorTitle": "雙重驗證",
+      "authenticatorApp": "驗證器應用程式",
+      "authenticatorAppDesc": "Google Authenticator 或類似應用程式",
+      "emailVerification": "電子郵件驗證",
+      "emailVerificationDesc": "備用碼傳送至電子郵件",
+      "smsVerification": "SMS 驗證",
+      "smsVerificationDesc": "代碼以簡訊傳送",
+      "backupCodes": "備用碼",
+      "backupCodesDesc": "您還有 <strong>8 / 10</strong> 個備用碼。若遺失 2FA 裝置，可用這些碼存取帳戶。",
+      "viewBackupCodes": "查看備用碼",
+      "generateNewCodes": "產生新備用碼",
+      "activeSessionsTitle": "活躍工作階段",
+      "signOutAll": "登出所有裝置",
+      "currentSession": "目前",
+      "activeNow": "目前活躍",
+      "lastActive": "上次活躍於 {time}",
+      "signOut": "登出",
+      "loginHistoryTitle": "登入紀錄",
+      "tableDateTime": "日期和時間",
+      "tableDevice": "裝置",
+      "tableLocation": "位置",
+      "tableIpAddress": "IP 位址",
+      "tableStatus": "狀態",
+      "badgeSuccess": "成功",
+      "badgeFailed": "失敗",
+      "paginationInfo": "第 {page} 頁，共 {total} 頁"
+    },
+    "notifications": {
+      "breadcrumb": "通知",
+      "emailSectionTitle": "電子郵件通知",
+      "allEmails": "所有電子郵件",
+      "pushSectionTitle": "推播通知",
+      "allPush": "所有推播",
+      "smsSectionTitle": "SMS 通知",
+      "smsPremium": "進階",
+      "smsDesc": "SMS 通知適用於嚴重警示。設定您的電話號碼以接收簡訊。",
+      "phoneNumber": "電話號碼",
+      "quietHoursTitle": "免打擾時段",
+      "quietHoursDesc": "在指定時段暫停非嚴重通知。嚴重警示將持續傳送。",
+      "enableQuietHours": "啟用免打擾時段",
+      "startTime": "開始時間",
+      "endTime": "結束時間",
+      "days": "天數",
+      "savePreferences": "儲存偏好設定",
+      "categoryDailyOps": "日常營運",
+      "categoryAlerts": "警示與問題",
+      "categorySupport": "支援與工單",
+      "categoryBusiness": "業務更新",
+      "dailySummary": "每日摘要",
+      "dailySummaryDesc": "每天上午 8:00 接收每日活動摘要",
+      "weeklyReports": "每週報告",
+      "weeklyReportsDesc": "每週一的績效和營收報告",
+      "monthlyAnalytics": "月度分析",
+      "monthlyAnalyticsDesc": "全面的月度績效報告",
+      "criticalAlerts": "嚴重警示",
+      "criticalAlertsDesc": "設備故障、系統中斷",
+      "equipmentWarnings": "設備警告",
+      "equipmentWarningsDesc": "維護到期、耗材不足",
+      "securityAlerts": "安全性警示",
+      "securityAlertsDesc": "登入嘗試、密碼變更",
+      "newTickets": "新工單",
+      "newTicketsDesc": "建立新支援工單時",
+      "ticketUpdates": "工單更新",
+      "ticketUpdatesDesc": "您追蹤的工單狀態變更時",
+      "ticketResolved": "工單已解決",
+      "ticketResolvedDesc": "工單關閉或解決時",
+      "newCustomers": "新客戶",
+      "newCustomersDesc": "新客戶註冊或訂閱時",
+      "membershipChanges": "會員異動",
+      "membershipChangesDesc": "訂閱續約、取消、升級",
+      "urgentAlerts": "緊急警示",
+      "urgentAlertsDesc": "需要立即處理的嚴重問題",
+      "ticketAssignments": "工單指派",
+      "ticketAssignmentsDesc": "工單指派給您時",
+      "ticketUpdatesPush": "工單更新",
+      "ticketUpdatesPushDesc": "您負責的工單有更新時",
+      "equipmentStatus": "設備狀態",
+      "equipmentStatusDesc": "機器狀態變更和警示",
+      "teamMentions": "團隊提及",
+      "teamMentionsDesc": "有人在評論中提及您時",
+      "criticalSystemAlerts": "嚴重系統警示",
+      "criticalSystemAlertsDesc": "僅限嚴重中斷或安全性漏洞",
+      "equipmentFailures": "設備故障",
+      "equipmentFailuresDesc": "設備離線或故障時"
+    },
+    "integrations": {
+      "breadcrumb": "整合",
+      "connectedTitle": "已連線整合",
+      "availableTitle": "可用整合",
+      "connect": "連線",
+      "webhooksTitle": "Webhooks",
+      "addWebhook": "新增 Webhook",
+      "test": "測試",
+      "slackDesc": "已連線至 #jetx-alerts 頻道",
+      "googleWorkspaceDesc": "已啟用行事曆同步和 SSO",
+      "stripeDesc": "付款處理整合",
+      "quickbooksDesc": "同步財務資料和發票",
+      "zapierDesc": "自動化工作流程，支援 5000+ 應用程式",
+      "jiraDesc": "與專案管理同步工單",
+      "msTeamsDesc": "團隊通知和警示",
+      "powerBiDesc": "進階分析和報告",
+      "whatsappDesc": "客戶訊息和支援",
+      "lineNotifyDesc": "透過 LINE 傳送警示通知",
+      "datadogDesc": "基礎架構監控",
+      "webhookProductionEvents": "生產環境事件",
+      "webhookAnalyticsPipeline": "分析管道"
+    },
+    "api": {
+      "breadcrumb": "API 金鑰",
+      "createApiKey": "建立 API 金鑰",
+      "kpi": {
+        "callsToday": "API 呼叫次數（今日）",
+        "callsMonth": "API 呼叫次數（本月）",
+        "activeKeys": "活躍金鑰",
+        "avgResponseTime": "平均回應時間",
+        "ofLimit": "500K 上限",
+        "productionTesting": "2 個生產環境，2 個測試",
+        "improvement": "-12% 改善"
+      },
+      "sectionTitle": "API 金鑰",
+      "copy": "複製",
+      "editPermissions": "編輯權限",
+      "viewLogs": "查看日誌",
+      "regenerate": "重新產生",
+      "revoke": "撤銷",
+      "productionKey": "生產環境 API 金鑰",
+      "mobileAppKey": "行動應用程式整合",
+      "devTestingKey": "開發測試",
+      "legacyKey": "舊版整合（已棄用）",
+      "badgeProduction": "生產環境",
+      "badgeTesting": "測試",
+      "metaLastUsed": "上次使用：",
+      "metaCallsToday": "今日呼叫次數：",
+      "metaRateLimit": "速率限制：",
+      "metaRevoked": "已撤銷：",
+      "metaReason": "原因：",
+      "quickReference": "快速參考",
+      "baseUrl": "基本 URL",
+      "authentication": "驗證",
+      "authDesc": "在請求標頭中包含您的 API 金鑰：",
+      "availableEndpoints": "可用端點",
+      "viewFullDocs": "查看完整文件"
+    }
+  },
+  "customers": {
+    "title": "客戶",
+    "subtitle": "管理客戶帳戶和會員資格",
+    "status": {
+      "atRisk": "高流失風險",
+      "churned": "已流失"
+    },
+    "membership": {
+      "unlimited": "無限",
+      "premium": "高級",
+      "basic": "基本",
+      "none": "無"
+    },
+    "kpi": {
+      "totalCustomers": "客戶總數",
+      "activeMembers": "活躍會員",
+      "avgLtv": "平均終身價值",
+      "churnRate": "流失率",
+      "lifetimeVisits": "累計造訪次數",
+      "lifetimeValue": "終身價值",
+      "visitFrequency": "造訪頻率",
+      "rewardPoints": "獎勵點數",
+      "top5Percent": "前 5% 客戶",
+      "consistent": "穩定客戶"
+    },
+    "filters": {
+      "searchPlaceholder": "搜尋客戶...",
+      "allMemberships": "所有會員方案"
+    },
+    "table": {
+      "customer": "客戶",
+      "contact": "聯絡方式",
+      "membership": "會員方案",
+      "totalVisits": "總造訪次數",
+      "totalSpend": "總消費",
+      "lastVisit": "上次造訪",
+      "site": "站點",
+      "service": "服務",
+      "vehicle": "車輛",
+      "points": "點數"
+    },
+    "pagination": {
+      "showingCustomers": "顯示第 {from}-{to} 筆，共 {total} 位客戶"
+    },
+    "tabs": {
+      "overview": "總覽",
+      "transactions": "交易紀錄",
+      "vehiclesCount": "車輛（{count}）",
+      "membership": "會員方案"
+    },
+    "actions": {
+      "sendMessage": "傳送訊息",
+      "issueRefund": "發起退款",
+      "createTicket": "建立工單"
+    },
+    "detail": {
+      "subtitle": "客戶 #{id} · 會員自 {date} 起",
+      "memberBanner": "{planName} 會員",
+      "renewsOn": "續約日期：{date}",
+      "autoRenewal": "自動續約",
+      "autoRenewalOn": "開啟",
+      "autoRenewalOff": "關閉",
+      "contactInformation": "聯絡資訊",
+      "membershipDetails": "會員詳情",
+      "visitFrequencyChart": "造訪頻率（12 週）",
+      "visitFrequencyChartPlaceholder": "造訪頻率圖",
+      "preferredServices": "偏好服務",
+      "registeredVehicles": "已登記車輛",
+      "recentTransactions": "近期交易",
+      "noActiveMembership": "無有效會員資格",
+      "fields": {
+        "fullName": "全名",
+        "preferredLanguage": "偏好語言",
+        "chineseTraditional": "中文（繁體）",
+        "homeSite": "常用站點",
+        "joinDate": "加入日期",
+        "plan": "方案",
+        "monthlyFee": "月費",
+        "billingCycle": "計費週期",
+        "paymentMethod": "付款方式",
+        "memberSince": "會員起始日",
+        "autoRenewal": "自動續約"
+      }
+    },
+    "vehicles": {
+      "primary": "主要",
+      "secondary": "次要",
+      "recentVehicleWashes": "近期車輛洗車紀錄",
+      "viewAllTransactions": "查看所有交易",
+      "kpi": {
+        "registeredVehicles": "已登記車輛",
+        "maxAllowed": "最多 {count} 輛",
+        "primaryVehicleWashes": "主要車輛洗車次數",
+        "secondaryVehicleWashes": "次要車輛洗車次數",
+        "lastWash": "上次洗車"
+      },
+      "actions": {
+        "addVehicle": "新增車輛",
+        "viewWashHistory": "查看洗車紀錄",
+        "removeVehicle": "移除車輛",
+        "setAsPrimary": "設為主要車輛"
+      },
+      "fields": {
+        "make": "廠牌",
+        "model": "型號",
+        "year": "年份",
+        "color": "顏色",
+        "licensePlate": "車牌號碼",
+        "registrationDate": "登記日期",
+        "totalWashes": "總洗車次數",
+        "lastWash": "上次洗車"
+      },
+      "table": {
+        "duration": "時長"
+      }
+    },
+    "memberships": {
+      "currentPlan": "目前方案",
+      "billingInformation": "計費資訊",
+      "membershipValue": "會員價值",
+      "billingHistory": "計費紀錄",
+      "membershipActions": "會員操作",
+      "monthlyUsageChart": "月度使用量（12 個月）",
+      "monthlyUsageChartPlaceholder": "月度使用量長條圖",
+      "kpi": {
+        "memberSince": "會員起始日",
+        "totalPaid": "累計付款",
+        "washesUsed": "已使用洗車次數",
+        "nextBilling": "下次計費"
+      },
+      "banner": {
+        "unlimitedMember": "無限洗車會員",
+        "activeNextRenewal": "有效 · 下次續約：{date}",
+        "autoRenewalOn": "自動續約 開啟"
+      },
+      "planFeatures": {
+        "unlimitedWashes": "每月無限次洗車",
+        "allWashLevels": "包含所有洗車等級（基本、高級、極致）",
+        "upToVehicles": "最多 {count} 輛已登記車輛",
+        "addonDiscount": "所有加購服務享 {percent}% 折扣",
+        "priorityLane": "優先通道使用權",
+        "doublePoints": "所有消費累積 2 倍獎勵點數"
+      },
+      "fields": {
+        "cardExpiry": "信用卡到期日",
+        "billingEmail": "計費電子郵件",
+        "nextCharge": "下次收費"
+      },
+      "value": {
+        "thisMonthWashes": "本月洗車次數",
+        "monthlySavings": "月度節省金額",
+        "lifetimeRoi": "終身 ROI"
+      },
+      "table": {
+        "invoiceNumber": "發票編號"
+      },
+      "pagination": {
+        "showingInvoices": "顯示第 {from}-{to} 筆，共 {total} 張發票"
+      },
+      "actions": {
+        "changePlan": "變更方案",
+        "pauseMembership": "暫停會員",
+        "update": "更新",
+        "downloadAllInvoices": "下載所有發票",
+        "pause": "暫停",
+        "transferMembership": "轉移會員",
+        "transfer": "轉移",
+        "cancelMembership": "取消會員"
+      },
+      "actionDescriptions": {
+        "changePlan": "升級或降級至不同的會員方案",
+        "pauseMembership": "暫停計費和使用權限，最多 3 個月",
+        "transferMembership": "將此會員資格轉移至其他客戶帳戶",
+        "cancelMembership": "取消會員並停止所有未來計費"
+      }
+    },
+    "transactions": {
+      "kpi": {
+        "totalTransactions": "交易總筆數",
+        "totalSpent": "總消費金額",
+        "avgTransaction": "平均交易額",
+        "addOnsOnly": "僅加購服務",
+        "pointsEarned": "已獲得點數"
+      },
+      "spendingByService": "各服務消費分布",
+      "monthlySpendingTrend": "月度消費趨勢",
+      "monthlySpendingChartPlaceholder": "月度消費圖",
+      "transactionHistory": "交易紀錄",
+      "transactionCount": "{count} 筆交易",
+      "serviceCategories": {
+        "membershipFee": "會員費",
+        "addonServices": "加購服務",
+        "payPerWash": "單次付費"
+      },
+      "table": {
+        "transactionId": "交易編號",
+        "dateTime": "日期和時間",
+        "payment": "付款"
+      },
+      "pagination": {
+        "showingTransactions": "顯示第 {from}-{to} 筆，共 {total} 筆交易"
+      },
+      "actions": {
+        "exportCsv": "匯出 CSV"
+      }
+    }
+  },
+  "memberships": {
+    "title": "會員方案",
+    "subtitle": "管理會員方案範本及站點使用設定",
+    "actions": {
+      "createPlanTemplate": "建立方案範本",
+      "viewSites": "查看站點"
+    },
+    "tabs": {
+      "planTemplates": "方案範本",
+      "subscribers": "訂閱者",
+      "siteAssignments": "站點指派",
+      "analytics": "分析"
+    },
+    "kpi": {
+      "planTemplates": "方案範本",
+      "totalActiveMembers": "活躍會員總數",
+      "multiSiteMembers": "多站點會員",
+      "totalMrr": "總 MRR"
+    },
+    "scope": {
+      "singleSite": "單站點",
+      "multiSite": "多站點",
+      "singleSiteMembers": "單站點會員",
+      "multiSiteMembers": "多站點會員"
+    },
+    "planTemplates": {
+      "cardTitle": "會員方案範本",
+      "cardDescription": "可指派至站點的主要方案範本。站點可直接套用範本或自訂定價/福利。",
+      "sites": "個站點",
+      "columns": {
+        "planName": "方案名稱",
+        "basePrice": "基本價格",
+        "scope": "適用範圍",
+        "sitesUsing": "使用站點數",
+        "activeMembers": "活躍會員",
+        "mrr": "MRR"
+      },
+      "planNames": {
+        "basic": "基本",
+        "premium": "高級",
+        "unlimited": "無限"
+      }
+    },
+    "sitePlanAssignments": {
+      "cardTitle": "站點方案指派",
+      "cardDescription": "查看並管理各站點可用的會員方案。站點可覆寫定價或福利。",
+      "notAvailable": "不適用",
+      "columns": {
+        "siteMrr": "站點 MRR"
+      },
+      "legend": {
+        "templatePrice": "範本價格",
+        "siteOverride": "站點覆寫",
+        "planNotOffered": "未提供此方案"
+      },
+      "viewAllSites": "查看全部 12 個站點 →"
+    },
+    "charts": {
+      "subscriberDistribution": "訂閱者分布",
+      "mrrTrend6Months": "MRR 趨勢（6 個月）"
+    },
+    "scopeBreakdown": {
+      "cardTitle": "會員適用範圍分布",
+      "singleSiteDescription": "只能在自己的站點使用會員資格",
+      "multiSiteDescription": "可在任何參與站點使用會員資格",
+      "basicPlan": "基本方案",
+      "premiumPlan": "高級方案",
+      "unlimitedPlan": "無限方案",
+      "legacyPlans": "舊版方案"
+    },
+    "recentActivity": {
+      "cardTitle": "近期會員活動",
+      "columns": {
+        "customer": "客戶",
+        "action": "操作",
+        "plan": "方案",
+        "site": "站點"
+      }
+    },
+    "edit": {
+      "title": "編輯高級方案",
+      "subtitle": "修改方案範本設定及站點使用設定",
+      "kpi": {
+        "activeSubscribers": "活躍訂閱者",
+        "monthlyRevenue": "月度營收",
+        "sitesOffering": "提供此方案的站點",
+        "allSitesEnabled": "所有站點已啟用",
+        "avgRetention": "平均留存率"
+      },
+      "sections": {
+        "basicInfo": "基本資訊",
+        "pricing": "定價",
+        "pricingDescription": "站點繼承的基本定價（站點可覆寫）",
+        "membershipScope": "會員適用範圍",
+        "planBenefits": "方案福利",
+        "planBenefitsDescription": "此方案範本的預設福利",
+        "siteAvailability": "站點使用設定",
+        "siteAvailabilityDescription": "選擇哪些站點可提供此方案"
+      },
+      "fields": {
+        "planName": "方案名稱",
+        "planIconColor": "方案圖示顏色",
+        "planStatus": "方案狀態",
+        "planStatusHint": "停用後將停止新訂閱，但不影響現有會員",
+        "basePrice": "基本價格",
+        "billingCycle": "計費週期",
+        "annualDiscount": "年度折扣",
+        "washesPerMonth": "每月洗車次數",
+        "addonDiscount": "加購服務折扣",
+        "pointsMultiplier": "點數倍率",
+        "additionalBenefits": "額外福利",
+        "selectAllSites": "選擇所有站點",
+        "siteOverrideHint": "帶有 ⚙ 標記的站點已設定自訂定價覆寫"
+      },
+      "billingCycleOptions": {
+        "monthly": "月度",
+        "quarterly": "季度",
+        "annual": "年度"
+      },
+      "scopeDescriptions": {
+        "singleSite": "會員只能在其常用站點使用訂閱",
+        "multiSite": "會員可在任何已啟用的站點使用訂閱"
+      },
+      "benefits": {
+        "priorityQueue": "優先排隊使用權",
+        "freeVacuum": "免費吸塵服務",
+        "freeInteriorWipe": "免費內裝擦拭",
+        "memberOnlyPromotions": "會員專屬促銷",
+        "freeTireShine": "免費輪胎亮光"
+      },
+      "dangerZone": {
+        "title": "危險操作",
+        "archiveTitle": "封存方案範本",
+        "archiveDescription": "將此方案隱藏在新訂閱之外。現有會員將保留其福利。",
+        "archiveButton": "封存方案",
+        "deleteTitle": "刪除方案範本",
+        "deleteDescription": "永久移除此方案。僅在沒有活躍訂閱者時可執行。",
+        "deleteButton": "刪除方案"
+      }
+    },
+    "subscribers": {
+      "cardTitle": "所有訂閱者",
+      "columns": {
+        "customer": "客戶",
+        "homeSite": "常用站點",
+        "startDate": "開始日期",
+        "renewalDate": "續約日期"
+      },
+      "filters": {
+        "plan": "方案",
+        "allPlans": "所有方案",
+        "expiringSoon": "即將到期",
+        "cancelled": "已取消",
+        "allTime": "所有時間",
+        "last90Days": "最近 90 天",
+        "thisYear": "今年",
+        "applyFilters": "套用篩選"
+      }
+    },
+    "sites": {
+      "cardDescription": "管理各站點可用的會員方案。點擊站點以設定定價覆寫。",
+      "columns": {
+        "site": "站點",
+        "basicWithPrice": "基本（$29）",
+        "premiumWithPrice": "高級（$59）",
+        "unlimitedWithPrice": "無限（$99）"
+      },
+      "totalSites": "共 12 個站點",
+      "overrides": {
+        "cardTitle": "有覆寫的站點",
+        "description": "站點有與範本不同的自訂定價"
+      },
+      "planAvailability": {
+        "cardTitle": "方案使用設定"
+      }
+    },
+    "analytics": {
+      "exportReport": "匯出報告",
+      "kpi": {
+        "churnRate": "流失率",
+        "avgMemberLtv": "平均會員終身價值",
+        "upgradeRate": "升級率",
+        "avgTenure": "平均會員年資"
+      },
+      "memberGrowth": {
+        "title": "會員成長（12 個月）",
+        "netNewMembers": "淨新增會員（年至今）",
+        "growthRate": "成長率"
+      },
+      "mrrTrend": {
+        "title": "MRR 趨勢（12 個月）",
+        "currentMrr": "目前 MRR",
+        "mrrGrowth": "MRR 成長"
+      },
+      "churnAnalysis": {
+        "title": "流失分析",
+        "monthlyChurnRate": "月度流失率",
+        "churnedThisMonth": "本月流失人數",
+        "revenueLost": "損失營收",
+        "topChurnReasons": "主要流失原因"
+      },
+      "planMovement": {
+        "title": "方案異動",
+        "upgradesThisMonth": "本月升級數",
+        "downgradesThisMonth": "本月降級數",
+        "netMovementRevenue": "淨異動營收",
+        "commonUpgradePaths": "常見升級路徑"
+      },
+      "revenueByPlan": {
+        "title": "各方案營收"
+      },
+      "topSitesByMrr": {
+        "title": "MRR 最高站點",
+        "viewAllSites": "查看所有站點 →"
+      },
+      "ltv": {
+        "title": "各方案終身價值",
+        "description": "每位會員在整個會員期間產生的平均營收",
+        "columns": {
+          "avgTenure": "平均年資",
+          "monthlyArpu": "月度 ARPU",
+          "ltv": "LTV",
+          "acquisitionCost": "獲客成本",
+          "ltvCacRatio": "LTV:CAC 比率"
+        }
+      }
+    }
+  },
+  "tickets": {
+    "breadcrumb": "支援工單",
+    "title": "支援工單",
+    "subtitle": "管理客戶和營運商的支援請求",
+    "actions": {
+      "createTicket": "建立工單"
+    },
+    "kpi": {
+      "openTickets": "待處理工單",
+      "avgResponseTime": "平均回應時間",
+      "avgResolutionTime": "平均解決時間",
+      "satisfactionRate": "滿意度"
+    },
+    "filters": {
+      "searchPlaceholder": "搜尋工單...",
+      "allAssignees": "所有負責人",
+      "assignedToMe": "指派給我",
+      "unassigned": "未指派"
+    },
+    "table": {
+      "ticketId": "工單編號",
+      "subject": "主旨",
+      "requester": "請求者",
+      "category": "分類",
+      "priority": "優先級",
+      "assignee": "負責人",
+      "updated": "更新時間"
+    },
+    "categories": {
+      "equipment": "設備",
+      "billing": "計費",
+      "customerService": "客戶服務",
+      "membership": "會員",
+      "complaint": "投訴",
+      "software": "軟體",
+      "other": "其他"
+    },
+    "pagination": {
+      "showing": "顯示第 {from}-{to} 筆，共 {total} 張工單"
+    },
+    "detail": {
+      "actions": {
+        "assign": "指派",
+        "escalate": "升級",
+        "resolve": "解決"
+      },
+      "statusBar": {
+        "created": "已建立"
+      },
+      "sections": {
+        "ticketDetails": "工單詳情",
+        "conversation": "對話",
+        "ticketInfo": "工單資訊",
+        "related": "相關",
+        "activity": "活動",
+        "similarTickets": "相似工單"
+      },
+      "reply": {
+        "addReply": "新增回覆",
+        "placeholder": "在此輸入您的回覆...",
+        "attachFile": "附加檔案",
+        "insertTemplate": "插入範本",
+        "publicReply": "公開回覆",
+        "internalNote": "內部備註",
+        "sendReply": "傳送回覆"
+      },
+      "info": {
+        "slaDue": "SLA 到期"
+      },
+      "related": {
+        "viewCctv": "查看 CCTV - 洗車槽 {bay}"
+      },
+      "activity": {
+        "ticketCreated": "工單已建立"
+      }
+    },
+    "create": {
+      "title": "建立支援工單",
+      "subtitle": "提交新的支援請求",
+      "form": {
+        "subject": "主旨 *",
+        "subjectPlaceholder": "問題的簡短說明",
+        "category": "分類 *",
+        "selectCategory": "選擇分類",
+        "priority": "優先級 *",
+        "description": "說明 *",
+        "descriptionPlaceholder": "請盡可能詳細說明問題...",
+        "site": "站點",
+        "selectSite": "選擇站點（若適用）",
+        "machine": "機器",
+        "selectMachine": "選擇機器（若適用）",
+        "transactionId": "交易編號",
+        "customerId": "客戶編號"
+      },
+      "categoryOptions": {
+        "equipment": "設備問題",
+        "billing": "計費/付款",
+        "membership": "會員",
+        "complaint": "客戶投訴",
+        "feature": "功能請求",
+        "other": "其他"
+      },
+      "sections": {
+        "relatedInfo": "相關資訊",
+        "relatedInfoSubtitle": "協助我們更快定位問題",
+        "attachments": "附件",
+        "quickTips": "快速提示",
+        "relatedArticles": "相關文章",
+        "needUrgentHelp": "需要緊急協助？"
+      },
+      "upload": {
+        "text": "拖放檔案至此或點擊瀏覽",
+        "hint": "螢幕截圖、照片、文件（每個最大 10MB）",
+        "browseFiles": "瀏覽檔案"
+      },
+      "tips": {
+        "errorMessages": "提供具體的錯誤訊息或代碼",
+        "whenStarted": "說明問題何時開始出現",
+        "attachPhotos": "盡可能附加照片或螢幕截圖",
+        "troubleshootingTried": "列出已嘗試過的故障排除步驟"
+      },
+      "contact": {
+        "hotline": "服務專線",
+        "liveChat": "即時客服",
+        "available247": "24 小時全天候服務"
+      },
+      "actions": {
+        "searchKnowledgeBase": "搜尋知識庫"
+      }
+    }
+  },
+  "knowledge": {
+    "breadcrumb": "知識庫",
+    "title": "知識庫",
+    "subtitle": "文件、指南和故障排除",
+    "actions": {
+      "newArticle": "新增文章"
+    },
+    "search": {
+      "heading": "我們能幫您什麼？",
+      "placeholder": "搜尋文章、指南或故障排除提示..."
+    },
+    "categories": {
+      "articleCount": "{count} 篇文章"
+    },
+    "sections": {
+      "popularArticles": "熱門文章",
+      "recentlyUpdated": "最近更新",
+      "videoTutorials": "影片教學",
+      "views": "次瀏覽"
+    }
+  },
+  "team": {
+    "breadcrumb": "團隊",
+    "title": "團隊管理",
+    "subtitle": "管理使用者和權限",
+    "actions": {
+      "inviteUser": "邀請使用者",
+      "createRole": "+ 建立角色"
+    },
+    "tabs": {
+      "members": "團隊成員",
+      "rolesAndPermissions": "角色和權限",
+      "invitations": "邀請",
+      "activityLog": "活動日誌"
+    },
+    "kpi": {
+      "totalUsers": "使用者總數",
+      "totalUsersTrend": "涵蓋所有角色",
+      "activeNow": "目前在線",
+      "activeNowTrend": "15 分鐘內上線",
+      "pendingInvites": "待接受邀請",
+      "pendingInvitesTrend": "等待接受",
+      "roles": "角色",
+      "rolesTrend": "已定義的自訂角色"
+    },
+    "filters": {
+      "label": "篩選",
+      "role": "角色",
+      "siteAccess": "站點存取",
+      "allSitesAccess": "所有站點存取"
+    },
+    "table": {
+      "user": "使用者",
+      "role": "角色",
+      "siteAccess": "站點存取",
+      "lastActive": "上次活躍"
+    },
+    "sections": {
+      "teamMembers": "團隊成員",
+      "roleDefinitions": "角色定義"
+    },
+    "pagination": {
+      "pageOf": "第 {page} 頁，共 {total} 頁"
+    },
+    "roles": {
+      "userCount": "{count} 位使用者",
+      "permissionsMatrix": "權限矩陣",
+      "permission": "權限",
+      "roleDetails": "角色詳情",
+      "sections": {
+        "dashboardAnalytics": "儀表板和分析",
+        "sitesOperations": "站點和營運",
+        "customersMemberships": "客戶和會員",
+        "pricingPromotions": "定價和促銷",
+        "supportTickets": "支援和工單",
+        "teamAdministration": "團隊和管理",
+        "billingFinance": "計費和財務"
+      },
+      "permissions": {
+        "viewDashboard": "查看儀表板",
+        "viewAllSitesData": "查看所有站點資料",
+        "exportReports": "匯出報告",
+        "createSites": "建立站點",
+        "editSiteSettings": "編輯站點設定",
+        "viewCctv": "查看 CCTV",
+        "viewCustomers": "查看客戶",
+        "editCustomerData": "編輯客戶資料",
+        "manageMemberships": "管理會員",
+        "viewPricing": "查看定價",
+        "editPricing": "編輯定價",
+        "managePromotions": "管理促銷",
+        "viewTickets": "查看工單",
+        "createTickets": "建立工單",
+        "resolveTickets": "解決工單",
+        "viewTeamMembers": "查看團隊成員",
+        "manageUsers": "管理使用者",
+        "manageRoles": "管理角色",
+        "viewTransactions": "查看交易",
+        "processRefunds": "處理退款",
+        "billingSettings": "計費設定"
+      },
+      "descriptions": {
+        "admin": "擁有完整系統存取權限，可完全控制所有設定、使用者和資料。建議僅限業主和 IT 管理員使用。",
+        "manager": "可查看所有資料並管理營運商。可存取報告和有限設定。無法管理計費或角色。",
+        "operator": "存取範圍限於其自己的營運商站點。可查看交易、建立工單，但無法修改設定。",
+        "siteManager": "僅限分配的站點。可管理日常營運、查看 CCTV 和建立工單。",
+        "support": "客戶支援存取權限。可查看客戶、工單、交易和處理退款。無法修改設定。",
+        "viewer": "對儀表板、報告和資料的唯讀存取。無法對系統進行任何更改。"
+      }
+    },
+    "invitations": {
+      "pending": "待接受",
+      "sections": {
+        "pendingInvitations": "待接受邀請",
+        "invitationHistory": "邀請紀錄",
+        "quickInvite": "快速邀請"
+      },
+      "table": {
+        "invitedBy": "邀請者",
+        "sent": "傳送時間",
+        "expires": "到期時間",
+        "result": "結果"
+      },
+      "actions": {
+        "resend": "重新傳送",
+        "revoke": "撤銷"
+      },
+      "status": {
+        "accepted": "已接受",
+        "neverAccepted": "從未接受",
+        "revokedByAdmin": "管理員已撤銷"
+      },
+      "quickInvite": {
+        "newOperator": "新營運商",
+        "newOperatorDesc": "邀請可存取其自身站點的新合作營運商",
+        "inviteOperator": "邀請營運商",
+        "siteManager": "站點管理員",
+        "siteManagerDesc": "邀請特定地點的站點管理員",
+        "inviteSiteManager": "邀請站點管理員",
+        "supportStaff": "支援人員",
+        "supportStaffDesc": "邀請具有客戶服務權限的支援人員",
+        "inviteSupport": "邀請支援人員",
+        "viewer": "查看者",
+        "viewerDesc": "邀請可查看報告和儀表板的唯讀查看者",
+        "inviteViewer": "邀請查看者"
+      }
+    },
+    "activity": {
+      "actions": {
+        "exportLog": "匯出日誌"
+      },
+      "filters": {
+        "user": "使用者",
+        "allUsers": "所有使用者",
+        "actionType": "操作類型",
+        "allActions": "所有操作",
+        "loginLogout": "登入/登出",
+        "userManagement": "使用者管理",
+        "settingsChanges": "設定變更",
+        "dataAccess": "資料存取",
+        "securityEvents": "安全性事件",
+        "last90Days": "最近 90 天"
+      },
+      "sections": {
+        "recentActivity": "近期活動"
+      }
+    }
+  },
+  "reports": {
+    "title": "報表",
+    "subtitle": "分析、洞察和資料匯出",
+    "tabs": {
+      "overview": "總覽",
+      "revenue": "營收",
+      "operations": "營運",
+      "customers": "客戶",
+      "scheduled": "已排程"
+    },
+    "actions": {
+      "scheduleReport": "排程報告",
+      "customReport": "自訂報告"
+    },
+    "dateFilter": {
+      "from": "從",
+      "to": "至",
+      "thisWeek": "本週",
+      "ytd": "年至今",
+      "last90Days": "最近 90 天"
+    },
+    "kpi": {
+      "mtdRevenue": "本月至今營收",
+      "mtdTransactions": "本月至今交易筆數",
+      "avgDailyRevenue": "平均每日營收",
+      "equipmentUptime": "設備正常運行率"
+    },
+    "reportLibrary": {
+      "title": "報告庫",
+      "financial": "財務報告",
+      "operations": "營運報告",
+      "customer": "客戶報告",
+      "marketing": "行銷報告"
+    },
+    "recentlyGenerated": {
+      "title": "最近產生",
+      "columns": {
+        "reportName": "報告名稱",
+        "dateRange": "日期範圍",
+        "generated": "產生時間",
+        "generatedBy": "產生者"
+      }
+    },
+    "scheduledReports": {
+      "title": "已排程報告",
+      "scheduleNew": "新增排程",
+      "columns": {
+        "report": "報告",
+        "frequency": "頻率",
+        "recipients": "收件者",
+        "nextRun": "下次執行"
+      }
+    },
+    "revenue": {
+      "title": "營收報告",
+      "subtitle": "財務績效和營收分析",
+      "kpi": {
+        "totalRevenue": "總營收",
+        "avgTransactionValue": "平均交易額",
+        "transactions": "交易筆數"
+      },
+      "chart": {
+        "revenueTrend": "營收趨勢",
+        "daily": "每日",
+        "weekly": "每週",
+        "monthly": "每月",
+        "legend": {
+          "membershipRevenue": "會員營收",
+          "singleWashRevenue": "單次洗車營收",
+          "addonRevenue": "加購服務營收"
+        }
+      },
+      "byServiceType": "各服務類型營收",
+      "paymentMethods": "付款方式",
+      "bySite": {
+        "title": "各站點營收",
+        "columns": {
+          "site": "站點",
+          "revenue": "營收",
+          "transactions": "交易筆數",
+          "avgValue": "平均值",
+          "sevenDayTrend": "7 天趨勢",
+          "change": "變化"
+        },
+        "showingTop5": "顯示前 5 名，共 12 個站點",
+        "viewAllSites": "查看所有站點 →"
+      }
+    },
+    "customers": {
+      "title": "客戶報告",
+      "subtitle": "獲客、留存和終身價值分析",
+      "kpi": {
+        "totalCustomers": "客戶總數",
+        "activeMembers": "活躍會員",
+        "avgLtv": "平均終身價值",
+        "churnRate": "流失率"
+      },
+      "acquisition": {
+        "title": "客戶獲取",
+        "last8Weeks": "最近 8 週"
+      },
+      "funnel": {
+        "title": "轉化漏斗",
+        "appDownloads": "應用程式下載",
+        "registered": "已註冊",
+        "firstWash": "首次洗車",
+        "repeatCustomer": "回頭客"
+      },
+      "segments": {
+        "title": "客戶分群"
+      },
+      "ltv": {
+        "title": "客戶終身價值",
+        "retentionTitle": "會員與非會員留存率",
+        "members": "會員",
+        "nonMembers": "非會員"
+      },
+      "cohort": {
+        "title": "同期群組留存分析",
+        "badge": "月度同期群組",
+        "columns": {
+          "cohort": "同期群組",
+          "users": "使用者"
+        }
+      },
+      "topCustomers": {
+        "title": "終身價值最高客戶",
+        "allTime": "所有時間",
+        "thisYear": "今年",
+        "columns": {
+          "customer": "客戶",
+          "memberSince": "會員起始日",
+          "totalVisits": "總造訪次數",
+          "ltv": "LTV",
+          "avgSpend": "平均消費",
+          "visitTrend": "造訪趨勢",
+          "favoriteSite": "常用站點"
+        },
+        "showingTop5": "顯示前 5 位客戶",
+        "viewAll": "查看所有客戶 →"
+      }
+    },
+    "operations": {
+      "title": "營運報告",
+      "subtitle": "設備績效、使用率和維護分析",
+      "kpi": {
+        "equipmentUptime": "設備正常運行率",
+        "avgWaitTime": "平均等待時間",
+        "washesPerHour": "每小時洗車數（平均）",
+        "activeAlerts": "活躍警示"
+      },
+      "heatmap": {
+        "title": "流量熱圖 - 所有站點",
+        "less": "較少",
+        "more": "較多"
+      },
+      "siteUtilization": {
+        "title": "站點使用率"
+      },
+      "downtimeEvents": {
+        "title": "近期停機事件"
+      },
+      "equipmentStatus": {
+        "title": "各站點設備狀態",
+        "columns": {
+          "site": "站點",
+          "bays": "洗車槽",
+          "uptime7d": "正常運行率（7天）",
+          "washesToday": "今日洗車數",
+          "avgWait": "平均等待",
+          "nextMaintenance": "下次維護"
+        },
+        "showing5of12": "顯示 12 個站點中的 5 個",
+        "viewAllEquipment": "查看所有設備 →"
+      },
+      "weeklySummary": {
+        "title": "本週摘要",
+        "totalWashes": "完成洗車總數",
+        "totalDowntime": "總停機時間",
+        "revenueLost": "停機預估損失營收"
+      }
+    },
+    "scheduled": {
+      "title": "已排程報告",
+      "subtitle": "自動化報告產生和傳送",
+      "kpi": {
+        "activeSchedules": "活躍排程",
+        "reportsSent": "已傳送報告（30天）",
+        "deliverySuccessRate": "傳送成功率",
+        "recipients": "收件者"
+      },
+      "types": {
+        "dailySummary": "每日摘要",
+        "dailySummaryDesc": "每天早上的營收和交易",
+        "weeklyOperations": "每週營運",
+        "weeklyOperationsDesc": "設備和維護狀態",
+        "monthlyFinancial": "月度財務",
+        "monthlyFinancialDesc": "完整財務報表",
+        "customSchedule": "自訂排程",
+        "customScheduleDesc": "建立您自己的報告排程"
+      },
+      "activeSchedules": {
+        "title": "活躍排程"
+      },
+      "actions": {
+        "runNow": "立即執行"
+      },
+      "deliveryHistory": {
+        "title": "近期傳送紀錄"
+      }
+    }
+  },
+  "hardware": {
+    "title": "硬體設備",
+    "allEquipment": {
+      "title": "所有設備",
+      "subtitle": "45 個站點共 127 台機器"
+    },
+    "tabs": {
+      "listView": "列表檢視",
+      "mapView": "地圖檢視",
+      "alerts": "警示（3）",
+      "allMachines": "所有機器"
+    },
+    "actions": {
+      "addUnit": "新增設備",
+      "createTicket": "建立工單",
+      "acknowledge": "確認",
+      "viewMachine": "查看機器"
+    },
+    "filters": {
+      "searchEquipment": "搜尋設備..."
+    },
+    "table": {
+      "machineId": "機器編號",
+      "site": "站點",
+      "uptime": "正常運行率",
+      "lastService": "上次維修",
+      "totalCycles": "總循環次數"
+    },
+    "pagination": {
+      "showing": "顯示第 1-{count} 筆，共 127 台機器"
+    },
+    "detail": {
+      "actions": {
+        "remoteControl": "遠端控制",
+        "scheduleMaintenance": "排程維護"
+      },
+      "status": {
+        "onlineOperational": "線上 - 正常運作",
+        "lastHeartbeat": "上次心跳"
+      },
+      "kpi": {
+        "todaysWashes": "今日洗車數",
+        "todaysRevenue": "今日營收",
+        "uptime30Days": "正常運行率（30 天）",
+        "nextMaintenance": "下次維護"
+      },
+      "tabs": {
+        "overview": "總覽",
+        "diagnostics": "診斷",
+        "maintenance": "維護",
+        "logs": "日誌",
+        "cctv": "監控系統",
+        "settings": "設定"
+      },
+      "machineInfo": {
+        "title": "機器資訊",
+        "machineId": "機器編號",
+        "model": "型號",
+        "serialNumber": "序號",
+        "installationDate": "安裝日期",
+        "warrantyUntil": "保固期至",
+        "firmwareVersion": "韌體版本",
+        "totalWashCycles": "總洗車循環數"
+      },
+      "sensors": {
+        "title": "即時感測器",
+        "waterTemp": "水溫",
+        "waterPressure": "水壓",
+        "soapLevel": "皂液量",
+        "waxLevel": "蠟量",
+        "powerDraw": "電力消耗",
+        "motorRpm": "馬達轉速",
+        "normal": "正常",
+        "good": "良好",
+        "low": "不足"
+      },
+      "washStatus": {
+        "title": "目前洗車狀態",
+        "complete": "完成",
+        "currentStage": "目前階段",
+        "program": "程式",
+        "customer": "客戶",
+        "vehicle": "車輛",
+        "estCompletion": "預計完成"
+      },
+      "todaysActivity": {
+        "title": "今日活動",
+        "hourlyDistribution": "每小時分布"
+      },
+      "recentTransactions": {
+        "title": "近期交易",
+        "columns": {
+          "time": "時間",
+          "transactionId": "交易編號",
+          "customer": "客戶",
+          "program": "程式"
+        }
+      },
+      "maintenanceHistory": {
+        "title": "維護紀錄",
+        "scheduledMaintenance": "排程維護",
+        "emergencyRepair": "緊急維修"
+      },
+      "activeAlerts": {
+        "title": "活躍警示",
+        "lowWaxLevel": "蠟量不足",
+        "firmwareUpdate": "有可用的韌體更新",
+        "updateButton": "更新"
+      }
+    },
+    "alerts": {
+      "acknowledgeAll": "確認所有",
+      "activeAlerts": "活躍警示",
+      "acknowledgedBy": "確認者",
+      "kpi": {
+        "warnings": "警告",
+        "acknowledged": "已確認",
+        "resolvedToday": "今日已解決",
+        "requiresImmediateAction": "需要立即處理",
+        "attentionNeeded": "需要關注",
+        "beingHandled": "處理中"
+      },
+      "filters": {
+        "severity": "嚴重程度",
+        "allSeverity": "所有嚴重程度",
+        "warning": "警告",
+        "info": "資訊",
+        "last24Hours": "最近 24 小時"
+      },
+      "impact": {
+        "estimatedRevenueLoss": "預估損失營收",
+        "affectedCustomers": "受影響客戶"
+      },
+      "actions": {
+        "viewCctv": "查看 CCTV",
+        "viewTicket": "查看工單"
+      },
+      "recentlyResolved": {
+        "title": "最近已解決",
+        "autoResolved": "自動解決",
+        "columns": {
+          "alert": "警示",
+          "duration": "持續時間",
+          "resolvedBy": "解決者",
+          "time": "時間"
+        }
+      }
+    },
+    "map": {
+      "statusFilter": "狀態篩選",
+      "machineType": "機器類型",
+      "viewOptions": "檢視選項",
+      "selfService": "自助式",
+      "automatic": "自動",
+      "premium": "高級",
+      "clusterMarkers": "群組標記",
+      "showLabels": "顯示標籤",
+      "sites": "站點",
+      "locations": "個位置"
+    }
+  },
+  "cctv": {
+    "title": "監控系統",
+    "monitoring": {
+      "title": "CCTV 監控",
+      "subtitle": "即時攝影機畫面和錄影"
+    },
+    "actions": {
+      "recordingSettings": "錄影設定",
+      "fullScreenView": "全螢幕檢視"
+    },
+    "filters": {
+      "site": "站點"
+    },
+    "camera": {
+      "live": "直播",
+      "expand": "展開",
+      "playback": "回放",
+      "snapshot": "截圖"
+    },
+    "recordings": {
+      "title": "近期錄影",
+      "play": "播放"
+    },
+    "incidents": {
+      "title": "已標記事件",
+      "review": "審查"
+    },
+    "storage": {
+      "title": "儲存狀態",
+      "used": "已用 2.72 TB，共 4 TB",
+      "daysOfRecordings": "天的錄影"
+    }
+  },
+  "pricing": {
+    "title": "定價",
+    "pageTitle": "定價管理",
+    "pageSubtitle": "管理定價範本、動態規則和站點指派",
+    "actions": {
+      "importPrices": "匯入價格",
+      "createTemplate": "建立範本",
+      "newTemplate": "新增範本",
+      "newRule": "新增規則",
+      "clone": "複製"
+    },
+    "kpi": {
+      "pricingTemplates": "定價範本",
+      "sitesWithOverrides": "有覆寫的站點",
+      "ofTotalSites": "共 {count} 個站點",
+      "dynamicRulesActive": "動態規則活躍數",
+      "surge": "漲價",
+      "discount": "折扣",
+      "avgRevenueSite": "平均每站點營收",
+      "vsLastMonth": "對比上月（{pct}）",
+      "sitesUsing": "使用此範本的站點",
+      "monthlyRevenue": "月度營收",
+      "avgTransaction": "平均交易額",
+      "includesAddons": "含加購服務",
+      "pctOfSites": "占總站點 {pct}"
+    },
+    "tabs": {
+      "templates": "範本",
+      "dynamicPricing": "動態定價",
+      "addons": "加購服務",
+      "siteAssignments": "站點指派"
+    },
+    "templates": {
+      "cardTitle": "定價範本",
+      "table": {
+        "name": "範本名稱",
+        "basicWash": "基本洗車",
+        "premiumWash": "高級洗車",
+        "ultimateWash": "極致洗車",
+        "sitesUsing": "使用站點數",
+        "avgRevenue": "平均營收",
+        "sites": "個站點"
+      }
+    },
+    "dynamicRules": {
+      "cardTitle": "動態定價規則",
+      "table": {
+        "ruleName": "規則名稱",
+        "condition": "觸發條件",
+        "adjustment": "調整幅度",
+        "sitesEnabled": "啟用站點",
+        "ofSites": "共 {total} 個站點"
+      }
+    },
+    "siteAssignments": {
+      "cardTitle": "站點定價指派",
+      "allTemplates": "所有範本",
+      "table": {
+        "site": "站點",
+        "template": "範本",
+        "hasOverrides": "有覆寫",
+        "dynamicRules": "動態規則",
+        "monthlyRevenue": "月度營收",
+        "none": "無"
+      },
+      "override": "{count} 個覆寫",
+      "overrides": "{count} 個覆寫",
+      "noOverrides": "無覆寫",
+      "active": "活躍",
+      "showing": "顯示 {shown} / {total} 個站點"
+    },
+    "edit": {
+      "pageTitle": "編輯定價範本",
+      "pageSubtitle": "修改範本定價和站點指派",
+      "basicInfo": "基本資訊",
+      "templateName": "範本名稱",
+      "templateStatus": "範本狀態",
+      "deactivatingHint": "停用後將阻止新站點使用此範本",
+      "setAsDefault": "設為預設範本",
+      "defaultTemplate": "預設範本",
+      "defaultTemplateHint": "新站點將自動使用此範本",
+      "washServicePricing": "洗車服務定價",
+      "washServicePricingDesc": "設定各洗車等級的基本價格",
+      "basicWash": "基本洗車",
+      "basicWashDesc": "基礎外觀清洗",
+      "premiumWash": "高級洗車",
+      "premiumWashDesc": "加強清洗含額外項目",
+      "ultimateWash": "極致洗車",
+      "ultimateWashDesc": "全方位高級洗車",
+      "preSoak": "預浸泡",
+      "highPressureWash": "高壓清洗",
+      "rinse": "沖洗",
+      "airDry": "風乾",
+      "allBasicFeatures": "所有基本功能",
+      "tripleFoam": "三重泡沫",
+      "wheelCleaner": "輪圈清潔",
+      "spotFreeRinse": "無痕沖洗",
+      "allPremiumFeatures": "所有高級功能",
+      "ceramicCoating": "陶瓷鍍膜",
+      "tireShine": "輪胎亮光",
+      "rainRepellent": "撥水鍍膜",
+      "interiorVacuum": "內裝吸塵",
+      "dynamicRulesDesc": "選擇哪些動態定價規則適用於此範本",
+      "peakHoursSurge": "尖峰時段漲價",
+      "peakHoursSurgeDesc": "平日上午 8-10 點及下午 5-7 點加價 20%",
+      "weekendPricing": "週末定價",
+      "weekendPricingDesc": "週六、週日加價 10%",
+      "rainyDayDiscount": "雨天折扣",
+      "rainyDayDiscountDesc": "下雨時折扣 15%（天氣 API 觸發）",
+      "earlyBirdDiscount": "早鳥折扣",
+      "earlyBirdDiscountDesc": "平日上午 6-8 點折扣 10%",
+      "holidayPricing": "假日定價",
+      "holidayPricingDesc": "國定假日加價 15%",
+      "manageDynamicRules": "管理動態規則 →",
+      "addonServicePricing": "加購服務定價",
+      "addonServicePricingDesc": "設定各加購服務的價格",
+      "service": "服務",
+      "regular": "一般",
+      "member": "會員",
+      "dashboardWipe": "儀表板擦拭",
+      "airFreshener": "空氣芳香",
+      "undercarriageWash": "底盤清洗",
+      "memberDiscount": "會員折扣（%）",
+      "memberDiscountHint": "適用於所有會員的加購服務",
+      "siteAssignmentsDesc": "使用此定價範本的站點",
+      "sitesAssigned": "{count} 個站點已指派",
+      "oneOverride": "1 個覆寫",
+      "twoOverrides": "2 個覆寫",
+      "moreSites": "+{count} 個站點",
+      "dangerZone": "危險操作",
+      "cloneTemplate": "複製範本",
+      "cloneTemplateDesc": "建立此範本的副本並使用新名稱",
+      "archiveTemplate": "封存範本",
+      "archiveTemplateDesc": "隱藏範本以防止新站點指派。現有指派保持不變。",
+      "archive": "封存",
+      "deleteTemplate": "刪除範本",
+      "deleteTemplateDesc": "永久刪除。僅在無站點指派時可用。",
+      "lastSaved": "上次儲存：剛才"
+    },
+    "addons": {
+      "pageTitle": "加購服務",
+      "pageSubtitle": "管理個別加購服務和組合套餐",
+      "addService": "新增服務",
+      "kpi": {
+        "addonServices": "加購服務",
+        "activeServices": "活躍服務",
+        "addonRevenue": "加購服務營收（本月至今）",
+        "attachRate": "附加率",
+        "avgAddonValue": "平均加購服務價值",
+        "perTransaction": "每筆交易"
+      },
+      "catalog": {
+        "cardTitle": "加購服務目錄",
+        "table": {
+          "service": "服務",
+          "category": "分類",
+          "basePrice": "基本價格",
+          "memberPrice": "會員價格",
+          "sitesEnabled": "啟用站點",
+          "monthlySales": "月度銷售量",
+          "revenue": "營收（本月至今）"
+        },
+        "interiorVacuumDesc": "全內裝吸塵清潔",
+        "dashboardWipeDesc": "儀表板和控制台擦拭",
+        "tireShineDesc": "輪胎和輪圈亮光處理",
+        "rainRepellentDesc": "疏水性撥水鍍膜",
+        "ceramicCoatingDesc": "持久陶瓷防護",
+        "airFreshenerDesc": "內裝香氛處理",
+        "wheelCleanerDesc": "深層輪圈和輪框清潔",
+        "undercarriageWashDesc": "全底盤高壓清洗"
+      },
+      "categories": {
+        "interior": "內裝",
+        "exterior": "外觀",
+        "protection": "保護"
+      },
+      "topPerforming": {
+        "cardTitle": "銷售最佳加購服務",
+        "sales": "次銷售"
+      },
+      "revenueByCategory": {
+        "cardTitle": "各分類營收",
+        "exteriorServices": "3 項外觀服務",
+        "exteriorPct": "占加購服務營收 61%",
+        "interiorServices": "3 項內裝服務",
+        "interiorPct": "占加購服務營收 61%",
+        "protectionServices": "2 項保護服務",
+        "protectionPct": "占加購服務營收 36%"
+      },
+      "combos": {
+        "cardTitle": "組合套餐",
+        "cardDesc": "以折扣價格捆綁多項加購服務",
+        "createCombo": "建立組合",
+        "table": {
+          "packageName": "套餐名稱",
+          "includedServices": "包含服務",
+          "regularTotal": "原始總價",
+          "packagePrice": "套餐價格",
+          "savings": "節省金額"
+        },
+        "interiorDetailPack": "內裝精緻套餐",
+        "interiorDetailPackServices": "吸塵 + 儀表板擦拭 + 空氣芳香",
+        "fullProtection": "全方位保護套餐",
+        "fullProtectionServices": "撥水鍍膜 + 陶瓷鍍膜 + 輪胎亮光",
+        "wheelTireCombo": "輪圈輪胎組合",
+        "wheelTireComboServices": "輪圈清潔 + 輪胎亮光",
+        "ultimateAddonPack": "極致加購套餐",
+        "ultimateAddonPackServices": "所有 8 項加購服務捆綁"
+      }
+    },
+    "dynamic": {
+      "pageTitle": "動態定價",
+      "pageSubtitle": "設定時間、天氣和事件型定價規則",
+      "viewHistory": "查看紀錄",
+      "createRule": "建立規則",
+      "kpi": {
+        "activeRules": "活躍規則",
+        "ofTotalRules": "共 {total} 條規則",
+        "surgeRevenueImpact": "漲價營收影響",
+        "thisMonth": "本月",
+        "discountRevenueLost": "折扣損失營收",
+        "offsetByVolume": "由交易量增長抵消",
+        "netDynamicImpact": "動態定價淨影響",
+        "vsBase": "對比基本定價"
+      },
+      "currentlyActive": "目前活躍規則",
+      "activeUntil": "今日 {time} 前有效",
+      "weatherApiTriggered": "天氣 API 觸發",
+      "netEffect": "淨效果：目前價格 +5%",
+      "todaySchedule": "今日排程",
+      "basePricing": "基本定價",
+      "allRules": {
+        "cardTitle": "所有動態定價規則",
+        "surge": "漲價",
+        "discount": "折扣",
+        "table": {
+          "triggerCondition": "觸發條件",
+          "thisMonthImpact": "本月影響"
+        },
+        "timeBased": "時間型",
+        "dayBased": "日期型",
+        "weatherBased": "天氣型",
+        "calendarBased": "行事曆型",
+        "whenRaining": "下雨時（天氣 API）",
+        "publicHolidays": "台灣國定假日",
+        "noHolidays": "本月無假日"
+      },
+      "charts": {
+        "revenueImpact": "各規則營收影響（本月至今）",
+        "volumeImpact": "各規則交易量影響（本月至今）",
+        "peakHours": "尖峰時段",
+        "weekend": "週末",
+        "earlyBird": "早鳥",
+        "rainyDay": "雨天"
+      }
+    },
+    "sites": {
+      "breadcrumb": "站點指派",
+      "pageTitle": "站點定價指派",
+      "pageSubtitle": "查看並管理各站點的定價範本指派",
+      "bulkAssign": "批量指派",
+      "exportReport": "匯出報告",
+      "kpi": {
+        "totalSites": "站點總數",
+        "acrossAllOperators": "涵蓋所有營運商",
+        "pctOfSites": "占總站點 {pct}",
+        "totalOverrides": "價格覆寫總數",
+        "individualPriceAdjustments": "個別價格調整",
+        "avgOverride": "平均覆寫金額",
+        "aboveTemplatePrice": "高於範本基本價格"
+      },
+      "overrideStatus": "覆寫狀態",
+      "hasOverrides": "有覆寫",
+      "clearFilters": "清除篩選",
+      "allSites": "所有站點（{count}）",
+      "table": {
+        "operator": "營運商"
+      },
+      "showing": "顯示 {shown} / {total} 個站點",
+      "templateDistribution": {
+        "cardTitle": "範本分布",
+        "withOverrides": "{count} 個有覆寫"
+      },
+      "overrideSummary": {
+        "cardTitle": "覆寫摘要",
+        "basicWashOverrides": "基本洗車覆寫",
+        "premiumWashOverrides": "高級洗車覆寫",
+        "ultimateWashOverrides": "極致洗車覆寫",
+        "avgOverrideImpact": "平均覆寫影響",
+        "aboveTemplateBasePrices": "高於範本基本價格"
+      },
+      "legend": {
+        "templatePrice": "範本價格",
+        "siteOverride": "站點覆寫",
+        "notOffered": "未提供"
+      }
+    }
+  },
+  "marketing": {
+    "title": "行銷",
+    "pageTitle": "行銷和活動",
+    "pageSubtitle": "管理活動、促銷和客戶互動",
+    "actions": {
+      "exportReport": "匯出報告",
+      "createCampaign": "建立活動",
+      "clone": "複製"
+    },
+    "kpi": {
+      "activeCampaigns": "進行中的活動",
+      "runningAcrossSites": "在 {count} 個站點進行中",
+      "totalRedemptions": "總兌換次數",
+      "vsLastMonth": "對比上月（{pct}）",
+      "avgConversionRate": "平均轉化率",
+      "revenueAttributed": "歸因營收"
+    },
+    "tabs": {
+      "campaigns": "活動",
+      "promotions": "促銷",
+      "siteTargeting": "站點鎖定",
+      "pushNotifications": "推播通知",
+      "analytics": "分析",
+      "notifications": "通知",
+      "sites": "站點"
+    },
+    "campaigns": {
+      "cardTitle": "進行中的活動",
+      "cardDesc": "在您的網絡中進行的活動",
+      "table": {
+        "campaign": "活動",
+        "offer": "優惠",
+        "duration": "期間",
+        "sitesActive": "活躍站點",
+        "redemptions": "兌換次數",
+        "viewSites": "查看站點"
+      }
+    },
+    "activation": {
+      "cardTitle": "活動啟用矩陣",
+      "cardDesc": "查看各站點正在進行的活動",
+      "optedOut": "已退出",
+      "table": {
+        "site": "站點",
+        "holiday": "假日",
+        "referral": "推薦",
+        "weekend": "週末",
+        "newYear": "新年",
+        "birthday": "生日"
+      },
+      "legend": {
+        "campaignRunning": "活動進行中",
+        "startsLater": "稍後開始",
+        "siteOptedOut": "站點已退出"
+      },
+      "viewAllSites": "查看全部 {count} 個站點"
+    },
+    "promoCodes": {
+      "cardTitle": "活躍促銷碼",
+      "createPromoCode": "建立促銷碼",
+      "table": {
+        "code": "代碼",
+        "discount": "折扣",
+        "sites": "站點",
+        "uses": "使用次數",
+        "limit": "上限",
+        "validUntil": "有效期至"
+      },
+      "allSites": "所有站點",
+      "unlimited": "無限",
+      "onePerUser": "每人 1 次",
+      "ongoing": "持續進行"
+    },
+    "performance": {
+      "cardTitle": "績效亮點",
+      "topPerformingSite": "績效最佳站點",
+      "highestRedemptionRate": "最高兌換率：{rate}",
+      "needsAttention": "需要關注",
+      "belowAvgRedemptionRate": "低於平均：{rate}",
+      "campaignsActive": "活躍活動"
+    },
+    "recentPush": {
+      "cardTitle": "近期推播通知",
+      "sendNew": "傳送新通知",
+      "allSites": "所有站點",
+      "automated": "自動化"
+    },
+    "recentEmail": {
+      "cardTitle": "近期電子郵件活動",
+      "sendNew": "傳送新活動"
+    },
+    "edit": {
+      "pageTitle": "編輯活動",
+      "pageSubtitle": "修改活動設定、優惠詳情和站點鎖定",
+      "preview": "預覽",
+      "basicInfo": "基本資訊",
+      "campaignName": "活動名稱",
+      "campaignType": "活動類型",
+      "types": {
+        "seasonal": "季節性",
+        "referral": "推薦",
+        "recurring": "週期性",
+        "flashSale": "閃購",
+        "loyalty": "忠誠度"
+      },
+      "descriptionHint": "在應用程式中向客戶顯示",
+      "campaignColor": "活動顏色",
+      "offerDetails": "優惠詳情",
+      "offerType": "優惠類型",
+      "offerTypes": {
+        "percentageOff": "百分比折扣",
+        "percentageOffExample": "例如：所有洗車 8 折",
+        "fixedAmount": "固定金額",
+        "fixedAmountExample": "例如：任意洗車折扣 $5",
+        "freeItem": "免費項目",
+        "freeItemExample": "例如：免費基本洗車",
+        "freeUpgrade": "免費升級",
+        "freeUpgradeExample": "例如：升級至高級洗車"
+      },
+      "discountValue": "折扣值",
+      "discountValueHint": "百分比折扣請輸入百分比（1-100）",
+      "appliesTo": "適用對象",
+      "appliesToOptions": {
+        "premiumOnly": "僅限高級洗車",
+        "allTypes": "所有洗車類型",
+        "basicOnly": "僅限基本洗車",
+        "addonsOnly": "僅限加購服務"
+      },
+      "promoCode": "促銷碼",
+      "promoCodePlaceholder": "例如：HOLIDAY20（選填）",
+      "promoCodeHint": "自動套用活動（無需代碼）請留空",
+      "durationSchedule": "期間和排程",
+      "fixedDates": "固定日期",
+      "ongoing": "持續進行",
+      "recurring": "週期性",
+      "startDate": "開始日期",
+      "endDate": "結束日期",
+      "usageLimits": "使用限制",
+      "totalRedemptionLimit": "總兌換上限",
+      "totalRedemptionLimitHint": "無上限請留空",
+      "perCustomerLimit": "每位客戶限制",
+      "perCustomerOptions": {
+        "one": "每位客戶 1 次",
+        "two": "每位客戶 2 次",
+        "three": "每位客戶 3 次",
+        "five": "每位客戶 5 次"
+      },
+      "combineMembership": "可與會員折扣合併使用",
+      "combinePromotions": "可與其他促銷合併使用",
+      "siteTargeting": "站點鎖定",
+      "sitesSelected": "已選 {count}/{total} 個站點",
+      "allSitesEligible": "所有站點均適用",
+      "selectAll": "全選",
+      "deselectAll": "取消全選",
+      "eligibilityRules": "資格規則",
+      "optional": "選填",
+      "ruleFields": {
+        "customerType": "客戶類型",
+        "membership": "會員方案",
+        "totalVisits": "總造訪次數",
+        "lastVisit": "上次造訪",
+        "pointsBalance": "點數餘額"
+      },
+      "ruleOperators": {
+        "is": "是",
+        "isNot": "不是"
+      },
+      "ruleValues": {
+        "allCustomers": "所有客戶",
+        "newCustomers": "新客戶",
+        "returningCustomers": "回頭客",
+        "membersOnly": "僅限會員"
+      },
+      "addRule": "新增規則",
+      "dangerZone": "危險操作",
+      "pauseCampaign": "暫停活動",
+      "archiveCampaign": "封存活動",
+      "cloneCampaign": "複製活動",
+      "deleteCampaign": "刪除活動"
+    },
+    "promotions": {
+      "pageTitle": "促銷和促銷碼",
+      "pageSubtitle": "管理折扣碼、自動套用促銷和兌換追蹤",
+      "createPromoCode": "建立促銷碼",
+      "kpi": {
+        "activePromoCodes": "活躍促銷碼",
+        "expiringSoon": "{count} 個即將到期",
+        "discountValueGiven": "已給予折扣價值",
+        "thisMonth": "本月",
+        "revenueGenerated": "產生的營收",
+        "roi": "折扣支出 3.5 倍 ROI"
+      },
+      "types": {
+        "percentageOff": "百分比折扣",
+        "fixedAmount": "固定金額",
+        "freeService": "免費服務",
+        "siteSpecific": "站點專屬"
+      },
+      "table": {
+        "usesLimit": "使用次數 / 上限",
+        "validPeriod": "有效期間"
+      },
+      "freeWash": "免費洗車",
+      "topPerforming": {
+        "cardTitle": "績效最佳促銷碼"
+      },
+      "redemptionTrend": {
+        "cardTitle": "兌換趨勢（本月）",
+        "legendDesc": "每週兌換次數 — W4 最高（假日推廣）"
+      },
+      "autoApply": {
+        "cardTitle": "自動套用促銷",
+        "cardDesc": "根據客戶行為自動套用",
+        "table": {
+          "promotion": "促銷",
+          "triggerCondition": "觸發條件",
+          "appliedThisMonth": "本月已套用"
+        },
+        "loyaltyMilestone": "忠誠里程碑獎勵",
+        "loyaltyMilestoneTrigger": "客戶達到第 10 次洗車",
+        "freeBasicWash": "免費基本洗車",
+        "memberAnniversary": "會員週年紅利",
+        "memberAnniversaryTrigger": "會員 1 週年紀念日",
+        "freeUltimateWash": "免費極致洗車",
+        "bulkPurchase": "大量購買折扣",
+        "bulkPurchaseTrigger": "單次交易購買 5 次洗車",
+        "bulkPurchaseDiscount": "總額 85 折",
+        "offPeakHours": "離峰時段促銷",
+        "offPeakHoursTrigger": "上午 10 點至下午 3 點洗車",
+        "offPeakHoursDiscount": "9 折"
+      },
+      "recentRedemptions": {
+        "cardTitle": "近期兌換",
+        "table": {
+          "time": "時間",
+          "customer": "客戶",
+          "site": "站點",
+          "original": "原價",
+          "final": "最終價"
+        }
+      }
+    },
+    "notifications": {
+      "pageTitle": "推播通知",
+      "pageSubtitle": "管理推播通知和自動化訊息",
+      "templates": "範本",
+      "sendNotification": "傳送通知",
+      "kpi": {
+        "appUsers": "應用程式使用者",
+        "newThisMonth": "本月新增 {count} 人",
+        "pushEnabled": "已啟用推播",
+        "optInRate": "選擇加入率 {rate}",
+        "avgOpenRate": "平均開啟率",
+        "conversions": "轉化",
+        "ctrToAction": "點擊率至操作"
+      },
+      "types": {
+        "promotional": "促銷",
+        "transactional": "交易",
+        "reminder": "提醒"
+      },
+      "recent": {
+        "cardTitle": "近期通知",
+        "table": {
+          "notification": "通知",
+          "audience": "受眾",
+          "delivered": "已送達",
+          "opened": "已開啟",
+          "clicked": "已點擊",
+          "sent": "已傳送",
+          "targeted": "目標對象",
+          "allUsers": "所有使用者",
+          "auto": "自動",
+          "settings": "設定"
+        }
+      },
+      "scheduled": {
+        "cardTitle": "已排程通知",
+        "schedule": "排程"
+      },
+      "triggers": {
+        "cardTitle": "自動化觸發器",
+        "addTrigger": "新增觸發器"
+      },
+      "bestSendTimes": {
+        "cardTitle": "最佳傳送時間",
+        "cardDesc": "根據所有活動的開啟率分析"
+      }
+    },
+    "analytics": {
+      "pageTitle": "行銷分析",
+      "pageSubtitle": "活動績效、ROI 追蹤和客戶互動洞察",
+      "roi": {
+        "header": "活動 ROI",
+        "desc": "本月行銷投資回報",
+        "totalSpend": "總支出",
+        "revenue": "營收",
+        "netProfit": "淨利潤"
+      },
+      "channelPerformance": {
+        "cardTitle": "渠道績效",
+        "pushNotifications": "推播通知",
+        "emailCampaigns": "電子郵件活動",
+        "inAppPromos": "應用程式內促銷",
+        "sms": "SMS"
+      },
+      "performanceTrend": {
+        "cardTitle": "績效趨勢",
+        "redemptions": "兌換次數",
+        "revenueK": "營收（千元）"
+      },
+      "conversionFunnel": {
+        "cardTitle": "轉化漏斗",
+        "thisMonth": "本月",
+        "impressions": "曝光次數",
+        "clicked": "已點擊",
+        "startedWash": "開始洗車",
+        "redeemed": "已兌換"
+      },
+      "topCampaigns": {
+        "cardTitle": "頂尖活動",
+        "redemptions": "次兌換"
+      },
+      "performanceBySite": {
+        "cardTitle": "各站點績效",
+        "showingTop": "顯示前 {shown} 名，共 {total} 個站點",
+        "viewAll": "查看所有站點",
+        "table": {
+          "site": "站點",
+          "performance": "績效",
+          "trend": "趨勢"
+        }
+      },
+      "insights": {
+        "cardTitle": "AI 洞察和建議",
+        "aiGenerated": "AI 生成",
+        "opportunity": "機會",
+        "opportunityTitle": "週末推播通知使用不足",
+        "opportunityDesc": "有週末通知的站點週六兌換率高出 2.3 倍。請為剩餘 4 個站點啟用。",
+        "attention": "注意",
+        "attentionTitle": "中和工業站低於平均",
+        "attentionDesc": "轉化率 2.1%，對比平均 4.2%。考慮啟用週末活動。",
+        "reviewSite": "審查站點"
+      }
+    },
+    "sitesPage": {
+      "breadcrumb": "站點鎖定",
+      "pageTitle": "站點活動管理",
+      "pageSubtitle": "管理所有站點的活動參與和退出",
+      "bulkUpdate": "批量更新",
+      "exportMatrix": "匯出矩陣",
+      "kpi": {
+        "totalSites": "站點總數",
+        "activeLocations": "活躍位置",
+        "fullParticipation": "完全參與",
+        "sitesWithAllCampaigns": "所有活動均活躍的站點",
+        "partialOptOut": "部分退出",
+        "sitesWithSomeOptOuts": "有部分退出的站點",
+        "avgCampaignCoverage": "平均活動覆蓋率",
+        "acrossAllSites": "涵蓋所有站點"
+      },
+      "matrix": {
+        "cardTitle": "活動啟用矩陣",
+        "cardDesc": "各站點活躍活動的總覽",
+        "table": {
+          "site": "站點",
+          "holidaySpecial": "假日特惠",
+          "referAFriend": "推薦朋友",
+          "weekendWarrior": "週末特攻",
+          "newYearSale": "新年特賣",
+          "birthdayBonus": "生日紅利"
+        }
+      },
+      "coverage": {
+        "cardTitle": "活動覆蓋率"
+      },
+      "topSites": {
+        "cardTitle": "兌換次數最高站點"
+      },
+      "optOuts": {
+        "cardTitle": "站點退出",
+        "cardDesc": "已退出特定活動的站點",
+        "table": {
+          "reason": "原因",
+          "optedOut": "退出時間"
+        },
+        "reEnable": "重新啟用"
+      }
+    }
+  },
+  "transactions": {
+    "title": "交易紀錄",
+    "subtitle": "查看並管理所有洗車交易",
+    "actions": {
+      "exportCsv": "匯出 CSV",
+      "exportPdf": "匯出 PDF"
+    },
+    "kpi": {
+      "todaysTransactions": "今日交易筆數",
+      "todaysRevenue": "今日營收",
+      "avgTransactionValue": "平均交易額",
+      "refundRate": "退款率"
+    },
+    "filters": {
+      "searchPlaceholder": "搜尋交易...",
+      "allPaymentMethods": "所有付款方式",
+      "refunded": "已退款",
+      "customRange": "自訂範圍"
+    },
+    "table": {
+      "transactionId": "交易編號",
+      "site": "站點",
+      "customer": "客戶",
+      "service": "服務",
+      "payment": "付款",
+      "guest": "訪客"
+    },
+    "pagination": {
+      "showing": "顯示第 {from}-{to} 筆，共 {total} 筆交易"
+    },
+    "detail": {
+      "pageTitle": "交易",
+      "live": "直播",
+      "washEstimate": "預計 2 分鐘後完成洗車",
+      "actions": {
+        "printReceipt": "列印收據",
+        "issueRefund": "發起退款",
+        "createTicket": "建立工單",
+        "viewProfile": "查看個人資料",
+        "viewLiveFeed": "查看即時畫面"
+      },
+      "sections": {
+        "transactionDetails": "交易詳情",
+        "customerInformation": "客戶資訊",
+        "serviceDetails": "服務詳情",
+        "locationEquipment": "位置和設備",
+        "paymentInformation": "付款資訊",
+        "washProgress": "洗車進度",
+        "cctvSnapshot": "CCTV 截圖"
+      },
+      "fields": {
+        "dateTime": "日期和時間",
+        "duration": "時長",
+        "membership": "會員方案",
+        "vehicle": "車輛",
+        "previousVisits": "歷史造訪次數",
+        "operator": "營運商",
+        "machine": "機器",
+        "machineType": "機器類型",
+        "amountCharged": "收費金額",
+        "pointsEarned": "已獲得點數"
+      },
+      "serviceLines": {
+        "included": "包含",
+        "subtotal": "小計",
+        "membershipDiscount": "會員折扣",
+        "totalCharged": "總收費"
+      },
+      "washSteps": {
+        "entryDetection": "入場偵測",
+        "paymentConfirmed": "付款確認",
+        "preSoak": "預浸泡",
+        "soapApplication": "皂液噴塗",
+        "brushWash": "刷洗",
+        "rinseCycle": "沖洗",
+        "tireShine": "輪胎亮光",
+        "airDry": "風乾",
+        "exit": "出場"
+      },
+      "cctv": {
+        "entryCamera": "入場攝影機",
+        "bay1Camera": "洗車槽 1 攝影機",
+        "exitCamera": "出場攝影機",
+        "waiting": "等待中..."
+      }
+    }
+  }
+}

@@ -1,0 +1,3001 @@
+{
+  "common": {
+    "actions": {
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "export": "Export",
+      "edit": "Edit",
+      "delete": "Delete",
+      "add": "Add",
+      "create": "Create",
+      "view": "View",
+      "viewAll": "View All",
+      "search": "Search",
+      "filter": "Filter",
+      "apply": "Apply",
+      "reset": "Reset",
+      "close": "Close",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "confirm": "Confirm",
+      "download": "Download",
+      "upload": "Upload",
+      "refresh": "Refresh",
+      "retry": "Retry",
+      "send": "Send",
+      "submit": "Submit",
+      "saveAsDraft": "Save as Draft",
+      "configure": "Configure",
+      "disconnect": "Disconnect",
+      "enable": "Enable",
+      "disable": "Disable",
+      "viewDetails": "View Details",
+      "viewFullReport": "View Full Report",
+      "manage": "Manage",
+      "remove": "Remove"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "online": "Online",
+      "offline": "Offline",
+      "pending": "Pending",
+      "suspended": "Suspended",
+      "maintenance": "Maintenance",
+      "alert": "Alert",
+      "error": "Error",
+      "open": "Open",
+      "closed": "Closed",
+      "inProgress": "In Progress",
+      "resolved": "Resolved",
+      "completed": "Completed",
+      "scheduled": "Scheduled",
+      "draft": "Draft",
+      "paused": "Paused",
+      "archived": "Archived",
+      "expired": "Expired",
+      "connected": "Connected",
+      "available": "Available",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "verified": "Verified",
+      "revoked": "Revoked",
+      "sent": "Sent",
+      "delivered": "Delivered",
+      "failed": "Failed",
+      "running": "Running",
+      "setup": "Setup"
+    },
+    "priority": {
+      "urgent": "Urgent",
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "filters": {
+      "all": "All",
+      "allStatus": "All Status",
+      "allTypes": "All Types",
+      "allRegions": "All Regions",
+      "allSites": "All Sites",
+      "allOperators": "All Operators",
+      "allCategories": "All Categories",
+      "allPriorities": "All Priorities",
+      "allRoles": "All Roles",
+      "dateRange": "Date Range",
+      "last7Days": "Last 7 Days",
+      "last30Days": "Last 30 Days",
+      "thisMonth": "This Month",
+      "lastMonth": "Last Month",
+      "thisQuarter": "This Quarter",
+      "custom": "Custom"
+    },
+    "pagination": {
+      "showing": "Showing",
+      "of": "of",
+      "page": "Page",
+      "perPage": "per page",
+      "rowsPerPage": "Rows per page"
+    },
+    "table": {
+      "name": "Name",
+      "status": "Status",
+      "type": "Type",
+      "date": "Date",
+      "actions": "Actions",
+      "email": "Email",
+      "phone": "Phone",
+      "amount": "Amount",
+      "description": "Description",
+      "noResults": "No results found",
+      "loading": "Loading..."
+    },
+    "time": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "daysAgo": "{count} days ago",
+      "hoursAgo": "{count} hours ago",
+      "minutesAgo": "{count} min ago",
+      "justNow": "Just now"
+    },
+    "breadcrumbs": {
+      "partners": "Partners",
+      "business": "Business",
+      "technical": "Technical",
+      "settings": "Settings"
+    },
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "nav": {
+    "sections": {
+      "partners": "Partners",
+      "business": "Business",
+      "technical": "Technical",
+      "settings": "Settings"
+    },
+    "items": {
+      "welcome": "Welcome",
+      "operators": "Operators",
+      "sites": "Sites",
+      "customers": "Customers",
+      "memberships": "Memberships",
+      "transactions": "Transactions",
+      "pricing": "Pricing",
+      "marketing": "Marketing",
+      "reports": "Reports",
+      "hardware": "Hardware",
+      "cctv": "CCTV",
+      "tickets": "Tickets",
+      "knowledgeBase": "Knowledge Base",
+      "team": "Team",
+      "account": "Account"
+    }
+  },
+  "topbar": {
+    "searchPlaceholder": "Search anything...",
+    "userRole": "Area Rep",
+    "notifications": "Notifications"
+  },
+  "dashboard": {
+    "breadcrumb": "Welcome",
+    "title": "Welcome",
+    "greeting": "Good morning, {name}",
+    "subtitle": "Here's your territory overview for this month.",
+    "kpi": {
+      "regionRevenue": "Region Revenue (MTD)",
+      "equipmentOnline": "Equipment Online",
+      "openTickets": "Open Tickets",
+      "totalDowntime": "Total Downtime (MTD)",
+      "machinesOffline": "{count} machine offline",
+      "machinesOfflinePlural": "{count} machines offline",
+      "ticketsSummary": "{critical} Critical, {high} High"
+    },
+    "cards": {
+      "revenueTrend": "Revenue Trend (7 Days)",
+      "equipmentHealth": "Equipment Health",
+      "openTickets": "Open Tickets",
+      "upcomingSites": "Upcoming Sites",
+      "viewAllSites": "View All Sites",
+      "operatorPerformance": "Operator Performance (MTD)",
+      "recentActivity": "Recent Activity"
+    },
+    "health": {
+      "online": "Online",
+      "needsAttention": "Needs Attention",
+      "offline": "Offline"
+    },
+    "activity": {
+      "ticketResolved": "Ticket #{id} resolved",
+      "newSiteAdded": "New site \u201c{name}\u201d added",
+      "equipmentAlert": "Equipment alert at {location}",
+      "autoResetSuccess": "Auto-reset successful on {machine}",
+      "autoTicketCreated": "Auto-ticket created"
+    }
+  },
+  "sites": {
+    "breadcrumb": {
+      "business": "Business",
+      "sites": "Sites",
+      "equipment": "Equipment",
+      "customers": "Customers",
+      "transactions": "Transactions",
+      "pricing": "Pricing",
+      "cctv": "CCTV",
+      "maintenance": "Maintenance",
+      "addNewSite": "Add New Site"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "equipment": "Equipment",
+      "customers": "Customers",
+      "transactions": "Transactions",
+      "pricing": "Pricing",
+      "cctv": "CCTV",
+      "maintenance": "Maintenance"
+    },
+    "list": {
+      "title": "All Sites",
+      "subtitle": "{siteCount} sites across {operatorCount} operators",
+      "addSite": "Add Site",
+      "searchPlaceholder": "Search sites...",
+      "table": {
+        "siteName": "Site Name",
+        "operator": "Operator",
+        "type": "Type",
+        "machines": "Machines",
+        "status": "Status",
+        "todaysRevenue": "Today's Revenue",
+        "actions": "Actions"
+      },
+      "pagination": {
+        "showing": "Showing 1-{count} of {total} sites"
+      },
+      "kpi": {
+        "totalSites": "Total Sites",
+        "totalSitesChange": "Across {count} operators",
+        "newThisMonth": "New This Month",
+        "avgWashesPerDay": "Avg Washes/Day",
+        "avgRevenuePerSite": "Avg Revenue/Site"
+      },
+      "status": {
+        "online": "Online",
+        "alert": "Alert",
+        "offline": "Offline",
+        "maintenance": "Maintenance"
+      }
+    },
+    "detail": {
+      "viewOnMap": "View on Map",
+      "editSite": "Edit Site",
+      "kpi": {
+        "todaysRevenue": "Today's Revenue",
+        "transactions": "Transactions",
+        "avgTicket": "Avg Ticket",
+        "equipmentUptime": "Equipment Uptime",
+        "allOnline": "All online"
+      },
+      "cards": {
+        "siteInformation": "Site Information",
+        "equipmentStatus": "Equipment Status",
+        "revenueTrend": "Revenue Trend (30 Days)",
+        "recentTransactions": "Recent Transactions"
+      },
+      "info": {
+        "status": "Status",
+        "equipmentType": "Equipment Type",
+        "totalMachines": "Total Machines",
+        "operatingHours": "Operating Hours",
+        "contact": "Contact",
+        "phone": "Phone"
+      },
+      "table": {
+        "machine": "Machine",
+        "type": "Type",
+        "status": "Status",
+        "lastService": "Last Service"
+      }
+    },
+    "equipment": {
+      "runDiagnostics": "Run Diagnostics",
+      "addEquipment": "Add Equipment",
+      "kpi": {
+        "totalEquipment": "Total Equipment",
+        "online": "Online",
+        "needsAttention": "Needs Attention",
+        "offline": "Offline"
+      },
+      "sections": {
+        "washBays": "Wash Bays",
+        "vacuumStations": "Vacuum Stations",
+        "otherEquipment": "Other Equipment"
+      },
+      "stats": {
+        "today": "Today",
+        "revenue": "Revenue",
+        "avgTime": "Avg Time",
+        "avgDuration": "Avg Duration",
+        "offlineSince": "Offline Since",
+        "lastWash": "Last Wash",
+        "estRepair": "Est. Repair",
+        "successRate": "Success Rate"
+      },
+      "sensors": {
+        "waterPressure": "Water Pressure",
+        "soapLevel": "Soap Level",
+        "waxLevel": "Wax Level",
+        "brushWear": "Brush Wear",
+        "motorStatus": "Motor Status",
+        "filterStatus": "Filter Status",
+        "waterLevel": "Water Level",
+        "temperature": "Temperature",
+        "pumpPressure": "Pump Pressure",
+        "connection": "Connection",
+        "receiptPaper": "Receipt Paper"
+      },
+      "alerts": {
+        "soapLowRefill": "Soap level at 15% - Refill recommended",
+        "motorFailure": "Motor failure detected - Ticket #1234 assigned"
+      },
+      "actions": {
+        "requestUrgentRepair": "Request Urgent Repair"
+      },
+      "badges": {
+        "lowSoap": "Low Soap",
+        "normal": "Normal"
+      }
+    },
+    "customers": {
+      "exportList": "Export List",
+      "addCustomer": "Add Customer",
+      "kpi": {
+        "totalCustomers": "Total Customers",
+        "activeMembers": "Active Members",
+        "avgVisitsPerMonth": "Avg Visits/Month",
+        "customerLtv": "Customer LTV"
+      },
+      "cards": {
+        "customerSegments": "Customer Segments",
+        "visitFrequency": "Visit Frequency (Last 30 Days)",
+        "topCustomers": "Top Customers This Month"
+      },
+      "segments": {
+        "premiumMembers": "Premium Members",
+        "premiumMembersDesc": "Unlimited wash plan",
+        "standardMembers": "Standard Members",
+        "standardMembersDesc": "4 washes/month plan",
+        "regularCustomers": "Regular Customers",
+        "regularCustomersDesc": "3+ visits/month",
+        "occasionalVisitors": "Occasional Visitors",
+        "occasionalVisitorsDesc": "1-2 visits/month"
+      },
+      "frequency": {
+        "oneVisit": "1 visit",
+        "twoVisits": "2 visits",
+        "threeVisits": "3 visits",
+        "fourVisits": "4 visits",
+        "fivePlusVisits": "5+ visits"
+      },
+      "table": {
+        "customer": "Customer",
+        "membership": "Membership",
+        "visits30d": "Visits (30d)",
+        "totalSpent": "Total Spent",
+        "avgTicket": "Avg Ticket",
+        "lastVisit": "Last Visit",
+        "preferredService": "Preferred Service"
+      },
+      "viewAllCustomers": "View All Customers"
+    },
+    "transactions": {
+      "exportCsv": "Export CSV",
+      "manualEntry": "Manual Entry",
+      "kpi": {
+        "todaysRevenue": "Today's Revenue",
+        "transactions": "Transactions",
+        "avgTicket": "Avg Ticket",
+        "memberTransactions": "Member Transactions"
+      },
+      "filters": {
+        "dateRange": "Date Range",
+        "paymentMethod": "Payment Method",
+        "serviceType": "Service Type",
+        "equipment": "Equipment",
+        "allMethods": "All Methods",
+        "allServices": "All Services",
+        "allEquipment": "All Equipment",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "last7Days": "Last 7 Days",
+        "last30Days": "Last 30 Days",
+        "thisMonth": "This Month",
+        "customRange": "Custom Range"
+      },
+      "table": {
+        "title": "Transaction History",
+        "time": "Time",
+        "transactionId": "Transaction ID",
+        "customer": "Customer",
+        "service": "Service",
+        "equipment": "Equipment",
+        "payment": "Payment",
+        "amount": "Amount",
+        "status": "Status"
+      },
+      "pagination": {
+        "showing": "Showing 1-10 of {total} transactions"
+      }
+    },
+    "pricing": {
+      "previewPrices": "Preview Prices",
+      "saveChanges": "Save Changes",
+      "kpi": {
+        "membershipRevenue": "Membership Revenue",
+        "activeMembers": "Active Members",
+        "promoRedemptions": "Promo Redemptions",
+        "avgTransaction": "Avg Transaction"
+      },
+      "cards": {
+        "pricingConfiguration": "Pricing Configuration",
+        "dynamicPricingRules": "Dynamic Pricing Rules",
+        "acceptedMemberships": "Accepted Memberships",
+        "activeCampaigns": "Active Campaigns",
+        "revenueByPaymentType": "Revenue by Payment Type (Last 30 Days)"
+      },
+      "config": {
+        "pricingTemplate": "Pricing Template",
+        "editOverrides": "Edit Overrides"
+      },
+      "table": {
+        "service": "Service",
+        "templatePrice": "Template Price",
+        "siteOverride": "Site Override",
+        "effectivePrice": "Effective Price"
+      },
+      "dynamicRules": {
+        "peakHoursPricing": "Peak Hours Pricing",
+        "peakHoursDesc": "+20% during 8-10 AM and 5-7 PM",
+        "weekendPricing": "Weekend Pricing",
+        "weekendDesc": "+10% on Saturday and Sunday",
+        "holidayPricing": "Holiday Pricing",
+        "holidayDesc": "+15% on public holidays",
+        "rainyDayDiscount": "Rainy Day Discount",
+        "rainyDayDesc": "-15% when raining (weather API)",
+        "currentModifier": "Current Price Modifier",
+        "manageRules": "Manage Rules"
+      },
+      "memberships": {
+        "totalActiveMembers": "Total Active Members",
+        "monthlyMembershipRevenue": "Monthly Membership Revenue",
+        "noOverride": "No override",
+        "notEnabled": "Not enabled",
+        "managePlans": "Manage Plans"
+      },
+      "campaigns": {
+        "manageCampaigns": "Manage Campaigns"
+      },
+      "revenue": {
+        "membership": "Membership",
+        "payPerWash": "Pay-per-Wash",
+        "promotions": "Promotions",
+        "addOns": "Add-ons"
+      }
+    },
+    "cctv": {
+      "downloadClips": "Download Clips",
+      "fullScreenView": "Full Screen View",
+      "kpi": {
+        "totalCameras": "Total Cameras",
+        "online": "Online",
+        "recording": "Recording",
+        "storageUsed": "Storage Used"
+      },
+      "feed": {
+        "liveFeed": "Live Feed",
+        "live": "LIVE"
+      },
+      "cards": {
+        "recentMotionEvents": "Recent Motion Events",
+        "savedRecordings": "Saved Recordings",
+        "cameraStatus": "Camera Status"
+      },
+      "motionFilter": {
+        "allCameras": "All Cameras"
+      },
+      "eventActions": {
+        "view": "View",
+        "review": "Review"
+      },
+      "table": {
+        "camera": "Camera",
+        "location": "Location",
+        "status": "Status",
+        "resolution": "Resolution",
+        "storageUsed": "Storage Used",
+        "lastMotion": "Last Motion",
+        "actions": "Actions",
+        "settings": "Settings"
+      },
+      "badges": {
+        "flagged": "Flagged",
+        "incident": "Incident",
+        "training": "Training",
+        "support": "Support"
+      }
+    },
+    "maintenance": {
+      "scheduleMaintenance": "Schedule Maintenance",
+      "createTicket": "Create Ticket",
+      "kpi": {
+        "openTickets": "Open Tickets",
+        "avgResolutionTime": "Avg Resolution Time",
+        "uptime30Days": "Uptime (30 days)",
+        "nextScheduled": "Next Scheduled"
+      },
+      "cards": {
+        "openIssues": "Open Issues",
+        "scheduledMaintenance": "Scheduled Maintenance",
+        "recentHistory": "Recent History",
+        "equipmentHealthOverview": "Equipment Health Overview"
+      },
+      "issues": {
+        "viewDetails": "View Details",
+        "updateStatus": "Update Status",
+        "markResolved": "Mark Resolved"
+      },
+      "schedule": {
+        "viewCalendar": "View Calendar",
+        "planned": "Planned"
+      },
+      "history": {
+        "viewAll": "View All"
+      },
+      "table": {
+        "equipment": "Equipment",
+        "status": "Status",
+        "healthScore": "Health Score",
+        "lastService": "Last Service",
+        "nextService": "Next Service",
+        "totalRuntime": "Total Runtime",
+        "issues90d": "Issues (90d)"
+      },
+      "badges": {
+        "active": "Active"
+      }
+    },
+    "add": {
+      "breadcrumbLabel": "Add New Site",
+      "pageTitle": "Add New Site",
+      "pageSubtitle": "Create a new wash station location",
+      "steps": {
+        "basicInfo": "Basic Info",
+        "location": "Location",
+        "equipment": "Equipment",
+        "review": "Review"
+      },
+      "sections": {
+        "basicInformation": "Basic Information",
+        "locationDetails": "Location Details",
+        "operatingHours": "Operating Hours",
+        "equipmentConfiguration": "Equipment Configuration",
+        "siteManagement": "Site Management"
+      },
+      "fields": {
+        "siteName": "Site Name *",
+        "siteCode": "Site Code *",
+        "operator": "Operator *",
+        "siteType": "Site Type *",
+        "openingDate": "Opening Date",
+        "status": "Status",
+        "address": "Address *",
+        "district": "District *",
+        "city": "City *",
+        "postalCode": "Postal Code *",
+        "country": "Country",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "vacuumStations": "Vacuum Stations",
+        "paymentKiosks": "Payment Kiosks",
+        "siteManager": "Site Manager",
+        "contactPhone": "Contact Phone",
+        "contactEmail": "Contact Email",
+        "pricingTemplate": "Pricing Template"
+      },
+      "placeholders": {
+        "siteName": "e.g., JetX Xinyi Station",
+        "siteCode": "e.g., XINYI-001",
+        "selectOperator": "Select operator",
+        "selectType": "Select type",
+        "streetAddress": "Street address",
+        "district": "e.g., Xinyi District",
+        "city": "e.g., Taipei",
+        "postalCode": "e.g., 110",
+        "latitude": "e.g., 25.0330",
+        "longitude": "e.g., 121.5654",
+        "contactPhone": "+886-2-XXXX-XXXX",
+        "contactEmail": "site@operator.com",
+        "selectMachineModel": "Select machine model",
+        "selectOrInvite": "Select or invite"
+      },
+      "statusOptions": {
+        "setup": "Setup / Pre-launch",
+        "active": "Active",
+        "underMaintenance": "Under Maintenance"
+      },
+      "siteTypeOptions": {
+        "fullService": "Full Service",
+        "selfService": "Self-Service",
+        "hybrid": "Hybrid"
+      },
+      "equipmentTypeOptions": {
+        "tunnelWash": "Tunnel Wash",
+        "rolloverWash": "Rollover Wash",
+        "selfServiceBay": "Self-Service Bay"
+      },
+      "hours": {
+        "to": "to",
+        "open": "Open",
+        "allDayOperation": "24/7 Operation"
+      },
+      "equipment": {
+        "addBay": "+ Add Bay",
+        "remove": "Remove"
+      },
+      "map": {
+        "placeholder": "Map will be displayed here",
+        "hint": "Enter address to auto-locate on map"
+      },
+      "actions": {
+        "cancel": "Cancel",
+        "saveAsDraft": "Save as Draft",
+        "createSite": "Create Site"
+      }
+    }
+  },
+  "operators": {
+    "title": "Operators",
+    "subtitle": "Manage partner operators and their sites",
+    "addOperator": "Add Operator",
+    "searchPlaceholder": "Search operators...",
+    "kpi": {
+      "totalOperators": "Total Operators",
+      "activeSites": "Active Sites",
+      "totalRevenueMtd": "Total Revenue (MTD)",
+      "avgSitesPerOperator": "Avg. Sites per Operator"
+    },
+    "table": {
+      "operatorName": "Operator Name",
+      "contactPerson": "Contact Person",
+      "region": "Region",
+      "sites": "Sites",
+      "mtdRevenue": "MTD Revenue",
+      "contract": "Contract",
+      "since": "Since"
+    },
+    "filters": {
+      "allContractTypes": "All Contract Types",
+      "north": "North",
+      "central": "Central",
+      "south": "South",
+      "east": "East",
+      "franchise": "Franchise",
+      "license": "License",
+      "partnership": "Partnership"
+    },
+    "pagination": {
+      "showing": "Showing {from}-{to} of {total} operators"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "sites": "Sites ({count})",
+      "financial": "Financial",
+      "team": "Team",
+      "documents": "Documents",
+      "activity": "Activity"
+    },
+    "detail": {
+      "subtitle": "Operator since {date} · {contractType} Agreement",
+      "editOperator": "Edit Operator",
+      "addSite": "Add Site",
+      "activePartner": "Active Partner",
+      "contractValidUntil": "Contract valid until {date}",
+      "kpi": {
+        "totalSites": "Total Sites",
+        "mtdRevenue": "MTD Revenue",
+        "ytdRevenue": "YTD Revenue",
+        "activeMembers": "Active Members"
+      },
+      "contactInfo": {
+        "title": "Contact Information",
+        "primaryContact": "Primary Contact",
+        "position": "Position",
+        "address": "Address",
+        "taxId": "Tax ID"
+      },
+      "contractDetails": {
+        "title": "Contract Details",
+        "viewContract": "View Contract",
+        "contractType": "Contract Type",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "revenueShare": "Revenue Share",
+        "territory": "Territory",
+        "siteLimit": "Site Limit",
+        "siteLimitValue": "{count} sites"
+      },
+      "sitesOverview": {
+        "title": "Sites Overview",
+        "table": {
+          "siteName": "Site Name",
+          "location": "Location",
+          "machines": "Machines"
+        }
+      },
+      "revenueTrend": {
+        "title": "Revenue Trend (12 Months)",
+        "chartPlaceholder": "Revenue Trend Chart"
+      },
+      "recentActivity": {
+        "title": "Recent Activity"
+      }
+    },
+    "financial": {
+      "subtitle": "Revenue share: 15% · Contract: Franchise",
+      "exportReport": "Export Report",
+      "generateInvoice": "Generate Invoice",
+      "kpi": {
+        "mtdGrossRevenue": "MTD Gross Revenue",
+        "mtdJetxShare": "MTD JetX Share (15%)",
+        "ytdGrossRevenue": "YTD Gross Revenue",
+        "ytdJetxShare": "YTD JetX Share"
+      },
+      "revenueBySite": {
+        "title": "Revenue by Site - December 2024",
+        "otherSites": "Other Sites ({count})",
+        "table": {
+          "site": "Site",
+          "grossRevenue": "Gross Revenue",
+          "transactions": "Transactions",
+          "avgTransaction": "Avg Transaction",
+          "jetxShare": "JetX Share (15%)",
+          "vsLastMonth": "vs Last Month",
+          "total": "Total"
+        }
+      },
+      "paymentHistory": {
+        "title": "Payment History",
+        "paid": "Paid"
+      },
+      "pendingInvoices": {
+        "title": "Pending Invoices",
+        "totalPending": "Total Pending"
+      },
+      "monthlyRevenueTrend": {
+        "title": "Monthly Revenue Trend (2024)",
+        "grossRevenue": "Gross Revenue",
+        "jetxShare": "JetX Share"
+      }
+    },
+    "sites": {
+      "subtitle": "12 sites across North Region",
+      "allSites": "All Sites",
+      "kpi": {
+        "totalMachines": "Total Machines",
+        "avgRevenueSite": "Avg Revenue/Site"
+      },
+      "stats": {
+        "machines": "Machines",
+        "mtdWashes": "MTD Washes"
+      },
+      "types": {
+        "fullService": "Full Service",
+        "selfService": "Self-Service",
+        "hybrid": "Hybrid"
+      },
+      "equipment": {
+        "lowSoap": "Low Soap"
+      }
+    },
+    "add": {
+      "breadcrumb": "Add New",
+      "title": "Add New Operator",
+      "subtitle": "Create a new partner operator account",
+      "createOperator": "Create Operator",
+      "steps": {
+        "companyInfo": "Company Info",
+        "contactDetails": "Contact Details",
+        "contractTerms": "Contract Terms",
+        "review": "Review"
+      },
+      "companyInfo": {
+        "title": "Company Information",
+        "companyName": "Company Name *",
+        "companyNamePlaceholder": "Enter company name",
+        "businessRegNumber": "Business Registration Number *",
+        "taxId": "Tax ID *",
+        "businessAddress": "Business Address *",
+        "streetAddress": "Street address",
+        "city": "City *",
+        "regionState": "Region/State",
+        "selectRegion": "Select region",
+        "postalCode": "Postal Code *",
+        "country": "Country *"
+      },
+      "primaryContact": {
+        "title": "Primary Contact",
+        "firstName": "First Name *",
+        "lastName": "Last Name *",
+        "positionTitle": "Position/Title *",
+        "positionPlaceholder": "e.g., CEO, Operations Manager",
+        "mobile": "Mobile"
+      },
+      "contractTerms": {
+        "title": "Contract Terms",
+        "contractType": "Contract Type *",
+        "selectType": "Select type",
+        "territory": "Territory *",
+        "selectTerritory": "Select territory",
+        "northRegion": "North Region",
+        "centralRegion": "Central Region",
+        "southRegion": "South Region",
+        "eastRegion": "East Region",
+        "exclusiveTerritory": "Exclusive Territory",
+        "exclusive": "Yes - Exclusive",
+        "nonExclusive": "No - Non-exclusive",
+        "siteLimit": "Site Limit",
+        "siteLimitPlaceholder": "Maximum number of sites",
+        "contractStartDate": "Contract Start Date *",
+        "contractEndDate": "Contract End Date *",
+        "revenueShare": "Revenue Share (%) *",
+        "minAnnualRevenue": "Minimum Annual Revenue"
+      },
+      "userAccount": {
+        "title": "Initial User Account",
+        "subtitle": "Create login credentials for the operator",
+        "username": "Username *",
+        "usernamePlaceholder": "Login username",
+        "emailForLogin": "Email (for login) *",
+        "sendWelcomeEmail": "Send welcome email with login instructions"
+      },
+      "documents": {
+        "title": "Documents",
+        "dragDrop": "Drag and drop files here or click to browse",
+        "hint": "Business registration, contracts, ID documents",
+        "browseFiles": "Browse Files"
+      }
+    }
+  },
+  "account": {
+    "breadcrumb": "Account",
+    "title": "Account Settings",
+    "subtitle": "Manage your profile and preferences",
+    "tabs": {
+      "profile": "Profile",
+      "security": "Security",
+      "notifications": "Notifications",
+      "integrations": "Integrations",
+      "apiKeys": "API Keys"
+    },
+    "profile": {
+      "sectionTitle": "Profile Information",
+      "changePhoto": "Change Photo",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "role": "Role",
+      "department": "Department",
+      "saveChanges": "Save Changes"
+    },
+    "securityOverview": {
+      "sectionTitle": "Security Settings",
+      "password": "Password",
+      "passwordDesc": "Last changed 45 days ago",
+      "changePassword": "Change Password",
+      "twoFactor": "Two-Factor Authentication",
+      "twoFactorDesc": "Add an extra layer of security",
+      "activeSessions": "Active Sessions",
+      "activeSessionsDesc": "3 active sessions on other devices",
+      "manageSessions": "Manage Sessions",
+      "loginHistory": "Login History",
+      "loginHistoryDesc": "View recent login activity",
+      "viewHistory": "View History"
+    },
+    "notificationOverview": {
+      "sectionTitle": "Notification Preferences",
+      "emailNotifications": "Email Notifications",
+      "pushNotifications": "Push Notifications",
+      "savePreferences": "Save Preferences"
+    },
+    "notifItems": {
+      "dailySummary": "Daily Summary",
+      "dailySummaryDesc": "Receive daily activity summary",
+      "criticalAlerts": "Critical Alerts",
+      "criticalAlertsDesc": "Equipment failures, system issues",
+      "newTickets": "New Tickets",
+      "newTicketsDesc": "When new support tickets are created",
+      "weeklyReports": "Weekly Reports",
+      "weeklyReportsDesc": "Performance and revenue reports",
+      "urgentAlerts": "Urgent Alerts",
+      "urgentAlertsDesc": "Critical issues requiring immediate attention",
+      "ticketUpdates": "Ticket Updates",
+      "ticketUpdatesDesc": "When tickets assigned to you are updated",
+      "equipmentStatus": "Equipment Status",
+      "equipmentStatusDesc": "Machine status changes and alerts"
+    },
+    "preferences": {
+      "sectionTitle": "Preferences",
+      "language": "Language",
+      "timezone": "Timezone",
+      "dateFormat": "Date Format",
+      "currencyDisplay": "Currency Display",
+      "defaultDashboard": "Default Dashboard",
+      "theme": "Theme",
+      "savePreferences": "Save Preferences"
+    },
+    "security": {
+      "breadcrumb": "Security",
+      "passwordSectionTitle": "Password",
+      "passwordStrong": "Password Strength: Strong",
+      "passwordLastChanged": "Last changed 45 days ago",
+      "currentPassword": "Current Password",
+      "currentPasswordPlaceholder": "Enter current password",
+      "newPassword": "New Password",
+      "newPasswordPlaceholder": "Enter new password",
+      "confirmPassword": "Confirm New Password",
+      "confirmPasswordPlaceholder": "Confirm new password",
+      "requireAtLeast8": "At least 8 characters",
+      "requireUppercase": "Contains uppercase letter",
+      "requireLowercase": "Contains lowercase letter",
+      "requireNumber": "Contains number",
+      "requireSpecial": "Contains special character",
+      "updatePassword": "Update Password",
+      "twoFactorTitle": "Two-Factor Authentication",
+      "authenticatorApp": "Authenticator App",
+      "authenticatorAppDesc": "Google Authenticator or similar",
+      "emailVerification": "Email Verification",
+      "emailVerificationDesc": "Backup codes sent to email",
+      "smsVerification": "SMS Verification",
+      "smsVerificationDesc": "Codes sent via text message",
+      "backupCodes": "Backup Codes",
+      "backupCodesDesc": "You have <strong>8 of 10</strong> backup codes remaining. These can be used to access your account if you lose your 2FA device.",
+      "viewBackupCodes": "View Backup Codes",
+      "generateNewCodes": "Generate New Codes",
+      "activeSessionsTitle": "Active Sessions",
+      "signOutAll": "Sign Out All",
+      "currentSession": "Current",
+      "activeNow": "Active now",
+      "lastActive": "Last active {time}",
+      "signOut": "Sign Out",
+      "loginHistoryTitle": "Login History",
+      "tableDateTime": "Date & Time",
+      "tableDevice": "Device",
+      "tableLocation": "Location",
+      "tableIpAddress": "IP Address",
+      "tableStatus": "Status",
+      "badgeSuccess": "Success",
+      "badgeFailed": "Failed",
+      "paginationInfo": "Page {page} of {total}"
+    },
+    "notifications": {
+      "breadcrumb": "Notifications",
+      "emailSectionTitle": "Email Notifications",
+      "allEmails": "All emails",
+      "pushSectionTitle": "Push Notifications",
+      "allPush": "All push",
+      "smsSectionTitle": "SMS Notifications",
+      "smsPremium": "Premium",
+      "smsDesc": "SMS notifications are available for critical alerts. Configure your phone number to receive text messages.",
+      "phoneNumber": "Phone Number",
+      "quietHoursTitle": "Quiet Hours",
+      "quietHoursDesc": "Pause non-critical notifications during specified hours. Critical alerts will always be delivered.",
+      "enableQuietHours": "Enable quiet hours",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "days": "Days",
+      "savePreferences": "Save Preferences",
+      "categoryDailyOps": "Daily Operations",
+      "categoryAlerts": "Alerts & Issues",
+      "categorySupport": "Support & Tickets",
+      "categoryBusiness": "Business Updates",
+      "dailySummary": "Daily Summary",
+      "dailySummaryDesc": "Receive daily activity summary at 8:00 AM",
+      "weeklyReports": "Weekly Reports",
+      "weeklyReportsDesc": "Performance and revenue reports every Monday",
+      "monthlyAnalytics": "Monthly Analytics",
+      "monthlyAnalyticsDesc": "Comprehensive monthly performance report",
+      "criticalAlerts": "Critical Alerts",
+      "criticalAlertsDesc": "Equipment failures, system outages",
+      "equipmentWarnings": "Equipment Warnings",
+      "equipmentWarningsDesc": "Maintenance due, low supplies",
+      "securityAlerts": "Security Alerts",
+      "securityAlertsDesc": "Login attempts, password changes",
+      "newTickets": "New Tickets",
+      "newTicketsDesc": "When new support tickets are created",
+      "ticketUpdates": "Ticket Updates",
+      "ticketUpdatesDesc": "Status changes on tickets you're following",
+      "ticketResolved": "Ticket Resolved",
+      "ticketResolvedDesc": "When tickets are closed or resolved",
+      "newCustomers": "New Customers",
+      "newCustomersDesc": "When new customers register or subscribe",
+      "membershipChanges": "Membership Changes",
+      "membershipChangesDesc": "Subscription renewals, cancellations, upgrades",
+      "urgentAlerts": "Urgent Alerts",
+      "urgentAlertsDesc": "Critical issues requiring immediate attention",
+      "ticketAssignments": "Ticket Assignments",
+      "ticketAssignmentsDesc": "When tickets are assigned to you",
+      "ticketUpdatesPush": "Ticket Updates",
+      "ticketUpdatesPushDesc": "When tickets assigned to you are updated",
+      "equipmentStatus": "Equipment Status",
+      "equipmentStatusDesc": "Machine status changes and alerts",
+      "teamMentions": "Team Mentions",
+      "teamMentionsDesc": "When someone mentions you in comments",
+      "criticalSystemAlerts": "Critical System Alerts",
+      "criticalSystemAlertsDesc": "Only for severe outages or security breaches",
+      "equipmentFailures": "Equipment Failures",
+      "equipmentFailuresDesc": "When equipment goes offline or fails"
+    },
+    "integrations": {
+      "breadcrumb": "Integrations",
+      "connectedTitle": "Connected Integrations",
+      "availableTitle": "Available Integrations",
+      "connect": "Connect",
+      "webhooksTitle": "Webhooks",
+      "addWebhook": "Add Webhook",
+      "test": "Test",
+      "slackDesc": "Connected to #jetx-alerts channel",
+      "googleWorkspaceDesc": "Calendar sync and SSO enabled",
+      "stripeDesc": "Payment processing integration",
+      "quickbooksDesc": "Sync financial data and invoices",
+      "zapierDesc": "Automate workflows with 5000+ apps",
+      "jiraDesc": "Sync tickets with project management",
+      "msTeamsDesc": "Team notifications and alerts",
+      "powerBiDesc": "Advanced analytics and reporting",
+      "whatsappDesc": "Customer messaging and support",
+      "lineNotifyDesc": "Alert notifications via LINE",
+      "datadogDesc": "Infrastructure monitoring",
+      "webhookProductionEvents": "Production Events",
+      "webhookAnalyticsPipeline": "Analytics Pipeline"
+    },
+    "api": {
+      "breadcrumb": "API Keys",
+      "createApiKey": "Create API Key",
+      "kpi": {
+        "callsToday": "API Calls (Today)",
+        "callsMonth": "API Calls (Month)",
+        "activeKeys": "Active Keys",
+        "avgResponseTime": "Avg Response Time",
+        "ofLimit": "of 500K limit",
+        "productionTesting": "2 production, 2 testing",
+        "improvement": "-12% improvement"
+      },
+      "sectionTitle": "API Keys",
+      "copy": "Copy",
+      "editPermissions": "Edit Permissions",
+      "viewLogs": "View Logs",
+      "regenerate": "Regenerate",
+      "revoke": "Revoke",
+      "productionKey": "Production API Key",
+      "mobileAppKey": "Mobile App Integration",
+      "devTestingKey": "Development Testing",
+      "legacyKey": "Legacy Integration (Deprecated)",
+      "badgeProduction": "Production",
+      "badgeTesting": "Testing",
+      "metaLastUsed": "Last used:",
+      "metaCallsToday": "Calls today:",
+      "metaRateLimit": "Rate limit:",
+      "metaRevoked": "Revoked:",
+      "metaReason": "Reason:",
+      "quickReference": "Quick Reference",
+      "baseUrl": "Base URL",
+      "authentication": "Authentication",
+      "authDesc": "Include your API key in the request header:",
+      "availableEndpoints": "Available Endpoints",
+      "viewFullDocs": "View Full Documentation"
+    }
+  },
+  "customers": {
+    "title": "Customers",
+    "subtitle": "Manage customer accounts and memberships",
+    "status": {
+      "atRisk": "At Risk",
+      "churned": "Churned"
+    },
+    "membership": {
+      "unlimited": "Unlimited",
+      "premium": "Premium",
+      "basic": "Basic",
+      "none": "None"
+    },
+    "kpi": {
+      "totalCustomers": "Total Customers",
+      "activeMembers": "Active Members",
+      "avgLtv": "Avg. LTV",
+      "churnRate": "Churn Rate",
+      "lifetimeVisits": "Lifetime Visits",
+      "lifetimeValue": "Lifetime Value",
+      "visitFrequency": "Visit Frequency",
+      "rewardPoints": "Reward Points",
+      "top5Percent": "Top 5% customer",
+      "consistent": "Consistent"
+    },
+    "filters": {
+      "searchPlaceholder": "Search customers...",
+      "allMemberships": "All Memberships"
+    },
+    "table": {
+      "customer": "Customer",
+      "contact": "Contact",
+      "membership": "Membership",
+      "totalVisits": "Total Visits",
+      "totalSpend": "Total Spend",
+      "lastVisit": "Last Visit",
+      "site": "Site",
+      "service": "Service",
+      "vehicle": "Vehicle",
+      "points": "Points"
+    },
+    "pagination": {
+      "showingCustomers": "Showing {from}-{to} of {total} customers"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "transactions": "Transactions",
+      "vehiclesCount": "Vehicles ({count})",
+      "membership": "Membership"
+    },
+    "actions": {
+      "sendMessage": "Send Message",
+      "issueRefund": "Issue Refund",
+      "createTicket": "Create Ticket"
+    },
+    "detail": {
+      "subtitle": "Customer #{id} · Member since {date}",
+      "memberBanner": "{planName} Member",
+      "renewsOn": "Renews: {date}",
+      "autoRenewal": "Auto-renewal",
+      "autoRenewalOn": "ON",
+      "autoRenewalOff": "OFF",
+      "contactInformation": "Contact Information",
+      "membershipDetails": "Membership Details",
+      "visitFrequencyChart": "Visit Frequency (12 Weeks)",
+      "visitFrequencyChartPlaceholder": "Visit Frequency Chart",
+      "preferredServices": "Preferred Services",
+      "registeredVehicles": "Registered Vehicles",
+      "recentTransactions": "Recent Transactions",
+      "noActiveMembership": "No active membership",
+      "fields": {
+        "fullName": "Full Name",
+        "preferredLanguage": "Preferred Language",
+        "chineseTraditional": "Chinese (Traditional)",
+        "homeSite": "Home Site",
+        "joinDate": "Join Date",
+        "plan": "Plan",
+        "monthlyFee": "Monthly Fee",
+        "billingCycle": "Billing Cycle",
+        "paymentMethod": "Payment Method",
+        "memberSince": "Member Since",
+        "autoRenewal": "Auto-Renewal"
+      }
+    },
+    "vehicles": {
+      "primary": "Primary",
+      "secondary": "Secondary",
+      "recentVehicleWashes": "Recent Vehicle Washes",
+      "viewAllTransactions": "View All Transactions",
+      "kpi": {
+        "registeredVehicles": "Registered Vehicles",
+        "maxAllowed": "Max {count} allowed",
+        "primaryVehicleWashes": "Primary Vehicle Washes",
+        "secondaryVehicleWashes": "Secondary Vehicle Washes",
+        "lastWash": "Last Wash"
+      },
+      "actions": {
+        "addVehicle": "Add Vehicle",
+        "viewWashHistory": "View Wash History",
+        "removeVehicle": "Remove Vehicle",
+        "setAsPrimary": "Set as Primary"
+      },
+      "fields": {
+        "make": "Make",
+        "model": "Model",
+        "year": "Year",
+        "color": "Color",
+        "licensePlate": "License Plate",
+        "registrationDate": "Registration Date",
+        "totalWashes": "Total Washes",
+        "lastWash": "Last Wash"
+      },
+      "table": {
+        "duration": "Duration"
+      }
+    },
+    "memberships": {
+      "currentPlan": "Current Plan",
+      "billingInformation": "Billing Information",
+      "membershipValue": "Membership Value",
+      "billingHistory": "Billing History",
+      "membershipActions": "Membership Actions",
+      "monthlyUsageChart": "Monthly Usage (12 Months)",
+      "monthlyUsageChartPlaceholder": "Monthly Usage Bar Chart",
+      "kpi": {
+        "memberSince": "Member Since",
+        "totalPaid": "Total Paid",
+        "washesUsed": "Washes Used",
+        "nextBilling": "Next Billing"
+      },
+      "banner": {
+        "unlimitedMember": "Unlimited Wash Member",
+        "activeNextRenewal": "Active · Next renewal: {date}",
+        "autoRenewalOn": "Auto-Renewal ON"
+      },
+      "planFeatures": {
+        "unlimitedWashes": "Unlimited washes per month",
+        "allWashLevels": "All wash levels included (Basic, Premium, Ultimate)",
+        "upToVehicles": "Up to {count} registered vehicles",
+        "addonDiscount": "{percent}% off all add-on services",
+        "priorityLane": "Priority lane access",
+        "doublePoints": "2x reward points on all purchases"
+      },
+      "fields": {
+        "cardExpiry": "Card Expiry",
+        "billingEmail": "Billing Email",
+        "nextCharge": "Next Charge"
+      },
+      "value": {
+        "thisMonthWashes": "This Month's Washes",
+        "monthlySavings": "Monthly Savings",
+        "lifetimeRoi": "Lifetime ROI"
+      },
+      "table": {
+        "invoiceNumber": "Invoice #"
+      },
+      "pagination": {
+        "showingInvoices": "Showing {from}-{to} of {total} invoices"
+      },
+      "actions": {
+        "changePlan": "Change Plan",
+        "pauseMembership": "Pause Membership",
+        "update": "Update",
+        "downloadAllInvoices": "Download All Invoices",
+        "pause": "Pause",
+        "transferMembership": "Transfer Membership",
+        "transfer": "Transfer",
+        "cancelMembership": "Cancel Membership"
+      },
+      "actionDescriptions": {
+        "changePlan": "Upgrade or downgrade to a different membership plan",
+        "pauseMembership": "Temporarily pause billing and access for up to 3 months",
+        "transferMembership": "Transfer this membership to a different customer account",
+        "cancelMembership": "Cancel membership and stop all future billing"
+      }
+    },
+    "transactions": {
+      "kpi": {
+        "totalTransactions": "Total Transactions",
+        "totalSpent": "Total Spent",
+        "avgTransaction": "Avg Transaction",
+        "addOnsOnly": "Add-ons only",
+        "pointsEarned": "Points Earned"
+      },
+      "spendingByService": "Spending by Service",
+      "monthlySpendingTrend": "Monthly Spending Trend",
+      "monthlySpendingChartPlaceholder": "Monthly Spending Chart",
+      "transactionHistory": "Transaction History",
+      "transactionCount": "{count} transactions",
+      "serviceCategories": {
+        "membershipFee": "Membership Fee",
+        "addonServices": "Add-on Services",
+        "payPerWash": "Pay-per-Wash"
+      },
+      "table": {
+        "transactionId": "Transaction ID",
+        "dateTime": "Date & Time",
+        "payment": "Payment"
+      },
+      "pagination": {
+        "showingTransactions": "Showing {from}-{to} of {total} transactions"
+      },
+      "actions": {
+        "exportCsv": "Export CSV"
+      }
+    }
+  },
+  "memberships": {
+    "title": "Memberships",
+    "subtitle": "Manage membership plan templates and site availability",
+    "actions": {
+      "createPlanTemplate": "Create Plan Template",
+      "viewSites": "View Sites"
+    },
+    "tabs": {
+      "planTemplates": "Plan Templates",
+      "subscribers": "Subscribers",
+      "siteAssignments": "Site Assignments",
+      "analytics": "Analytics"
+    },
+    "kpi": {
+      "planTemplates": "Plan Templates",
+      "totalActiveMembers": "Total Active Members",
+      "multiSiteMembers": "Multi-Site Members",
+      "totalMrr": "Total MRR"
+    },
+    "scope": {
+      "singleSite": "Single-Site",
+      "multiSite": "Multi-Site",
+      "singleSiteMembers": "Single-Site Members",
+      "multiSiteMembers": "Multi-Site Members"
+    },
+    "planTemplates": {
+      "cardTitle": "Membership Plan Templates",
+      "cardDescription": "Master plan templates that can be assigned to sites. Sites can apply templates as-is or customize pricing/benefits.",
+      "sites": "sites",
+      "columns": {
+        "planName": "Plan Name",
+        "basePrice": "Base Price",
+        "scope": "Scope",
+        "sitesUsing": "Sites Using",
+        "activeMembers": "Active Members",
+        "mrr": "MRR"
+      },
+      "planNames": {
+        "basic": "Basic",
+        "premium": "Premium",
+        "unlimited": "Unlimited"
+      }
+    },
+    "sitePlanAssignments": {
+      "cardTitle": "Site Plan Assignments",
+      "cardDescription": "View and manage which membership plans are available at each site. Sites can override pricing or benefits.",
+      "notAvailable": "Not Available",
+      "columns": {
+        "siteMrr": "Site MRR"
+      },
+      "legend": {
+        "templatePrice": "Template price",
+        "siteOverride": "Site override",
+        "planNotOffered": "Plan not offered"
+      },
+      "viewAllSites": "View all 12 sites →"
+    },
+    "charts": {
+      "subscriberDistribution": "Subscriber Distribution",
+      "mrrTrend6Months": "MRR Trend (6 Months)"
+    },
+    "scopeBreakdown": {
+      "cardTitle": "Membership Scope Breakdown",
+      "singleSiteDescription": "Can only use membership at their home site",
+      "multiSiteDescription": "Can use membership at any participating site",
+      "basicPlan": "Basic Plan",
+      "premiumPlan": "Premium Plan",
+      "unlimitedPlan": "Unlimited Plan",
+      "legacyPlans": "Legacy Plans"
+    },
+    "recentActivity": {
+      "cardTitle": "Recent Membership Activity",
+      "columns": {
+        "customer": "Customer",
+        "action": "Action",
+        "plan": "Plan",
+        "site": "Site"
+      }
+    },
+    "edit": {
+      "title": "Edit Premium Plan",
+      "subtitle": "Modify plan template settings and site availability",
+      "kpi": {
+        "activeSubscribers": "Active Subscribers",
+        "monthlyRevenue": "Monthly Revenue",
+        "sitesOffering": "Sites Offering",
+        "allSitesEnabled": "All sites enabled",
+        "avgRetention": "Avg. Retention"
+      },
+      "sections": {
+        "basicInfo": "Basic Information",
+        "pricing": "Pricing",
+        "pricingDescription": "Base pricing that sites inherit (sites can override)",
+        "membershipScope": "Membership Scope",
+        "planBenefits": "Plan Benefits",
+        "planBenefitsDescription": "Default benefits for this plan template",
+        "siteAvailability": "Site Availability",
+        "siteAvailabilityDescription": "Select which sites can offer this plan"
+      },
+      "fields": {
+        "planName": "Plan Name",
+        "planIconColor": "Plan Icon Color",
+        "planStatus": "Plan Status",
+        "planStatusHint": "Deactivating will stop new subscriptions but not affect existing members",
+        "basePrice": "Base Price",
+        "billingCycle": "Billing Cycle",
+        "annualDiscount": "Annual Discount",
+        "washesPerMonth": "Washes per Month",
+        "addonDiscount": "Add-on Discount",
+        "pointsMultiplier": "Points Multiplier",
+        "additionalBenefits": "Additional Benefits",
+        "selectAllSites": "Select All Sites",
+        "siteOverrideHint": "Sites with ⚙ have custom pricing overrides configured"
+      },
+      "billingCycleOptions": {
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "annual": "Annual"
+      },
+      "scopeDescriptions": {
+        "singleSite": "Member can only use subscription at their home site",
+        "multiSite": "Member can use subscription at any enabled site"
+      },
+      "benefits": {
+        "priorityQueue": "Priority queue access",
+        "freeVacuum": "Free vacuum service",
+        "freeInteriorWipe": "Free interior wipe",
+        "memberOnlyPromotions": "Member-only promotions",
+        "freeTireShine": "Free tire shine"
+      },
+      "dangerZone": {
+        "title": "Danger Zone",
+        "archiveTitle": "Archive Plan Template",
+        "archiveDescription": "Hide this plan from new subscriptions. Existing members will retain their benefits.",
+        "archiveButton": "Archive Plan",
+        "deleteTitle": "Delete Plan Template",
+        "deleteDescription": "Permanently remove this plan. Only possible if there are no active subscribers.",
+        "deleteButton": "Delete Plan"
+      }
+    },
+    "subscribers": {
+      "cardTitle": "All Subscribers",
+      "columns": {
+        "customer": "Customer",
+        "homeSite": "Home Site",
+        "startDate": "Start Date",
+        "renewalDate": "Renewal Date"
+      },
+      "filters": {
+        "plan": "Plan",
+        "allPlans": "All Plans",
+        "expiringSoon": "Expiring Soon",
+        "cancelled": "Cancelled",
+        "allTime": "All Time",
+        "last90Days": "Last 90 Days",
+        "thisYear": "This Year",
+        "applyFilters": "Apply Filters"
+      }
+    },
+    "sites": {
+      "cardDescription": "Manage which membership plans are available at each site. Click on a site to configure pricing overrides.",
+      "columns": {
+        "site": "Site",
+        "basicWithPrice": "Basic ($29)",
+        "premiumWithPrice": "Premium ($59)",
+        "unlimitedWithPrice": "Unlimited ($99)"
+      },
+      "totalSites": "12 sites total",
+      "overrides": {
+        "cardTitle": "Sites with Overrides",
+        "description": "Sites have custom pricing different from templates"
+      },
+      "planAvailability": {
+        "cardTitle": "Plan Availability"
+      }
+    },
+    "analytics": {
+      "exportReport": "Export Report",
+      "kpi": {
+        "churnRate": "Churn Rate",
+        "avgMemberLtv": "Avg. Member LTV",
+        "upgradeRate": "Upgrade Rate",
+        "avgTenure": "Avg. Tenure"
+      },
+      "memberGrowth": {
+        "title": "Member Growth (12 Months)",
+        "netNewMembers": "Net New Members (YTD)",
+        "growthRate": "Growth Rate"
+      },
+      "mrrTrend": {
+        "title": "MRR Trend (12 Months)",
+        "currentMrr": "Current MRR",
+        "mrrGrowth": "MRR Growth"
+      },
+      "churnAnalysis": {
+        "title": "Churn Analysis",
+        "monthlyChurnRate": "Monthly Churn Rate",
+        "churnedThisMonth": "Churned This Month",
+        "revenueLost": "Revenue Lost",
+        "topChurnReasons": "Top Churn Reasons"
+      },
+      "planMovement": {
+        "title": "Plan Movement",
+        "upgradesThisMonth": "Upgrades This Month",
+        "downgradesThisMonth": "Downgrades This Month",
+        "netMovementRevenue": "Net Movement Revenue",
+        "commonUpgradePaths": "Common Upgrade Paths"
+      },
+      "revenueByPlan": {
+        "title": "Revenue by Plan"
+      },
+      "topSitesByMrr": {
+        "title": "Top Sites by MRR",
+        "viewAllSites": "View all sites →"
+      },
+      "ltv": {
+        "title": "Lifetime Value by Plan",
+        "description": "Average revenue generated per member over their entire membership",
+        "columns": {
+          "avgTenure": "Avg. Tenure",
+          "monthlyArpu": "Monthly ARPU",
+          "ltv": "LTV",
+          "acquisitionCost": "Acquisition Cost",
+          "ltvCacRatio": "LTV:CAC Ratio"
+        }
+      }
+    }
+  },
+  "tickets": {
+    "breadcrumb": "Support Tickets",
+    "title": "Support Tickets",
+    "subtitle": "Manage customer and operator support requests",
+    "actions": {
+      "createTicket": "Create Ticket"
+    },
+    "kpi": {
+      "openTickets": "Open Tickets",
+      "avgResponseTime": "Avg. Response Time",
+      "avgResolutionTime": "Avg. Resolution Time",
+      "satisfactionRate": "Satisfaction Rate"
+    },
+    "filters": {
+      "searchPlaceholder": "Search tickets...",
+      "allAssignees": "All Assignees",
+      "assignedToMe": "Assigned to me",
+      "unassigned": "Unassigned"
+    },
+    "table": {
+      "ticketId": "Ticket ID",
+      "subject": "Subject",
+      "requester": "Requester",
+      "category": "Category",
+      "priority": "Priority",
+      "assignee": "Assignee",
+      "updated": "Updated"
+    },
+    "categories": {
+      "equipment": "Equipment",
+      "billing": "Billing",
+      "customerService": "Customer Service",
+      "membership": "Membership",
+      "complaint": "Complaint",
+      "software": "Software",
+      "other": "Other"
+    },
+    "pagination": {
+      "showing": "Showing {from}-{to} of {total} tickets"
+    },
+    "detail": {
+      "actions": {
+        "assign": "Assign",
+        "escalate": "Escalate",
+        "resolve": "Resolve"
+      },
+      "statusBar": {
+        "created": "Created"
+      },
+      "sections": {
+        "ticketDetails": "Ticket Details",
+        "conversation": "Conversation",
+        "ticketInfo": "Ticket Info",
+        "related": "Related",
+        "activity": "Activity",
+        "similarTickets": "Similar Tickets"
+      },
+      "reply": {
+        "addReply": "Add Reply",
+        "placeholder": "Type your response here...",
+        "attachFile": "Attach File",
+        "insertTemplate": "Insert Template",
+        "publicReply": "Public Reply",
+        "internalNote": "Internal Note",
+        "sendReply": "Send Reply"
+      },
+      "info": {
+        "slaDue": "SLA Due"
+      },
+      "related": {
+        "viewCctv": "View CCTV - Bay {bay}"
+      },
+      "activity": {
+        "ticketCreated": "Ticket created"
+      }
+    },
+    "create": {
+      "title": "Create Support Ticket",
+      "subtitle": "Submit a new support request",
+      "form": {
+        "subject": "Subject *",
+        "subjectPlaceholder": "Brief description of the issue",
+        "category": "Category *",
+        "selectCategory": "Select category",
+        "priority": "Priority *",
+        "description": "Description *",
+        "descriptionPlaceholder": "Please provide as much detail as possible about the issue...",
+        "site": "Site",
+        "selectSite": "Select site (if applicable)",
+        "machine": "Machine",
+        "selectMachine": "Select machine (if applicable)",
+        "transactionId": "Transaction ID",
+        "customerId": "Customer ID"
+      },
+      "categoryOptions": {
+        "equipment": "Equipment Issue",
+        "billing": "Billing / Payment",
+        "membership": "Membership",
+        "complaint": "Customer Complaint",
+        "feature": "Feature Request",
+        "other": "Other"
+      },
+      "sections": {
+        "relatedInfo": "Related Information",
+        "relatedInfoSubtitle": "Help us locate the issue faster",
+        "attachments": "Attachments",
+        "quickTips": "Quick Tips",
+        "relatedArticles": "Related Articles",
+        "needUrgentHelp": "Need Urgent Help?"
+      },
+      "upload": {
+        "text": "Drag and drop files here or click to browse",
+        "hint": "Screenshots, photos, documents (max 10MB each)",
+        "browseFiles": "Browse Files"
+      },
+      "tips": {
+        "errorMessages": "Include specific error messages or codes",
+        "whenStarted": "Mention when the issue started",
+        "attachPhotos": "Attach photos or screenshots if possible",
+        "troubleshootingTried": "List any troubleshooting already tried"
+      },
+      "contact": {
+        "hotline": "Hotline",
+        "liveChat": "Live Chat",
+        "available247": "Available 24/7"
+      },
+      "actions": {
+        "searchKnowledgeBase": "Search Knowledge Base"
+      }
+    }
+  },
+  "knowledge": {
+    "breadcrumb": "Knowledge Base",
+    "title": "Knowledge Base",
+    "subtitle": "Documentation, guides, and troubleshooting",
+    "actions": {
+      "newArticle": "New Article"
+    },
+    "search": {
+      "heading": "How can we help?",
+      "placeholder": "Search for articles, guides, or troubleshooting tips..."
+    },
+    "categories": {
+      "articleCount": "{count} articles"
+    },
+    "sections": {
+      "popularArticles": "Popular Articles",
+      "recentlyUpdated": "Recently Updated",
+      "videoTutorials": "Video Tutorials",
+      "views": "views"
+    }
+  },
+  "team": {
+    "breadcrumb": "Team",
+    "title": "Team Management",
+    "subtitle": "Manage users and permissions",
+    "actions": {
+      "inviteUser": "Invite User",
+      "createRole": "+ Create Role"
+    },
+    "tabs": {
+      "members": "Team Members",
+      "rolesAndPermissions": "Roles & Permissions",
+      "invitations": "Invitations",
+      "activityLog": "Activity Log"
+    },
+    "kpi": {
+      "totalUsers": "Total Users",
+      "totalUsersTrend": "Across all roles",
+      "activeNow": "Active Now",
+      "activeNowTrend": "Online in last 15 min",
+      "pendingInvites": "Pending Invites",
+      "pendingInvitesTrend": "Awaiting acceptance",
+      "roles": "Roles",
+      "rolesTrend": "Custom roles defined"
+    },
+    "filters": {
+      "label": "Filters",
+      "role": "Role",
+      "siteAccess": "Site Access",
+      "allSitesAccess": "All Sites Access"
+    },
+    "table": {
+      "user": "User",
+      "role": "Role",
+      "siteAccess": "Site Access",
+      "lastActive": "Last Active"
+    },
+    "sections": {
+      "teamMembers": "Team Members",
+      "roleDefinitions": "Role Definitions"
+    },
+    "pagination": {
+      "pageOf": "Page {page} of {total}"
+    },
+    "roles": {
+      "userCount": "{count} users",
+      "permissionsMatrix": "Permissions Matrix",
+      "permission": "Permission",
+      "roleDetails": "Role Details",
+      "sections": {
+        "dashboardAnalytics": "Dashboard & Analytics",
+        "sitesOperations": "Sites & Operations",
+        "customersMemberships": "Customers & Memberships",
+        "pricingPromotions": "Pricing & Promotions",
+        "supportTickets": "Support & Tickets",
+        "teamAdministration": "Team & Administration",
+        "billingFinance": "Billing & Finance"
+      },
+      "permissions": {
+        "viewDashboard": "View dashboard",
+        "viewAllSitesData": "View all sites data",
+        "exportReports": "Export reports",
+        "createSites": "Create sites",
+        "editSiteSettings": "Edit site settings",
+        "viewCctv": "View CCTV",
+        "viewCustomers": "View customers",
+        "editCustomerData": "Edit customer data",
+        "manageMemberships": "Manage memberships",
+        "viewPricing": "View pricing",
+        "editPricing": "Edit pricing",
+        "managePromotions": "Manage promotions",
+        "viewTickets": "View tickets",
+        "createTickets": "Create tickets",
+        "resolveTickets": "Resolve tickets",
+        "viewTeamMembers": "View team members",
+        "manageUsers": "Manage users",
+        "manageRoles": "Manage roles",
+        "viewTransactions": "View transactions",
+        "processRefunds": "Process refunds",
+        "billingSettings": "Billing settings"
+      },
+      "descriptions": {
+        "admin": "Full system access with complete control over all settings, users, and data. Recommended for business owners and IT administrators only.",
+        "manager": "Can view all data and manage operators. Has access to reports and limited settings. Cannot manage billing or roles.",
+        "operator": "Access limited to their own operator's sites. Can view transactions, create tickets, but cannot modify settings.",
+        "siteManager": "Limited to assigned site only. Can manage daily operations, view CCTV, and create tickets.",
+        "support": "Customer support access. Can view customers, tickets, transactions, and process refunds. Cannot modify settings.",
+        "viewer": "Read-only access to dashboards, reports, and data. Cannot make any changes to the system."
+      }
+    },
+    "invitations": {
+      "pending": "pending",
+      "sections": {
+        "pendingInvitations": "Pending Invitations",
+        "invitationHistory": "Invitation History",
+        "quickInvite": "Quick Invite"
+      },
+      "table": {
+        "invitedBy": "Invited By",
+        "sent": "Sent",
+        "expires": "Expires",
+        "result": "Result"
+      },
+      "actions": {
+        "resend": "Resend",
+        "revoke": "Revoke"
+      },
+      "status": {
+        "accepted": "Accepted",
+        "neverAccepted": "Never accepted",
+        "revokedByAdmin": "Revoked by admin"
+      },
+      "quickInvite": {
+        "newOperator": "New Operator",
+        "newOperatorDesc": "Invite a new operator partner with access to their own sites",
+        "inviteOperator": "Invite Operator",
+        "siteManager": "Site Manager",
+        "siteManagerDesc": "Invite a site manager for a specific location",
+        "inviteSiteManager": "Invite Site Manager",
+        "supportStaff": "Support Staff",
+        "supportStaffDesc": "Invite support staff with customer service permissions",
+        "inviteSupport": "Invite Support",
+        "viewer": "Viewer",
+        "viewerDesc": "Invite a read-only viewer for reports and dashboards",
+        "inviteViewer": "Invite Viewer"
+      }
+    },
+    "activity": {
+      "actions": {
+        "exportLog": "Export Log"
+      },
+      "filters": {
+        "user": "User",
+        "allUsers": "All Users",
+        "actionType": "Action Type",
+        "allActions": "All Actions",
+        "loginLogout": "Login/Logout",
+        "userManagement": "User Management",
+        "settingsChanges": "Settings Changes",
+        "dataAccess": "Data Access",
+        "securityEvents": "Security Events",
+        "last90Days": "Last 90 days"
+      },
+      "sections": {
+        "recentActivity": "Recent Activity"
+      }
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Analytics, insights, and data exports",
+    "tabs": {
+      "overview": "Overview",
+      "revenue": "Revenue",
+      "operations": "Operations",
+      "customers": "Customers",
+      "scheduled": "Scheduled"
+    },
+    "actions": {
+      "scheduleReport": "Schedule Report",
+      "customReport": "Custom Report"
+    },
+    "dateFilter": {
+      "from": "From",
+      "to": "To",
+      "thisWeek": "This Week",
+      "ytd": "YTD",
+      "last90Days": "Last 90 Days"
+    },
+    "kpi": {
+      "mtdRevenue": "MTD Revenue",
+      "mtdTransactions": "MTD Transactions",
+      "avgDailyRevenue": "Avg. Daily Revenue",
+      "equipmentUptime": "Equipment Uptime"
+    },
+    "reportLibrary": {
+      "title": "Report Library",
+      "financial": "Financial Reports",
+      "operations": "Operations Reports",
+      "customer": "Customer Reports",
+      "marketing": "Marketing Reports"
+    },
+    "recentlyGenerated": {
+      "title": "Recently Generated",
+      "columns": {
+        "reportName": "Report Name",
+        "dateRange": "Date Range",
+        "generated": "Generated",
+        "generatedBy": "Generated By"
+      }
+    },
+    "scheduledReports": {
+      "title": "Scheduled Reports",
+      "scheduleNew": "Schedule New",
+      "columns": {
+        "report": "Report",
+        "frequency": "Frequency",
+        "recipients": "Recipients",
+        "nextRun": "Next Run"
+      }
+    },
+    "revenue": {
+      "title": "Revenue Reports",
+      "subtitle": "Financial performance and revenue analytics",
+      "kpi": {
+        "totalRevenue": "Total Revenue",
+        "avgTransactionValue": "Avg. Transaction Value",
+        "transactions": "Transactions"
+      },
+      "chart": {
+        "revenueTrend": "Revenue Trend",
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "legend": {
+          "membershipRevenue": "Membership Revenue",
+          "singleWashRevenue": "Single Wash Revenue",
+          "addonRevenue": "Add-on Revenue"
+        }
+      },
+      "byServiceType": "Revenue by Service Type",
+      "paymentMethods": "Payment Methods",
+      "bySite": {
+        "title": "Revenue by Site",
+        "columns": {
+          "site": "Site",
+          "revenue": "Revenue",
+          "transactions": "Transactions",
+          "avgValue": "Avg. Value",
+          "sevenDayTrend": "7-Day Trend",
+          "change": "Change"
+        },
+        "showingTop5": "Showing top 5 of 12 sites",
+        "viewAllSites": "View all sites →"
+      }
+    },
+    "customers": {
+      "title": "Customer Reports",
+      "subtitle": "Acquisition, retention, and lifetime value analytics",
+      "kpi": {
+        "totalCustomers": "Total Customers",
+        "activeMembers": "Active Members",
+        "avgLtv": "Avg. LTV",
+        "churnRate": "Churn Rate"
+      },
+      "acquisition": {
+        "title": "Customer Acquisition",
+        "last8Weeks": "Last 8 Weeks"
+      },
+      "funnel": {
+        "title": "Conversion Funnel",
+        "appDownloads": "App Downloads",
+        "registered": "Registered",
+        "firstWash": "First Wash",
+        "repeatCustomer": "Repeat Customer"
+      },
+      "segments": {
+        "title": "Customer Segments"
+      },
+      "ltv": {
+        "title": "Customer Lifetime Value",
+        "retentionTitle": "Member vs Non-Member Retention",
+        "members": "Members",
+        "nonMembers": "Non-Members"
+      },
+      "cohort": {
+        "title": "Cohort Retention Analysis",
+        "badge": "Monthly Cohorts",
+        "columns": {
+          "cohort": "Cohort",
+          "users": "Users"
+        }
+      },
+      "topCustomers": {
+        "title": "Top Customers by Lifetime Value",
+        "allTime": "All Time",
+        "thisYear": "This Year",
+        "columns": {
+          "customer": "Customer",
+          "memberSince": "Member Since",
+          "totalVisits": "Total Visits",
+          "ltv": "LTV",
+          "avgSpend": "Avg. Spend",
+          "visitTrend": "Visit Trend",
+          "favoriteSite": "Favorite Site"
+        },
+        "showingTop5": "Showing top 5 customers",
+        "viewAll": "View all customers →"
+      }
+    },
+    "operations": {
+      "title": "Operations Reports",
+      "subtitle": "Equipment performance, utilization, and maintenance analytics",
+      "kpi": {
+        "equipmentUptime": "Equipment Uptime",
+        "avgWaitTime": "Avg. Wait Time",
+        "washesPerHour": "Washes/Hour (Avg)",
+        "activeAlerts": "Active Alerts"
+      },
+      "heatmap": {
+        "title": "Traffic Heatmap - All Sites",
+        "less": "Less",
+        "more": "More"
+      },
+      "siteUtilization": {
+        "title": "Site Utilization Rate"
+      },
+      "downtimeEvents": {
+        "title": "Recent Downtime Events"
+      },
+      "equipmentStatus": {
+        "title": "Equipment Status by Site",
+        "columns": {
+          "site": "Site",
+          "bays": "Bays",
+          "uptime7d": "Uptime (7d)",
+          "washesToday": "Washes Today",
+          "avgWait": "Avg Wait",
+          "nextMaintenance": "Next Maintenance"
+        },
+        "showing5of12": "Showing 5 of 12 sites",
+        "viewAllEquipment": "View all equipment →"
+      },
+      "weeklySummary": {
+        "title": "This Week Summary",
+        "totalWashes": "Total Washes Completed",
+        "totalDowntime": "Total Downtime",
+        "revenueLost": "Est. Revenue Lost to Downtime"
+      }
+    },
+    "scheduled": {
+      "title": "Scheduled Reports",
+      "subtitle": "Automate report generation and delivery",
+      "kpi": {
+        "activeSchedules": "Active Schedules",
+        "reportsSent": "Reports Sent (30d)",
+        "deliverySuccessRate": "Delivery Success Rate",
+        "recipients": "Recipients"
+      },
+      "types": {
+        "dailySummary": "Daily Summary",
+        "dailySummaryDesc": "Revenue & transactions every morning",
+        "weeklyOperations": "Weekly Operations",
+        "weeklyOperationsDesc": "Equipment & maintenance status",
+        "monthlyFinancial": "Monthly Financial",
+        "monthlyFinancialDesc": "Complete financial statement",
+        "customSchedule": "Custom Schedule",
+        "customScheduleDesc": "Build your own report schedule"
+      },
+      "activeSchedules": {
+        "title": "Active Schedules"
+      },
+      "actions": {
+        "runNow": "Run Now"
+      },
+      "deliveryHistory": {
+        "title": "Recent Delivery History"
+      }
+    }
+  },
+  "hardware": {
+    "title": "Hardware",
+    "allEquipment": {
+      "title": "All Equipment",
+      "subtitle": "127 machines across 45 sites"
+    },
+    "tabs": {
+      "listView": "List View",
+      "mapView": "Map View",
+      "alerts": "Alerts (3)",
+      "allMachines": "All Machines"
+    },
+    "actions": {
+      "addUnit": "Add Unit",
+      "createTicket": "Create Ticket",
+      "acknowledge": "Acknowledge",
+      "viewMachine": "View Machine"
+    },
+    "filters": {
+      "searchEquipment": "Search equipment..."
+    },
+    "table": {
+      "machineId": "Machine ID",
+      "site": "Site",
+      "uptime": "Uptime",
+      "lastService": "Last Service",
+      "totalCycles": "total cycles"
+    },
+    "pagination": {
+      "showing": "Showing 1-{count} of 127 machines"
+    },
+    "detail": {
+      "actions": {
+        "remoteControl": "Remote Control",
+        "scheduleMaintenance": "Schedule Maintenance"
+      },
+      "status": {
+        "onlineOperational": "Online - Operational",
+        "lastHeartbeat": "Last heartbeat"
+      },
+      "kpi": {
+        "todaysWashes": "Today's Washes",
+        "todaysRevenue": "Today's Revenue",
+        "uptime30Days": "Uptime (30 days)",
+        "nextMaintenance": "Next Maintenance"
+      },
+      "tabs": {
+        "overview": "Overview",
+        "diagnostics": "Diagnostics",
+        "maintenance": "Maintenance",
+        "logs": "Logs",
+        "cctv": "CCTV",
+        "settings": "Settings"
+      },
+      "machineInfo": {
+        "title": "Machine Information",
+        "machineId": "Machine ID",
+        "model": "Model",
+        "serialNumber": "Serial Number",
+        "installationDate": "Installation Date",
+        "warrantyUntil": "Warranty Until",
+        "firmwareVersion": "Firmware Version",
+        "totalWashCycles": "Total Wash Cycles"
+      },
+      "sensors": {
+        "title": "Real-time Sensors",
+        "waterTemp": "Water Temp",
+        "waterPressure": "Water Pressure",
+        "soapLevel": "Soap Level",
+        "waxLevel": "Wax Level",
+        "powerDraw": "Power Draw",
+        "motorRpm": "Motor RPM",
+        "normal": "Normal",
+        "good": "Good",
+        "low": "Low"
+      },
+      "washStatus": {
+        "title": "Current Wash Status",
+        "complete": "Complete",
+        "currentStage": "Current Stage",
+        "program": "Program",
+        "customer": "Customer",
+        "vehicle": "Vehicle",
+        "estCompletion": "Est. Completion"
+      },
+      "todaysActivity": {
+        "title": "Today's Activity",
+        "hourlyDistribution": "Hourly Distribution"
+      },
+      "recentTransactions": {
+        "title": "Recent Transactions",
+        "columns": {
+          "time": "Time",
+          "transactionId": "Transaction ID",
+          "customer": "Customer",
+          "program": "Program"
+        }
+      },
+      "maintenanceHistory": {
+        "title": "Maintenance History",
+        "scheduledMaintenance": "Scheduled Maintenance",
+        "emergencyRepair": "Emergency Repair"
+      },
+      "activeAlerts": {
+        "title": "Active Alerts",
+        "lowWaxLevel": "Low Wax Level",
+        "firmwareUpdate": "Firmware Update Available",
+        "updateButton": "Update"
+      }
+    },
+    "alerts": {
+      "acknowledgeAll": "Acknowledge All",
+      "activeAlerts": "Active Alerts",
+      "acknowledgedBy": "Acknowledged by",
+      "kpi": {
+        "warnings": "Warnings",
+        "acknowledged": "Acknowledged",
+        "resolvedToday": "Resolved Today",
+        "requiresImmediateAction": "Requires immediate action",
+        "attentionNeeded": "Attention needed",
+        "beingHandled": "Being handled"
+      },
+      "filters": {
+        "severity": "Severity",
+        "allSeverity": "All Severity",
+        "warning": "Warning",
+        "info": "Info",
+        "last24Hours": "Last 24 hours"
+      },
+      "impact": {
+        "estimatedRevenueLoss": "Estimated Revenue Loss",
+        "affectedCustomers": "Affected Customers"
+      },
+      "actions": {
+        "viewCctv": "View CCTV",
+        "viewTicket": "View Ticket"
+      },
+      "recentlyResolved": {
+        "title": "Recently Resolved",
+        "autoResolved": "Auto-resolved",
+        "columns": {
+          "alert": "Alert",
+          "duration": "Duration",
+          "resolvedBy": "Resolved By",
+          "time": "Time"
+        }
+      }
+    },
+    "map": {
+      "statusFilter": "Status Filter",
+      "machineType": "Machine Type",
+      "viewOptions": "View Options",
+      "selfService": "Self-Service",
+      "automatic": "Automatic",
+      "premium": "Premium",
+      "clusterMarkers": "Cluster markers",
+      "showLabels": "Show labels",
+      "sites": "Sites",
+      "locations": "locations"
+    }
+  },
+  "cctv": {
+    "title": "CCTV",
+    "monitoring": {
+      "title": "CCTV Monitoring",
+      "subtitle": "Live camera feeds and recordings"
+    },
+    "actions": {
+      "recordingSettings": "Recording Settings",
+      "fullScreenView": "Full Screen View"
+    },
+    "filters": {
+      "site": "Site"
+    },
+    "camera": {
+      "live": "Live",
+      "expand": "Expand",
+      "playback": "Playback",
+      "snapshot": "Snapshot"
+    },
+    "recordings": {
+      "title": "Recent Recordings",
+      "play": "Play"
+    },
+    "incidents": {
+      "title": "Flagged Incidents",
+      "review": "Review"
+    },
+    "storage": {
+      "title": "Storage Status",
+      "used": "2.72 TB used of 4 TB",
+      "daysOfRecordings": "days of recordings"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "pageTitle": "Pricing Management",
+    "pageSubtitle": "Manage pricing templates, dynamic rules, and site assignments",
+    "actions": {
+      "importPrices": "Import Prices",
+      "createTemplate": "Create Template",
+      "newTemplate": "New Template",
+      "newRule": "New Rule",
+      "clone": "Clone"
+    },
+    "kpi": {
+      "pricingTemplates": "Pricing Templates",
+      "sitesWithOverrides": "Sites with Overrides",
+      "ofTotalSites": "{count} of total sites",
+      "dynamicRulesActive": "Dynamic Rules Active",
+      "surge": "surge",
+      "discount": "discount",
+      "avgRevenueSite": "Avg Revenue/Site",
+      "vsLastMonth": "vs last month ({pct})",
+      "sitesUsing": "Sites Using This Template",
+      "monthlyRevenue": "Monthly Revenue",
+      "avgTransaction": "Avg Transaction",
+      "includesAddons": "Includes add-ons",
+      "pctOfSites": "{pct} of total sites"
+    },
+    "tabs": {
+      "templates": "Templates",
+      "dynamicPricing": "Dynamic Pricing",
+      "addons": "Add-ons",
+      "siteAssignments": "Site Assignments"
+    },
+    "templates": {
+      "cardTitle": "Pricing Templates",
+      "table": {
+        "name": "Template Name",
+        "basicWash": "Basic Wash",
+        "premiumWash": "Premium Wash",
+        "ultimateWash": "Ultimate Wash",
+        "sitesUsing": "Sites Using",
+        "avgRevenue": "Avg Revenue",
+        "sites": "sites"
+      }
+    },
+    "dynamicRules": {
+      "cardTitle": "Dynamic Pricing Rules",
+      "table": {
+        "ruleName": "Rule Name",
+        "condition": "Condition",
+        "adjustment": "Adjustment",
+        "sitesEnabled": "Sites Enabled",
+        "ofSites": "of {total} sites"
+      }
+    },
+    "siteAssignments": {
+      "cardTitle": "Site Pricing Assignments",
+      "allTemplates": "All Templates",
+      "table": {
+        "site": "Site",
+        "template": "Template",
+        "hasOverrides": "Has Overrides",
+        "dynamicRules": "Dynamic Rules",
+        "monthlyRevenue": "Monthly Revenue",
+        "none": "None"
+      },
+      "override": "{count} override",
+      "overrides": "{count} overrides",
+      "noOverrides": "No Overrides",
+      "active": "active",
+      "showing": "Showing {shown} of {total} sites"
+    },
+    "edit": {
+      "pageTitle": "Edit Pricing Template",
+      "pageSubtitle": "Modify template pricing and site assignments",
+      "basicInfo": "Basic Information",
+      "templateName": "Template Name",
+      "templateStatus": "Template Status",
+      "deactivatingHint": "Deactivating will prevent new sites from using this template",
+      "setAsDefault": "Set as Default Template",
+      "defaultTemplate": "Default Template",
+      "defaultTemplateHint": "New sites will automatically use this template",
+      "washServicePricing": "Wash Service Pricing",
+      "washServicePricingDesc": "Set base prices for each wash level",
+      "basicWash": "Basic Wash",
+      "basicWashDesc": "Essential exterior wash",
+      "premiumWash": "Premium Wash",
+      "premiumWashDesc": "Enhanced wash with extras",
+      "ultimateWash": "Ultimate Wash",
+      "ultimateWashDesc": "Full-service premium wash",
+      "preSoak": "Pre-Soak",
+      "highPressureWash": "High-Pressure Wash",
+      "rinse": "Rinse",
+      "airDry": "Air Dry",
+      "allBasicFeatures": "All Basic Features",
+      "tripleFoam": "Triple Foam",
+      "wheelCleaner": "Wheel Cleaner",
+      "spotFreeRinse": "Spot-Free Rinse",
+      "allPremiumFeatures": "All Premium Features",
+      "ceramicCoating": "Ceramic Coating",
+      "tireShine": "Tire Shine",
+      "rainRepellent": "Rain Repellent",
+      "interiorVacuum": "Interior Vacuum",
+      "dynamicRulesDesc": "Select which dynamic pricing rules apply to this template",
+      "peakHoursSurge": "Peak Hours Surge",
+      "peakHoursSurgeDesc": "+20% during 8-10 AM and 5-7 PM weekdays",
+      "weekendPricing": "Weekend Pricing",
+      "weekendPricingDesc": "+10% on Saturday and Sunday",
+      "rainyDayDiscount": "Rainy Day Discount",
+      "rainyDayDiscountDesc": "-15% when raining (weather API triggered)",
+      "earlyBirdDiscount": "Early Bird Discount",
+      "earlyBirdDiscountDesc": "-10% during 6-8 AM weekdays",
+      "holidayPricing": "Holiday Pricing",
+      "holidayPricingDesc": "+15% on public holidays",
+      "manageDynamicRules": "Manage Dynamic Rules →",
+      "addonServicePricing": "Add-on Service Pricing",
+      "addonServicePricingDesc": "Set prices for individual add-on services",
+      "service": "Service",
+      "regular": "Regular",
+      "member": "Member",
+      "dashboardWipe": "Dashboard Wipe",
+      "airFreshener": "Air Freshener",
+      "undercarriageWash": "Undercarriage Wash",
+      "memberDiscount": "Member Discount (%)",
+      "memberDiscountHint": "Applied to all add-on services for members",
+      "siteAssignmentsDesc": "Sites using this pricing template",
+      "sitesAssigned": "{count} sites assigned",
+      "oneOverride": "1 override",
+      "twoOverrides": "2 overrides",
+      "moreSites": "+{count} more sites",
+      "dangerZone": "Danger Zone",
+      "cloneTemplate": "Clone Template",
+      "cloneTemplateDesc": "Create a copy of this template with a new name",
+      "archiveTemplate": "Archive Template",
+      "archiveTemplateDesc": "Hide template from new site assignments. Existing assignments remain.",
+      "archive": "Archive",
+      "deleteTemplate": "Delete Template",
+      "deleteTemplateDesc": "Permanently delete. Only available when no sites are assigned.",
+      "lastSaved": "Last saved: just now"
+    },
+    "addons": {
+      "pageTitle": "Add-on Services",
+      "pageSubtitle": "Manage individual add-on services and combo packages",
+      "addService": "Add Service",
+      "kpi": {
+        "addonServices": "Add-on Services",
+        "activeServices": "Active services",
+        "addonRevenue": "Add-on Revenue (MTD)",
+        "attachRate": "Attach Rate",
+        "avgAddonValue": "Avg Add-on Value",
+        "perTransaction": "Per transaction"
+      },
+      "catalog": {
+        "cardTitle": "Add-on Service Catalog",
+        "table": {
+          "service": "Service",
+          "category": "Category",
+          "basePrice": "Base Price",
+          "memberPrice": "Member Price",
+          "sitesEnabled": "Sites Enabled",
+          "monthlySales": "Monthly Sales",
+          "revenue": "Revenue (MTD)"
+        },
+        "interiorVacuumDesc": "Full interior vacuum cleaning",
+        "dashboardWipeDesc": "Dashboard and console wipe-down",
+        "tireShineDesc": "Tire and wheel shine treatment",
+        "rainRepellentDesc": "Hydrophobic rain repellent coating",
+        "ceramicCoatingDesc": "Long-lasting ceramic protection",
+        "airFreshenerDesc": "Interior fragrance treatment",
+        "wheelCleanerDesc": "Deep wheel and rim cleaning",
+        "undercarriageWashDesc": "Full undercarriage pressure wash"
+      },
+      "categories": {
+        "interior": "Interior",
+        "exterior": "Exterior",
+        "protection": "Protection"
+      },
+      "topPerforming": {
+        "cardTitle": "Top Performing Add-ons",
+        "sales": "sales"
+      },
+      "revenueByCategory": {
+        "cardTitle": "Revenue by Category",
+        "exteriorServices": "3 exterior services",
+        "exteriorPct": "61% of add-on revenue",
+        "interiorServices": "3 interior services",
+        "interiorPct": "61% of add-on revenue",
+        "protectionServices": "2 protection services",
+        "protectionPct": "36% of add-on revenue"
+      },
+      "combos": {
+        "cardTitle": "Combo Packages",
+        "cardDesc": "Bundle multiple add-ons at a discounted rate",
+        "createCombo": "Create Combo",
+        "table": {
+          "packageName": "Package Name",
+          "includedServices": "Included Services",
+          "regularTotal": "Regular Total",
+          "packagePrice": "Package Price",
+          "savings": "Savings"
+        },
+        "interiorDetailPack": "Interior Detail Pack",
+        "interiorDetailPackServices": "Vacuum + Dashboard Wipe + Air Freshener",
+        "fullProtection": "Full Protection Pack",
+        "fullProtectionServices": "Rain Repellent + Ceramic Coating + Tire Shine",
+        "wheelTireCombo": "Wheel & Tire Combo",
+        "wheelTireComboServices": "Wheel Cleaner + Tire Shine",
+        "ultimateAddonPack": "Ultimate Add-on Pack",
+        "ultimateAddonPackServices": "All 8 add-on services bundled"
+      }
+    },
+    "dynamic": {
+      "pageTitle": "Dynamic Pricing",
+      "pageSubtitle": "Configure time-based, weather-based, and event-based pricing rules",
+      "viewHistory": "View History",
+      "createRule": "Create Rule",
+      "kpi": {
+        "activeRules": "Active Rules",
+        "ofTotalRules": "of {total} total rules",
+        "surgeRevenueImpact": "Surge Revenue Impact",
+        "thisMonth": "This month",
+        "discountRevenueLost": "Discount Revenue Lost",
+        "offsetByVolume": "Offset by volume increase",
+        "netDynamicImpact": "Net Dynamic Pricing Impact",
+        "vsBase": "vs base pricing"
+      },
+      "currentlyActive": "Currently Active Rules",
+      "activeUntil": "Active until {time} today",
+      "weatherApiTriggered": "Weather API triggered",
+      "netEffect": "Net effect: +5% on current prices",
+      "todaySchedule": "Today's Schedule",
+      "basePricing": "Base Pricing",
+      "allRules": {
+        "cardTitle": "All Dynamic Pricing Rules",
+        "surge": "Surge",
+        "discount": "Discount",
+        "table": {
+          "triggerCondition": "Trigger Condition",
+          "thisMonthImpact": "This Month Impact"
+        },
+        "timeBased": "Time-based",
+        "dayBased": "Day-based",
+        "weatherBased": "Weather-based",
+        "calendarBased": "Calendar-based",
+        "whenRaining": "When raining (weather API)",
+        "publicHolidays": "Taiwan public holidays",
+        "noHolidays": "No holidays this month"
+      },
+      "charts": {
+        "revenueImpact": "Revenue Impact by Rule (MTD)",
+        "volumeImpact": "Volume Impact by Rule (MTD)",
+        "peakHours": "Peak Hours",
+        "weekend": "Weekend",
+        "earlyBird": "Early Bird",
+        "rainyDay": "Rainy Day"
+      }
+    },
+    "sites": {
+      "breadcrumb": "Site Assignments",
+      "pageTitle": "Site Pricing Assignments",
+      "pageSubtitle": "View and manage pricing templates assigned to each site",
+      "bulkAssign": "Bulk Assign",
+      "exportReport": "Export Report",
+      "kpi": {
+        "totalSites": "Total Sites",
+        "acrossAllOperators": "Across all operators",
+        "pctOfSites": "{pct} of total sites",
+        "totalOverrides": "Total Price Overrides",
+        "individualPriceAdjustments": "Individual price adjustments",
+        "avgOverride": "Avg Override Amount",
+        "aboveTemplatePrice": "Above template base price"
+      },
+      "overrideStatus": "Override Status",
+      "hasOverrides": "Has Overrides",
+      "clearFilters": "Clear Filters",
+      "allSites": "All Sites ({count})",
+      "table": {
+        "operator": "Operator"
+      },
+      "showing": "Showing {shown} of {total} sites",
+      "templateDistribution": {
+        "cardTitle": "Template Distribution",
+        "withOverrides": "{count} with overrides"
+      },
+      "overrideSummary": {
+        "cardTitle": "Override Summary",
+        "basicWashOverrides": "Basic wash overrides",
+        "premiumWashOverrides": "Premium wash overrides",
+        "ultimateWashOverrides": "Ultimate wash overrides",
+        "avgOverrideImpact": "Avg Override Impact",
+        "aboveTemplateBasePrices": "above template base prices"
+      },
+      "legend": {
+        "templatePrice": "Template Price",
+        "siteOverride": "Site Override",
+        "notOffered": "Not Offered"
+      }
+    }
+  },
+  "marketing": {
+    "title": "Marketing",
+    "pageTitle": "Marketing & Campaigns",
+    "pageSubtitle": "Manage campaigns, promotions, and customer engagement",
+    "actions": {
+      "exportReport": "Export Report",
+      "createCampaign": "Create Campaign",
+      "clone": "Clone"
+    },
+    "kpi": {
+      "activeCampaigns": "Active Campaigns",
+      "runningAcrossSites": "Running across {count} sites",
+      "totalRedemptions": "Total Redemptions",
+      "vsLastMonth": "vs last month ({pct})",
+      "avgConversionRate": "Avg Conversion Rate",
+      "revenueAttributed": "Revenue Attributed"
+    },
+    "tabs": {
+      "campaigns": "Campaigns",
+      "promotions": "Promotions",
+      "siteTargeting": "Site Targeting",
+      "pushNotifications": "Push Notifications",
+      "analytics": "Analytics",
+      "notifications": "Notifications",
+      "sites": "Sites"
+    },
+    "campaigns": {
+      "cardTitle": "Active Campaigns",
+      "cardDesc": "Campaigns running across your network",
+      "table": {
+        "campaign": "Campaign",
+        "offer": "Offer",
+        "duration": "Duration",
+        "sitesActive": "Sites Active",
+        "redemptions": "Redemptions",
+        "viewSites": "View Sites"
+      }
+    },
+    "activation": {
+      "cardTitle": "Campaign Activation Matrix",
+      "cardDesc": "See which campaigns are running at each site",
+      "optedOut": "Opted Out",
+      "table": {
+        "site": "Site",
+        "holiday": "Holiday",
+        "referral": "Referral",
+        "weekend": "Weekend",
+        "newYear": "New Year",
+        "birthday": "Birthday"
+      },
+      "legend": {
+        "campaignRunning": "Campaign running",
+        "startsLater": "Starts later",
+        "siteOptedOut": "Site opted out"
+      },
+      "viewAllSites": "View all {count} sites"
+    },
+    "promoCodes": {
+      "cardTitle": "Active Promo Codes",
+      "createPromoCode": "Create Promo Code",
+      "table": {
+        "code": "Code",
+        "discount": "Discount",
+        "sites": "Sites",
+        "uses": "Uses",
+        "limit": "Limit",
+        "validUntil": "Valid Until"
+      },
+      "allSites": "All Sites",
+      "unlimited": "Unlimited",
+      "onePerUser": "1 per user",
+      "ongoing": "Ongoing"
+    },
+    "performance": {
+      "cardTitle": "Performance Highlights",
+      "topPerformingSite": "Top Performing Site",
+      "highestRedemptionRate": "Highest redemption rate: {rate}",
+      "needsAttention": "Needs Attention",
+      "belowAvgRedemptionRate": "Below average: {rate}",
+      "campaignsActive": "Campaigns Active"
+    },
+    "recentPush": {
+      "cardTitle": "Recent Push Notifications",
+      "sendNew": "Send New",
+      "allSites": "All Sites",
+      "automated": "Automated"
+    },
+    "recentEmail": {
+      "cardTitle": "Recent Email Campaigns",
+      "sendNew": "Send New"
+    },
+    "edit": {
+      "pageTitle": "Edit Campaign",
+      "pageSubtitle": "Modify campaign settings, offer details, and site targeting",
+      "preview": "Preview",
+      "basicInfo": "Basic Information",
+      "campaignName": "Campaign Name",
+      "campaignType": "Campaign Type",
+      "types": {
+        "seasonal": "Seasonal",
+        "referral": "Referral",
+        "recurring": "Recurring",
+        "flashSale": "Flash Sale",
+        "loyalty": "Loyalty"
+      },
+      "descriptionHint": "Shown to customers in the app",
+      "campaignColor": "Campaign Color",
+      "offerDetails": "Offer Details",
+      "offerType": "Offer Type",
+      "offerTypes": {
+        "percentageOff": "Percentage Off",
+        "percentageOffExample": "e.g. 20% off all washes",
+        "fixedAmount": "Fixed Amount",
+        "fixedAmountExample": "e.g. $5 off any wash",
+        "freeItem": "Free Item",
+        "freeItemExample": "e.g. Free basic wash",
+        "freeUpgrade": "Free Upgrade",
+        "freeUpgradeExample": "e.g. Upgrade to premium"
+      },
+      "discountValue": "Discount Value",
+      "discountValueHint": "Enter percentage (1-100) for percentage discounts",
+      "appliesTo": "Applies To",
+      "appliesToOptions": {
+        "premiumOnly": "Premium Wash Only",
+        "allTypes": "All Wash Types",
+        "basicOnly": "Basic Wash Only",
+        "addonsOnly": "Add-ons Only"
+      },
+      "promoCode": "Promo Code",
+      "promoCodePlaceholder": "e.g., HOLIDAY20 (optional)",
+      "promoCodeHint": "Leave blank for auto-apply campaigns (no code required)",
+      "durationSchedule": "Duration & Schedule",
+      "fixedDates": "Fixed Dates",
+      "ongoing": "Ongoing",
+      "recurring": "Recurring",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "usageLimits": "Usage Limits",
+      "totalRedemptionLimit": "Total Redemption Limit",
+      "totalRedemptionLimitHint": "Leave blank for no limit",
+      "perCustomerLimit": "Per Customer Limit",
+      "perCustomerOptions": {
+        "one": "1 use per customer",
+        "two": "2 uses per customer",
+        "three": "3 uses per customer",
+        "five": "5 uses per customer"
+      },
+      "combineMembership": "Can be combined with membership discounts",
+      "combinePromotions": "Can be combined with other promotions",
+      "siteTargeting": "Site Targeting",
+      "sitesSelected": "{count}/{total} sites selected",
+      "allSitesEligible": "All sites eligible",
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "eligibilityRules": "Eligibility Rules",
+      "optional": "Optional",
+      "ruleFields": {
+        "customerType": "Customer Type",
+        "membership": "Membership",
+        "totalVisits": "Total Visits",
+        "lastVisit": "Last Visit",
+        "pointsBalance": "Points Balance"
+      },
+      "ruleOperators": {
+        "is": "is",
+        "isNot": "is not"
+      },
+      "ruleValues": {
+        "allCustomers": "All Customers",
+        "newCustomers": "New Customers",
+        "returningCustomers": "Returning Customers",
+        "membersOnly": "Members Only"
+      },
+      "addRule": "Add Rule",
+      "dangerZone": "Danger Zone",
+      "pauseCampaign": "Pause Campaign",
+      "archiveCampaign": "Archive Campaign",
+      "cloneCampaign": "Clone Campaign",
+      "deleteCampaign": "Delete Campaign"
+    },
+    "promotions": {
+      "pageTitle": "Promotions & Promo Codes",
+      "pageSubtitle": "Manage discount codes, auto-apply promotions, and redemption tracking",
+      "createPromoCode": "Create Promo Code",
+      "kpi": {
+        "activePromoCodes": "Active Promo Codes",
+        "expiringSoon": "{count} expiring soon",
+        "discountValueGiven": "Discount Value Given",
+        "thisMonth": "This month",
+        "revenueGenerated": "Revenue Generated",
+        "roi": "3.5x ROI on discount spend"
+      },
+      "types": {
+        "percentageOff": "Percentage Off",
+        "fixedAmount": "Fixed Amount",
+        "freeService": "Free Service",
+        "siteSpecific": "Site-Specific"
+      },
+      "table": {
+        "usesLimit": "Uses / Limit",
+        "validPeriod": "Valid Period"
+      },
+      "freeWash": "Free Wash",
+      "topPerforming": {
+        "cardTitle": "Top Performing Codes"
+      },
+      "redemptionTrend": {
+        "cardTitle": "Redemption Trend (This Month)",
+        "legendDesc": "Weekly redemptions — highest in W4 (holiday push)"
+      },
+      "autoApply": {
+        "cardTitle": "Auto-Apply Promotions",
+        "cardDesc": "Automatically applied based on customer behavior",
+        "table": {
+          "promotion": "Promotion",
+          "triggerCondition": "Trigger Condition",
+          "appliedThisMonth": "Applied This Month"
+        },
+        "loyaltyMilestone": "Loyalty Milestone Reward",
+        "loyaltyMilestoneTrigger": "Customer reaches 10th wash",
+        "freeBasicWash": "Free Basic Wash",
+        "memberAnniversary": "Member Anniversary Bonus",
+        "memberAnniversaryTrigger": "1 year membership anniversary",
+        "freeUltimateWash": "Free Ultimate Wash",
+        "bulkPurchase": "Bulk Purchase Discount",
+        "bulkPurchaseTrigger": "Buy 5 washes in one transaction",
+        "bulkPurchaseDiscount": "15% off total",
+        "offPeakHours": "Off-Peak Hours Promotion",
+        "offPeakHoursTrigger": "Wash between 10 AM – 3 PM",
+        "offPeakHoursDiscount": "10% off"
+      },
+      "recentRedemptions": {
+        "cardTitle": "Recent Redemptions",
+        "table": {
+          "time": "Time",
+          "customer": "Customer",
+          "site": "Site",
+          "original": "Original",
+          "final": "Final"
+        }
+      }
+    },
+    "notifications": {
+      "pageTitle": "Push Notifications",
+      "pageSubtitle": "Manage push notifications and automated messaging",
+      "templates": "Templates",
+      "sendNotification": "Send Notification",
+      "kpi": {
+        "appUsers": "App Users",
+        "newThisMonth": "{count} new this month",
+        "pushEnabled": "Push Enabled",
+        "optInRate": "{rate} opt-in rate",
+        "avgOpenRate": "Avg Open Rate",
+        "conversions": "Conversions",
+        "ctrToAction": "CTR to action"
+      },
+      "types": {
+        "promotional": "Promotional",
+        "transactional": "Transactional",
+        "reminder": "Reminder"
+      },
+      "recent": {
+        "cardTitle": "Recent Notifications",
+        "table": {
+          "notification": "Notification",
+          "audience": "Audience",
+          "delivered": "Delivered",
+          "opened": "Opened",
+          "clicked": "Clicked",
+          "sent": "Sent",
+          "targeted": "Targeted",
+          "allUsers": "All Users",
+          "auto": "Auto",
+          "settings": "Settings"
+        }
+      },
+      "scheduled": {
+        "cardTitle": "Scheduled Notifications",
+        "schedule": "Schedule"
+      },
+      "triggers": {
+        "cardTitle": "Automated Triggers",
+        "addTrigger": "Add Trigger"
+      },
+      "bestSendTimes": {
+        "cardTitle": "Best Send Times",
+        "cardDesc": "Based on open rate analysis across all campaigns"
+      }
+    },
+    "analytics": {
+      "pageTitle": "Marketing Analytics",
+      "pageSubtitle": "Campaign performance, ROI tracking, and customer engagement insights",
+      "roi": {
+        "header": "Campaign ROI",
+        "desc": "Return on marketing investment this month",
+        "totalSpend": "Total Spend",
+        "revenue": "Revenue",
+        "netProfit": "Net Profit"
+      },
+      "channelPerformance": {
+        "cardTitle": "Channel Performance",
+        "pushNotifications": "Push Notifications",
+        "emailCampaigns": "Email Campaigns",
+        "inAppPromos": "In-App Promotions",
+        "sms": "SMS"
+      },
+      "performanceTrend": {
+        "cardTitle": "Performance Trend",
+        "redemptions": "Redemptions",
+        "revenueK": "Revenue ($K)"
+      },
+      "conversionFunnel": {
+        "cardTitle": "Conversion Funnel",
+        "thisMonth": "This Month",
+        "impressions": "Impressions",
+        "clicked": "Clicked",
+        "startedWash": "Started Wash",
+        "redeemed": "Redeemed"
+      },
+      "topCampaigns": {
+        "cardTitle": "Top Campaigns",
+        "redemptions": "redemptions"
+      },
+      "performanceBySite": {
+        "cardTitle": "Performance by Site",
+        "showingTop": "Showing top {shown} of {total} sites",
+        "viewAll": "View all sites",
+        "table": {
+          "site": "Site",
+          "performance": "Performance",
+          "trend": "Trend"
+        }
+      },
+      "insights": {
+        "cardTitle": "AI Insights & Recommendations",
+        "aiGenerated": "AI Generated",
+        "opportunity": "Opportunity",
+        "opportunityTitle": "Weekend push notifications underutilized",
+        "opportunityDesc": "Sites with weekend notifications see 2.3x higher Saturday redemptions. Enable for 4 remaining sites.",
+        "attention": "Attention",
+        "attentionTitle": "Zhonghe Industrial below average",
+        "attentionDesc": "Conversion rate of 2.1% vs 4.2% average. Consider enabling Weekend Warrior campaign.",
+        "reviewSite": "Review Site"
+      }
+    },
+    "sitesPage": {
+      "breadcrumb": "Site Targeting",
+      "pageTitle": "Site Campaign Management",
+      "pageSubtitle": "Manage campaign participation and opt-outs across all sites",
+      "bulkUpdate": "Bulk Update",
+      "exportMatrix": "Export Matrix",
+      "kpi": {
+        "totalSites": "Total Sites",
+        "activeLocations": "Active locations",
+        "fullParticipation": "Full Participation",
+        "sitesWithAllCampaigns": "Sites with all campaigns active",
+        "partialOptOut": "Partial Opt-out",
+        "sitesWithSomeOptOuts": "Sites with some opt-outs",
+        "avgCampaignCoverage": "Avg Campaign Coverage",
+        "acrossAllSites": "Across all sites"
+      },
+      "matrix": {
+        "cardTitle": "Campaign Activation Matrix",
+        "cardDesc": "Overview of which campaigns are active at each site",
+        "table": {
+          "site": "Site",
+          "holidaySpecial": "Holiday Special",
+          "referAFriend": "Refer a Friend",
+          "weekendWarrior": "Weekend Warrior",
+          "newYearSale": "New Year Sale",
+          "birthdayBonus": "Birthday Bonus"
+        }
+      },
+      "coverage": {
+        "cardTitle": "Campaign Coverage"
+      },
+      "topSites": {
+        "cardTitle": "Top Sites by Redemptions"
+      },
+      "optOuts": {
+        "cardTitle": "Site Opt-Outs",
+        "cardDesc": "Sites that have opted out of specific campaigns",
+        "table": {
+          "reason": "Reason",
+          "optedOut": "Opted Out"
+        },
+        "reEnable": "Re-enable"
+      }
+    }
+  },
+  "transactions": {
+    "title": "Transactions",
+    "subtitle": "View and manage all wash transactions",
+    "actions": {
+      "exportCsv": "Export CSV",
+      "exportPdf": "Export PDF"
+    },
+    "kpi": {
+      "todaysTransactions": "Today's Transactions",
+      "todaysRevenue": "Today's Revenue",
+      "avgTransactionValue": "Avg. Transaction Value",
+      "refundRate": "Refund Rate"
+    },
+    "filters": {
+      "searchPlaceholder": "Search transactions...",
+      "allPaymentMethods": "All Payment Methods",
+      "refunded": "Refunded",
+      "customRange": "Custom Range"
+    },
+    "table": {
+      "transactionId": "Transaction ID",
+      "site": "Site",
+      "customer": "Customer",
+      "service": "Service",
+      "payment": "Payment",
+      "guest": "Guest"
+    },
+    "pagination": {
+      "showing": "Showing {from}-{to} of {total} transactions"
+    },
+    "detail": {
+      "pageTitle": "Transaction",
+      "live": "LIVE",
+      "washEstimate": "Wash estimated to complete in 2 minutes",
+      "actions": {
+        "printReceipt": "Print Receipt",
+        "issueRefund": "Issue Refund",
+        "createTicket": "Create Ticket",
+        "viewProfile": "View Profile",
+        "viewLiveFeed": "View Live Feed"
+      },
+      "sections": {
+        "transactionDetails": "Transaction Details",
+        "customerInformation": "Customer Information",
+        "serviceDetails": "Service Details",
+        "locationEquipment": "Location & Equipment",
+        "paymentInformation": "Payment Information",
+        "washProgress": "Wash Progress",
+        "cctvSnapshot": "CCTV Snapshot"
+      },
+      "fields": {
+        "dateTime": "Date & Time",
+        "duration": "Duration",
+        "membership": "Membership",
+        "vehicle": "Vehicle",
+        "previousVisits": "Previous Visits",
+        "operator": "Operator",
+        "machine": "Machine",
+        "machineType": "Machine Type",
+        "amountCharged": "Amount Charged",
+        "pointsEarned": "Points Earned"
+      },
+      "serviceLines": {
+        "included": "Included",
+        "subtotal": "Subtotal",
+        "membershipDiscount": "Membership Discount",
+        "totalCharged": "Total Charged"
+      },
+      "washSteps": {
+        "entryDetection": "Entry Detection",
+        "paymentConfirmed": "Payment Confirmed",
+        "preSoak": "Pre-Soak",
+        "soapApplication": "Soap Application",
+        "brushWash": "Brush Wash",
+        "rinseCycle": "Rinse Cycle",
+        "tireShine": "Tire Shine",
+        "airDry": "Air Dry",
+        "exit": "Exit"
+      },
+      "cctv": {
+        "entryCamera": "Entry Camera",
+        "bay1Camera": "Bay 1 Camera",
+        "exitCamera": "Exit Camera",
+        "waiting": "Waiting..."
+      }
+    }
+  }
+}
