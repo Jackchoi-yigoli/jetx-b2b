@@ -2456,6 +2456,12 @@ tbody tr.clickable {
     margin-top: 24px;
 }
 
+/* Cards inside grids are spaced by grid gap, not margin */
+.grid-2 > .card,
+.grid-3 > .card {
+    margin-top: 0;
+}
+
 /* ========== Utilities ========== */
 .mb-0 { margin-bottom: 0; }
 .mb-8 { margin-bottom: 8px; }
