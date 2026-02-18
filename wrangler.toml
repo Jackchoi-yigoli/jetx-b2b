@@ -1,0 +1,20 @@
+# Cloudflare Pages/Workers configuration
+# This file is used for deploying to Cloudflare Pages
+
+name = "jetx-b2b"
+compatibility_date = "2024-01-01"
+
+# Build configuration for Next.js
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+# Environment variables
+[vars]
+# Add your environment variables here
+# NEXT_PUBLIC_API_URL = "https://api.example.com"
+
+# Node compatibility
+[build.environment]
+NODE_VERSION = "20"
