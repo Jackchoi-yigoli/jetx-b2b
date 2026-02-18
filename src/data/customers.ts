@@ -1,0 +1,43 @@
+import type { Customer } from '@/types';
+
+export const customers: Customer[] = [
+  {
+    id: 'cust-45678',
+    name: 'Emily Chen',
+    email: 'emily.chen@email.com',
+    phone: '+886-912-345-678',
+    language: 'zh-TW',
+    homeSiteId: 'site-xinyi',
+    joinDate: '2023-03-15',
+    avatarInitials: 'EC',
+    status: 'active',
+    segment: 'vip',
+    walletBalance: 45.60,
+  },
+  {
+    id: 'cust-12345',
+    name: 'David Wang',
+    email: 'david.wang@email.com',
+    phone: '+886-923-456-789',
+    language: 'zh-TW',
+    homeSiteId: 'site-xinyi',
+    joinDate: '2023-05-10',
+    avatarInitials: 'DW',
+    status: 'active',
+    segment: 'regular',
+    walletBalance: 120.00,
+  },
+  {
+    id: 'cust-67890',
+    name: 'Sarah Lin',
+    email: 'sarah.lin@email.com',
+    phone: '+886-934-567-890',
+    language: 'zh-TW',
+    homeSiteId: 'site-daan',
+    joinDate: '2023-09-20',
+    avatarInitials: 'SL',
+    status: 'active',
+    segment: 'regular',
+    walletBalance: 0.00,
+  },
+];

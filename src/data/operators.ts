@@ -1,0 +1,48 @@
+import type { Operator } from '@/types';
+
+export const operators: Operator[] = [
+  {
+    id: 'op-cleanwash',
+    name: 'CleanWash Corp',
+    status: 'active',
+    contractType: 'franchise',
+    contractStart: '2023-01-15',
+    contractEnd: '2025-12-31',
+    revenueSharePct: 15,
+    territory: 'North Region (Exclusive)',
+    siteLimit: 20,
+    contact: {
+      name: 'Michael Chen',
+      position: 'CEO',
+      email: 'michael@cleanwash.com',
+      phone: '+886-2-1234-5678',
+      address: '123 Business Ave, Taipei 100',
+    },
+    taxId: '12345678',
+    businessRegistrationNumber: 'TW-2023-CW-001',
+    country: 'Taiwan',
+    createdAt: '2023-01-15',
+  },
+  {
+    id: 'op-abc',
+    name: 'ABC Car Wash Co.',
+    status: 'active',
+    contractType: 'license',
+    contractStart: '2023-03-01',
+    contractEnd: '2026-02-28',
+    revenueSharePct: 12,
+    territory: 'Central Region',
+    siteLimit: 15,
+    contact: {
+      name: 'Sarah Wong',
+      position: 'Operations Manager',
+      email: 'sarah@abccarwash.com',
+      phone: '+1-234-567-8900',
+      address: '123 Main Street, City, State 12345',
+    },
+    taxId: '87654321',
+    businessRegistrationNumber: 'US-2023-ABC-002',
+    country: 'United States',
+    createdAt: '2023-03-01',
+  },
+];

@@ -1,175 +1,139 @@
-'use client';
-
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import Card from '@/components/ui/Card';
-import { useState } from 'react';
+import Link from 'next/link';
+import { sites, getOperatorById } from '@/lib/data';
+import { getTranslations } from 'next-intl/server';
 
-export default function SitesPage() {
-  const [searchTerm, setSearchTerm] = useState('');
+function getSiteStatusBadge(status: string, t: (key: string) => string) {
+  switch (status) {
+    case 'online':
+      return <span className="badge-pill badge-success"><span className="status-dot online"></span>{t('list.status.online')}</span>;
+    case 'alert':
+      return <span className="badge-pill badge-warning"><span className="status-dot alert"></span>{t('list.status.alert')}</span>;
+    case 'offline':
+      return <span className="badge-pill badge-error"><span className="status-dot offline"></span>{t('list.status.offline')}</span>;
+    case 'maintenance':
+      return <span className="badge-pill badge-warning"><span className="status-dot alert"></span>{t('list.status.maintenance')}</span>;
+    default:
+      return <span className="badge-pill badge-gray">{status}</span>;
+  }
+}
 
-  // Mock sites data
-  const sites = [
-    {
-      id: 1,
-      name: 'Downtown Plaza',
-      operator: 'ABC Car Wash Co.',
-      location: '123 Main St, Downtown',
-      equipment: '4x A5, 6x A0',
-      status: 'online',
-      revenue: '$8,420',
-      uptime: '98.5%',
-    },
-    {
-      id: 2,
-      name: 'Highway Station',
-      operator: 'ABC Car Wash Co.',
-      location: '456 Highway 1, Exit 24',
-      equipment: '6x A5, 8x A0',
-      status: 'warning',
-      revenue: '$12,840',
-      uptime: '95.2%',
-    },
-    {
-      id: 3,
-      name: 'Airport Location',
-      operator: 'XYZ Wash',
-      location: '789 Airport Blvd',
-      equipment: '3x A5, 4x A0',
-      status: 'online',
-      revenue: '$6,180',
-      uptime: '97.1%',
-    },
-    {
-      id: 4,
-      name: 'Mall Plaza',
-      operator: 'QuickClean',
-      location: '321 Shopping Center Dr',
-      equipment: '2x A5, 3x A0',
-      status: 'offline',
-      revenue: '$0',
-      uptime: '0%',
-    },
-    {
-      id: 5,
-      name: 'Tech Park',
-      operator: 'XYZ Wash',
-      location: '654 Innovation Ave',
-      equipment: '1x A5, 2x A0',
-      status: 'online',
-      revenue: '$3,560',
-      uptime: '99.2%',
-    },
-  ];
+export default async function SitesPage() {
+  const t = await getTranslations('sites');
+  const tc = await getTranslations('common');
 
-  const filteredSites = sites.filter(
-    (site) =>
-      site.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      site.operator.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const operatorCount = new Set(sites.map((s) => s.operatorId)).size;
 
   return (
     <DashboardLayout>
-      <div className="space-y-6">
-        {/* Page Header */}
-        <div>
-          <div className="text-sm text-text-secondary mb-1">Business</div>
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-text-primary">Sites</h1>
-              <p className="text-sm text-text-secondary mt-1">Manage and monitor all car wash locations</p>
-            </div>
-            <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-hover transition-colors">
-              Add New Site
+      <div className="page-header">
+        <div className="breadcrumb">
+          <Link href="/">{tc('breadcrumbs.business')}</Link>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          {t('breadcrumb.sites')}
+        </div>
+        <div className="page-title-row">
+          <div>
+            <h1 className="page-title">{t('list.title')}</h1>
+            <p className="page-subtitle">{t('list.subtitle', { siteCount: sites.length, operatorCount })}</p>
+          </div>
+          <div className="page-actions">
+            <button className="btn btn-primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
+              {t('list.addSite')}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Filters & Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="md:col-span-2">
-            <input
-              type="text"
-              placeholder="Search sites..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full h-10 px-4 rounded-md border border-border bg-bg-input text-text-primary placeholder-text-muted focus:outline-none focus:border-border-focus focus:ring-1 focus:ring-border-focus"
-            />
+      <div className="kpi-grid mb-24">
+        <div className="kpi-card">
+          <div className="kpi-label">{t('list.kpi.totalSites')}</div>
+          <div className="kpi-value">{sites.length}</div>
+          <div className="kpi-change neutral">{t('list.kpi.totalSitesChange', { count: operatorCount })}</div>
+        </div>
+        <div className="kpi-card">
+          <div className="kpi-label">{t('list.kpi.newThisMonth')}</div>
+          <div className="kpi-value">3</div>
+          <div className="kpi-change positive">+7% growth</div>
+        </div>
+        <div className="kpi-card">
+          <div className="kpi-label">{t('list.kpi.avgWashesPerDay')}</div>
+          <div className="kpi-value">156</div>
+          <div className="kpi-change positive">+12% vs last month</div>
+        </div>
+        <div className="kpi-card">
+          <div className="kpi-label">{t('list.kpi.avgRevenuePerSite')}</div>
+          <div className="kpi-value">$2,340</div>
+          <div className="kpi-change positive">+8% vs last month</div>
+        </div>
+      </div>
+
+      <div className="table-container">
+        <div className="table-filters">
+          <div className="search-input" style={{ width: 250 }}>
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <input type="text" placeholder={t('list.searchPlaceholder')} />
           </div>
-          <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
-            <div className="text-sm text-text-secondary">Total Sites</div>
-            <div className="text-2xl font-semibold text-text-primary mt-1">{sites.length}</div>
-          </div>
-          <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
-            <div className="text-sm text-text-secondary">Online</div>
-            <div className="text-2xl font-semibold text-success mt-1">
-              {sites.filter((s) => s.status === 'online').length}
-            </div>
+          <select className="filter-input">
+            <option>{tc('filters.allOperators')}</option>
+            <option>ABC Car Wash</option>
+            <option>XYZ Wash</option>
+            <option>QuickClean</option>
+          </select>
+          <select className="filter-input">
+            <option>{tc('filters.allStatus')}</option>
+            <option>{t('list.status.online')}</option>
+            <option>{t('list.status.alert')}</option>
+            <option>{t('list.status.offline')}</option>
+          </select>
+          <select className="filter-input">
+            <option>{tc('filters.allTypes')}</option>
+            <option>A0</option>
+            <option>A5</option>
+            <option>A7</option>
+          </select>
+        </div>
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>{t('list.table.siteName')}</th>
+                <th>{t('list.table.operator')}</th>
+                <th>{t('list.table.type')}</th>
+                <th>{t('list.table.machines')}</th>
+                <th>{t('list.table.status')}</th>
+                <th>{t('list.table.todaysRevenue')}</th>
+                <th>{t('list.table.actions')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sites.map((site) => {
+                const operator = getOperatorById(site.operatorId);
+                return (
+                  <tr key={site.id} className="clickable">
+                    <td>
+                      <div className="list-item-title">{site.name}</div>
+                      <div className="list-item-subtitle">{site.location}</div>
+                    </td>
+                    <td>{operator?.name ?? site.operatorId}</td>
+                    <td>{site.equipmentType}</td>
+                    <td>{site.bayCount}</td>
+                    <td>{getSiteStatusBadge(site.status, t)}</td>
+                    <td><strong>{site.status === 'offline' ? '$0' : '$—'}</strong></td>
+                    <td><button className="btn btn-icon btn-ghost sm">...</button></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div className="table-pagination">
+          <span>{t('list.pagination.showing', { count: sites.length, total: sites.length })}</span>
+          <div className="pagination-pages">
+            <button className="active">1</button>
           </div>
         </div>
-
-        {/* Sites Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredSites.map((site) => (
-            <Card key={site.id}>
-              <div className="space-y-4">
-                {/* Site Header */}
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-base font-semibold text-text-primary">{site.name}</h3>
-                    <div className="text-sm text-text-secondary mt-1">{site.operator}</div>
-                    <div className="text-sm text-text-secondary mt-0.5">{site.location}</div>
-                  </div>
-                  <span
-                    className={`px-2 py-1 text-xs font-medium rounded ${
-                      site.status === 'online'
-                        ? 'bg-success-bg text-success'
-                        : site.status === 'warning'
-                        ? 'bg-warning-bg text-warning'
-                        : 'bg-error-bg text-error'
-                    }`}
-                  >
-                    {site.status.charAt(0).toUpperCase() + site.status.slice(1)}
-                  </span>
-                </div>
-
-                {/* Site Details */}
-                <div className="pt-3 border-t border-border space-y-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-text-secondary">Equipment</span>
-                    <span className="text-text-primary font-medium">{site.equipment}</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-text-secondary">Revenue (MTD)</span>
-                    <span className="text-text-primary font-medium">{site.revenue}</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-text-secondary">Uptime</span>
-                    <span className={`font-medium ${parseInt(site.uptime) >= 95 ? 'text-success' : parseInt(site.uptime) >= 80 ? 'text-warning' : 'text-error'}`}>
-                      {site.uptime}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Actions */}
-                <div className="pt-3 border-t border-border flex gap-2">
-                  <button className="flex-1 px-3 py-2 text-sm font-medium text-primary border border-primary rounded-md hover:bg-primary-light transition-colors">
-                    View Details
-                  </button>
-                  <button className="px-3 py-2 text-sm font-medium text-text-secondary border border-border rounded-md hover:bg-gray-100 transition-colors">
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        {/* Empty State */}
-        {filteredSites.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-text-muted text-sm">No sites found matching your search.</div>
-          </div>
-        )}
       </div>
     </DashboardLayout>
   );
