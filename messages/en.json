@@ -89,6 +89,8 @@
       "last30Days": "Last 30 Days",
       "thisMonth": "This Month",
       "lastMonth": "Last Month",
+      "today": "Today",
+      "yesterday": "Yesterday",
       "thisQuarter": "This Quarter",
       "custom": "Custom"
     },

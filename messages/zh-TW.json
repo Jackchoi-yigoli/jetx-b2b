@@ -89,6 +89,8 @@
       "last30Days": "最近 30 天",
       "thisMonth": "本月",
       "lastMonth": "上月",
+      "today": "今日",
+      "yesterday": "昨日",
       "thisQuarter": "本季",
       "custom": "自訂"
     },
