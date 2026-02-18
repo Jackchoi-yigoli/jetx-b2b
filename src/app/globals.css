@@ -601,6 +601,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: start;
 }
 
 .grid-4 {
@@ -2448,18 +2449,18 @@ tbody tr.clickable {
 }
 
 /* ========== Spacing ========== */
-.card + .card,
 .card + .grid-2,
 .card + .grid-3,
 .grid-2 + .card,
-.grid-2 + .grid-2 {
+.grid-2 + .grid-2,
+.grid-3 + .card,
+.grid-3 + .grid-3 {
     margin-top: 24px;
 }
 
-/* Cards inside grids are spaced by grid gap, not margin */
-.grid-2 > .card,
-.grid-3 > .card {
-    margin-top: 0;
+/* Vertical card stacking — only outside grid containers */
+:not(.grid-2, .grid-3, .grid-4) > .card + .card {
+    margin-top: 24px;
 }
 
 /* ========== Utilities ========== */
