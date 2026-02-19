@@ -1,29 +1,111 @@
 # JetX B2B Platform
 
-A modern B2B management dashboard for car wash operations, built with Next.js 16, TypeScript, and Tailwind CSS.
+A comprehensive B2B management dashboard for car wash operations, built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and Prisma 7.
 
 ## Features
 
-- 📊 Dashboard with real-time KPIs and analytics
-- 🏢 Multi-site management and monitoring
-- 👥 Customer and operator management
-- 💰 Transaction tracking and revenue analytics
-- 🔧 Hardware monitoring and alerts
-- 📱 Responsive design for all devices
+- **Dashboard** — Real-time KPIs, revenue charts, site status overview
+- **Operators** — Multi-operator management with contract tracking and revenue share
+- **Sites** — Multi-site monitoring with equipment, CCTV, maintenance, and pricing per site
+- **Customers** — Customer profiles with vehicles, transactions, memberships, and segmentation
+- **Transactions** — Full wash transaction history with filtering and analytics
+- **Hardware** — Machine monitoring with sensor data, alerts, and maintenance records
+- **Memberships** — Subscription plans, billing records, site assignments, and analytics
+- **Pricing** — Pricing templates with wash prices, add-ons, combos, and dynamic pricing rules
+- **Marketing** — Campaigns, promo codes, notification templates, and analytics
+- **Tickets** — Support ticket system with messaging, priority, and category tracking
+- **Team** — Team members, roles with granular permissions, invitations, and activity logs
+- **Reports** — Scheduled reports with delivery history (revenue, operations, customers)
+- **CCTV** — Camera management with recording playback and storage monitoring
+- **Knowledge Base** — Internal articles for support and operations
+- **Account Settings** — API keys, integrations, webhooks, notifications, security
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **UI Components**: Custom reusable components
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript 5 |
+| UI | React 19 |
+| Styling | Tailwind CSS 4 |
+| Database | PostgreSQL (Supabase) |
+| ORM | Prisma 7 (50 enums, 46 models) |
+| Validation | Zod 4 |
+| i18n | next-intl (English + Traditional Chinese, 3000+ keys) |
+| Theme | next-themes (light/dark mode) |
+| Charts | Custom SVG (BarChart, DonutChart, StackedBarChart) |
+| Tables | Custom DataTable with sort, search, pagination |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── (auth)/           # Auth pages (login, register, forgot-password, etc.)
+│   ├── account/          # Account settings (API, integrations, notifications, security)
+│   ├── api/              # 32 RESTful API routes (14 resource groups)
+│   ├── cctv/             # CCTV monitoring
+│   ├── customers/        # Customer management + [id] detail pages
+│   ├── hardware/         # Machine monitoring, alerts, map view
+│   ├── knowledge/        # Knowledge base articles
+│   ├── marketing/        # Campaigns, promotions, notifications, analytics
+│   ├── memberships/      # Plans, subscribers, site assignments, analytics
+│   ├── operators/        # Operator management + [id] detail pages
+│   ├── pricing/          # Pricing templates, add-ons, dynamic rules
+│   ├── reports/          # Revenue, operations, customer, scheduled reports
+│   ├── sites/            # Site management + [id] detail pages (6 sub-pages each)
+│   ├── team/             # Team members, roles, invitations, activity log
+│   ├── tickets/          # Support tickets + [id] detail + create
+│   └── transactions/     # Transaction history + [id] detail
+├── components/
+│   ├── auth/             # Auth form components
+│   ├── layout/           # Sidebar, Topbar, DashboardLayout
+│   └── ui/               # BarChart, DataTable, DonutChart, StackedBarChart, TabNav, ThemeToggle, LanguageSwitcher
+├── generated/prisma/     # Prisma generated client (auto-generated, do not edit)
+├── i18n/                 # next-intl request config
+├── lib/
+│   ├── data.ts           # Static mock data (used by pages)
+│   ├── prisma.ts         # Prisma client singleton
+│   ├── services/         # 14 service files (data access layer via Prisma)
+│   └── validations/      # Zod schemas for API input validation
+messages/
+├── en.json               # English translations (3000+ keys)
+└── zh-TW.json            # Traditional Chinese translations
+prisma/
+├── schema.prisma         # Database schema (50 enums, 46 models)
+└── seed.ts               # Seed script (populates all mock data)
+```
+
+## Routes
+
+**64 page routes** across 15 modules + **32 API routes** across 14 resource groups = **96 total routes**.
+
+### API Endpoints
+
+| Resource | Routes | Methods |
+|----------|--------|---------|
+| `/api/operators` | collection + `[id]` | GET, POST, PATCH, DELETE |
+| `/api/sites` | collection + `[id]` | GET, POST, PATCH, DELETE |
+| `/api/customers` | collection + `[id]` | GET, POST, PATCH, DELETE |
+| `/api/transactions` | collection + `[id]` | GET, POST, PATCH |
+| `/api/tickets` | collection + `[id]` + `[id]/messages` | GET, POST, PATCH |
+| `/api/hardware` | collection + `[id]` + `[id]/alerts` + `[id]/maintenance` | GET, PATCH, POST |
+| `/api/memberships/plans` | collection + `[id]` | GET, POST, PATCH |
+| `/api/memberships/subscriptions` | collection + `[id]` | GET, POST, PATCH |
+| `/api/pricing` | collection + `[id]` | GET, POST, PATCH |
+| `/api/marketing/campaigns` | collection + `[id]` | GET, POST, PATCH |
+| `/api/marketing/promotions` | collection + `[id]` | GET, POST, PATCH |
+| `/api/team` | collection + `[id]` + `/invitations` | GET, POST, PATCH |
+| `/api/reports` | collection + `[id]` | GET, POST, PATCH |
+| `/api/knowledge` | collection + `[id]` | GET, POST, PATCH, DELETE |
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 20+ installed
-- npm, yarn, pnpm, or bun package manager
+- Node.js 20+
+- npm (or yarn/pnpm/bun)
+- A Supabase project (free tier works) for database
 
 ### Installation
 
@@ -31,147 +113,67 @@ A modern B2B management dashboard for car wash operations, built with Next.js 16
 # Install dependencies
 npm install
 
-# Run development server
+# Generate Prisma client
+npx prisma generate
+```
+
+### Database Setup
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Go to Project Settings > Database > Connection string
+3. Create `.env.local`:
+
+```env
+DATABASE_URL="postgresql://postgres:[PASSWORD]@db.[PROJECT].supabase.co:6543/postgres?pgbouncer=true"
+```
+
+4. Push the schema and seed data:
+
+```bash
+npx prisma db push
+npx prisma db seed
+```
+
+5. Verify with Prisma Studio:
+
+```bash
+npx prisma studio
+```
+
+### Development
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Project Structure
-
-```
-src/
-├── app/              # Next.js App Router pages
-│   ├── sites/        # Sites management page
-│   └── transactions/ # Transactions page
-├── components/
-│   ├── layout/       # Layout components (Sidebar, Topbar, DashboardLayout)
-│   └── ui/          # Reusable UI components (Card, KPICard)
-```
-
-## Deployment Options
-
-### Option 1: Vercel (Recommended for Next.js)
-
-The easiest and most optimized deployment for Next.js applications.
-
-**Steps:**
-
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import your GitHub repository: `Jackchoi-yigoli/jetx-b2b`
-3. Vercel will automatically detect Next.js configuration
-4. Click "Deploy"
-
-Your app will be live at `https://jetx-b2b.vercel.app`
-
-**Environment Variables (if needed):**
-- Add any environment variables in Vercel dashboard under Settings > Environment Variables
-
-### Option 2: Cloudflare Pages
-
-Deploy your Next.js app on Cloudflare's global network.
-
-**Steps:**
-
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. Navigate to Pages > Create a project
-3. Connect to Git > Select `jetx-b2b` repository
-4. Configure build settings:
-   - **Framework preset**: Next.js
-   - **Build command**: `npm run build`
-   - **Build output directory**: `.next`
-5. Click "Save and Deploy"
-
-**Note**: This project includes `@cloudflare/next-on-pages` for Cloudflare compatibility.
-
-### Option 3: AWS Amplify
-
-Deploy to AWS with full control over infrastructure.
-
-**Steps:**
-
-1. Go to [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
-2. Click "New app" > "Host web app"
-3. Connect to GitHub and select `jetx-b2b` repository
-4. Configure build settings:
-   ```yaml
-   version: 1
-   frontend:
-     phases:
-       preBuild:
-         commands:
-           - npm ci
-       build:
-         commands:
-           - npm run build
-     artifacts:
-       baseDirectory: .next
-       files:
-         - '**/*'
-     cache:
-       paths:
-         - node_modules/**/*
-   ```
-5. Click "Save and deploy"
-
-### Option 4: Netlify
-
-Simple deployment with continuous integration.
-
-**Steps:**
-
-1. Go to [Netlify](https://app.netlify.com/start)
-2. Import your GitHub repository
-3. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `.next`
-4. Click "Deploy site"
-
-**Create `netlify.toml`:**
-```toml
-[build]
-  command = "npm run build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-```
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Available Scripts
 
 ```bash
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
+npm run dev       # Start development server (Turbopack)
+npm run build     # Production build
+npm start         # Start production server
+npm run lint      # ESLint
+npx prisma studio # Visual database browser
+npx prisma db push   # Push schema changes to database
+npx prisma db seed   # Seed database with mock data
+npx prisma generate  # Regenerate Prisma client after schema changes
 ```
 
-## Environment Variables
+## Deployment
 
-Create a `.env.local` file for local development:
+### Vercel (Recommended)
 
-```env
-# Add your environment variables here
-# Example:
-# NEXT_PUBLIC_API_URL=https://api.example.com
-```
+1. Import your repository at [vercel.com/new](https://vercel.com/new)
+2. Add `DATABASE_URL` environment variable
+3. Deploy — Vercel auto-detects Next.js
 
-## Learn More
+### Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs)
-
-## Repository
-
-[GitHub Repository](https://github.com/Jackchoi-yigoli/jetx-b2b)
+| Variable | Description |
+|----------|-------------|
+| `DATABASE_URL` | PostgreSQL connection string (Supabase) |
 
 ## License
 

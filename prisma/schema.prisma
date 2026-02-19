@@ -1,0 +1,1415 @@
+// JetX B2B Car Wash Management Platform — Prisma Schema
+// ~50 enums, ~46 models, PostgreSQL (Supabase)
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ═══════════════════════════════════════════════════════
+// ENUMS
+// ═══════════════════════════════════════════════════════
+
+enum OperatorStatus {
+  active
+  inactive
+  suspended
+}
+
+enum ContractType {
+  franchise
+  license
+  corporate
+  partnership
+}
+
+enum SiteType {
+  full_service  @map("full-service")
+  self_service  @map("self-service")
+  hybrid
+}
+
+enum SiteStatus {
+  online
+  offline
+  maintenance
+  alert
+}
+
+enum BayStatus {
+  active
+  maintenance
+  offline
+}
+
+enum CustomerStatus {
+  active
+  inactive
+  at_risk   @map("at-risk")
+  churned
+}
+
+enum CustomerSegment {
+  vip
+  regular
+  new_customer @map("new")
+  at_risk      @map("at-risk")
+  occasional
+}
+
+enum FuelType {
+  electric
+  hybrid
+  gasoline
+  diesel
+}
+
+enum TransactionStatus {
+  in_progress @map("in-progress")
+  completed
+  failed
+  refunded
+}
+
+enum ServiceType {
+  basic
+  premium
+  deluxe
+  ultimate
+  self_service @map("self-service")
+}
+
+enum PaymentMethod {
+  membership
+  credit_card @map("credit-card")
+  cash
+  line_pay    @map("line-pay")
+  apple_pay   @map("apple-pay")
+  jetx_wallet @map("jetx-wallet")
+}
+
+enum WashStageStatus {
+  completed
+  active
+  pending
+}
+
+enum MachineType {
+  tunnel
+  rollover
+  self_service @map("self-service")
+  vacuum
+  payment_kiosk @map("payment-kiosk")
+}
+
+enum MachineCategory {
+  a0_self_service @map("a0-self-service")
+  a5_automatic    @map("a5-automatic")
+  a7_premium      @map("a7-premium")
+}
+
+enum MachineStatus {
+  online
+  offline
+  maintenance
+  error
+  alert
+}
+
+enum SensorStatus {
+  ok
+  warning
+  critical
+}
+
+enum AlertSeverity {
+  critical
+  warning
+  info
+}
+
+enum AlertStatus {
+  active
+  acknowledged
+  resolved
+}
+
+enum MaintenanceType {
+  scheduled
+  emergency
+  firmware_update @map("firmware-update")
+  error
+}
+
+enum MaintenanceRecordStatus {
+  completed
+  in_progress @map("in-progress")
+  scheduled
+}
+
+enum TicketStatus {
+  open
+  in_progress @map("in-progress")
+  resolved
+  closed
+}
+
+enum TicketPriority {
+  urgent
+  high
+  medium
+  low
+}
+
+enum TicketCategory {
+  equipment
+  billing
+  customer_service @map("customer-service")
+  membership
+  complaint
+  software
+  other
+}
+
+enum MessageType {
+  public
+  internal
+}
+
+enum PlanTier {
+  basic
+  premium
+  unlimited
+}
+
+enum PlanStatus {
+  active
+  archived
+}
+
+enum BillingCycle {
+  monthly
+  quarterly
+  annual
+}
+
+enum PlanScope {
+  single_site @map("single-site")
+  multi_site  @map("multi-site")
+}
+
+enum SubscriptionStatus {
+  active
+  paused
+  cancelled
+  expired
+  expiring_soon @map("expiring-soon")
+}
+
+enum CancelReason {
+  price_too_high    @map("price-too-high")
+  moving_away       @map("moving-away")
+  not_using_enough  @map("not-using-enough")
+  service_quality   @map("service-quality")
+  other
+}
+
+enum BillingRecordStatus {
+  paid
+  failed
+  refunded
+  pending
+}
+
+enum PricingTemplateStatus {
+  active
+  archived
+}
+
+enum AddonCategory {
+  interior
+  exterior
+  protection
+}
+
+enum DynamicPricingType {
+  surge
+  discount
+}
+
+enum DynamicTriggerType {
+  time_based     @map("time-based")
+  day_based      @map("day-based")
+  weather_based  @map("weather-based")
+  calendar_based @map("calendar-based")
+}
+
+enum DiscountType {
+  percentage
+  fixed_amount  @map("fixed-amount")
+  free_service  @map("free-service")
+}
+
+enum PromoCodeStatus {
+  active
+  expired
+  disabled
+}
+
+enum AutoApplyTriggerType {
+  loyalty_milestone    @map("loyalty-milestone")
+  member_anniversary   @map("member-anniversary")
+  bulk_purchase        @map("bulk-purchase")
+  off_peak             @map("off-peak")
+  custom
+}
+
+enum CampaignType {
+  email
+  push
+  sms
+  in_app @map("in-app")
+}
+
+enum CampaignCategory {
+  seasonal
+  referral
+  recurring
+  flash_sale @map("flash-sale")
+  loyalty
+}
+
+enum CampaignStatus {
+  draft
+  scheduled
+  active
+  completed
+  paused
+}
+
+enum TargetSegment {
+  all
+  vip
+  regular
+  new_segment @map("new")
+  at_risk     @map("at-risk")
+  churned
+}
+
+enum OfferType {
+  percentage_off @map("percentage-off")
+  fixed_amount   @map("fixed-amount")
+  free_item      @map("free-item")
+  free_upgrade   @map("free-upgrade")
+  free_service   @map("free-service")
+}
+
+enum AppliesTo {
+  all_wash_types @map("all-wash-types")
+  basic_only     @map("basic-only")
+  premium_only   @map("premium-only")
+  ultimate_only  @map("ultimate-only")
+  addons_only    @map("addons-only")
+}
+
+enum EligibilityRuleType {
+  membership_tier @map("membership-tier")
+  visit_count     @map("visit-count")
+  last_visit      @map("last-visit")
+  signup_date     @map("signup-date")
+  location
+}
+
+enum RuleOperator {
+  equals
+  greater_than @map("greater-than")
+  less_than    @map("less-than")
+  between
+  in_op        @map("in")
+}
+
+enum NotificationTemplateType {
+  promotional
+  transactional
+  reminder
+}
+
+enum NotificationChannel {
+  push
+  email
+  sms
+  in_app @map("in-app")
+}
+
+enum NotificationTriggerType {
+  manual
+  automated
+}
+
+enum TeamRole {
+  admin
+  manager
+  operator
+  site_manager @map("site-manager")
+  support
+  viewer
+}
+
+enum TeamMemberStatus {
+  active
+  inactive
+  invited
+  disabled
+}
+
+enum TwoFactorMethod {
+  authenticator_app @map("authenticator-app")
+  email
+  sms
+}
+
+enum InvitationStatus {
+  pending
+  accepted
+  expired
+  revoked
+}
+
+enum ActivityAction {
+  login
+  logout
+  failed_login     @map("failed-login")
+  create
+  update
+  delete
+  export
+  invite
+  role_change      @map("role-change")
+  password_change  @map("password-change")
+  settings_change  @map("settings-change")
+}
+
+enum PermissionLevel {
+  full
+  read
+  none
+}
+
+enum LoginStatus {
+  success
+  failed
+}
+
+enum CameraStatus {
+  online
+  offline
+}
+
+enum RecordingSeverity {
+  warning
+  info
+}
+
+enum ArticleCategory {
+  equipment
+  platform
+  billing
+  memberships
+  operations
+  training
+}
+
+enum ContentType {
+  article
+  video
+}
+
+enum VideoLevel {
+  beginner
+  intermediate
+  advanced
+}
+
+enum ReportType {
+  financial
+  operations
+  customer
+  marketing
+}
+
+enum ReportFrequency {
+  daily
+  weekly
+  monthly
+  quarterly
+}
+
+enum ReportFormat {
+  pdf
+  csv
+  excel
+}
+
+enum ReportStatus {
+  active
+  paused
+}
+
+enum ReportDeliveryStatus {
+  success
+  failed
+  pending
+}
+
+enum ApiKeyEnvironment {
+  production
+  testing
+}
+
+enum ApiKeyStatus {
+  active
+  revoked
+}
+
+enum IntegrationCategory {
+  payment
+  analytics
+  crm
+  notification
+  accounting
+}
+
+enum IntegrationStatus {
+  connected
+  disconnected
+  error
+}
+
+enum WebhookStatus {
+  active
+  inactive
+  failing
+}
+
+// ═══════════════════════════════════════════════════════
+// MODELS
+// ═══════════════════════════════════════════════════════
+
+// ─── Core Entities ───
+
+model Operator {
+  id                         String         @id @default(cuid())
+  name                       String
+  status                     OperatorStatus
+  contractType               ContractType   @map("contract_type")
+  contractStart              DateTime       @map("contract_start")
+  contractEnd                DateTime       @map("contract_end")
+  revenueSharePct            Float          @map("revenue_share_pct")
+  territory                  String
+  siteLimit                  Int            @map("site_limit")
+  contact                    Json
+  taxId                      String         @map("tax_id")
+  businessRegistrationNumber String         @map("business_registration_number")
+  country                    String
+  createdAt                  DateTime       @default(now()) @map("created_at")
+
+  sites        Site[]
+  transactions Transaction[]
+
+  @@map("operators")
+}
+
+model Site {
+  id                String     @id @default(cuid())
+  operatorId        String     @map("operator_id")
+  siteCode          String     @unique @map("site_code")
+  name              String
+  location          String
+  address           String
+  type              SiteType
+  status            SiteStatus
+  operatingHours    Json       @map("operating_hours")
+  equipmentType     String     @map("equipment_type")
+  contact           Json
+  pricingTemplateId String     @map("pricing_template_id")
+  coordinates       Json
+  bayCount          Int        @map("bay_count")
+  createdAt         DateTime   @default(now()) @map("created_at")
+
+  operator        Operator              @relation(fields: [operatorId], references: [id])
+  pricingTemplate PricingTemplate       @relation(fields: [pricingTemplateId], references: [id])
+
+  bays                  BayConfig[]
+  machines              Machine[]
+  customers             Customer[]
+  transactions          Transaction[]
+  tickets               Ticket[]
+  planSiteConfigs       PlanSiteConfig[]
+  subscriptions         Subscription[]
+  pricingSiteAssignments PricingSiteAssignment[]
+  campaignSiteOptOuts   CampaignSiteOptOut[]
+  cameras               Camera[]
+  cctvRecordings        CCTVRecording[]
+  cctvStorage           CCTVStorage?
+  machineAlerts         MachineAlert[]
+  teamMembers           TeamMember[]    @relation("TeamMemberSites")
+  campaigns             Campaign[]      @relation("CampaignSites")
+  promoCodes            PromoCode[]     @relation("PromoCodeSites")
+
+  @@index([operatorId])
+  @@index([pricingTemplateId])
+  @@map("sites")
+}
+
+model BayConfig {
+  id          String    @id @default(cuid())
+  siteId      String    @map("site_id")
+  bayNumber   Int       @map("bay_number")
+  machineId   String    @map("machine_id")
+  machineType String    @map("machine_type")
+  status      BayStatus
+
+  site Site @relation(fields: [siteId], references: [id])
+
+  @@index([siteId])
+  @@map("bay_configs")
+}
+
+// ─── Customer & Vehicle ───
+
+model Customer {
+  id              String          @id @default(cuid())
+  supabaseUid     String?         @unique @map("supabase_uid")
+  name            String
+  email           String          @unique
+  phone           String
+  language        String          @default("en")
+  homeSiteId      String          @map("home_site_id")
+  joinDate        DateTime        @map("join_date")
+  avatarInitials  String          @map("avatar_initials")
+  status          CustomerStatus
+  segment         CustomerSegment
+  walletBalance   Float           @default(0) @map("wallet_balance")
+
+  homeSite      Site           @relation(fields: [homeSiteId], references: [id])
+  vehicles      Vehicle[]
+  subscriptions Subscription[]
+  transactions  Transaction[]
+
+  @@index([homeSiteId])
+  @@index([status])
+  @@index([segment])
+  @@map("customers")
+}
+
+model Vehicle {
+  id         String   @id @default(cuid())
+  customerId String   @map("customer_id")
+  make       String
+  model      String
+  plate      String   @unique
+  color      String
+  year       Int
+  fuelType   FuelType @map("fuel_type")
+  isPrimary  Boolean  @default(false) @map("is_primary")
+
+  customer     Customer      @relation(fields: [customerId], references: [id])
+  transactions Transaction[]
+
+  @@index([customerId])
+  @@map("vehicles")
+}
+
+// ─── Transaction ───
+
+model Transaction {
+  id                String            @id @default(cuid())
+  dateTime          DateTime          @map("date_time")
+  status            TransactionStatus
+  duration          Int
+  customerId        String?           @map("customer_id")
+  vehicleId         String?           @map("vehicle_id")
+  siteId            String            @map("site_id")
+  operatorId        String            @map("operator_id")
+  machineId         String            @map("machine_id")
+  serviceType       ServiceType       @map("service_type")
+  subtotal          Float
+  discount          Float             @default(0)
+  total             Float
+  paymentMethod     PaymentMethod     @map("payment_method")
+  pointsEarned      Int               @default(0) @map("points_earned")
+  addons            String[]
+  promoCodeId       String?           @map("promo_code_id")
+  estimatedDuration Int?              @map("estimated_duration")
+  createdAt         DateTime          @default(now()) @map("created_at")
+
+  customer  Customer?  @relation(fields: [customerId], references: [id])
+  vehicle   Vehicle?   @relation(fields: [vehicleId], references: [id])
+  site      Site       @relation(fields: [siteId], references: [id])
+  operator  Operator   @relation(fields: [operatorId], references: [id])
+  machine   Machine    @relation(fields: [machineId], references: [id])
+  promoCode PromoCode? @relation(fields: [promoCodeId], references: [id])
+
+  washStages WashStage[]
+
+  @@index([customerId])
+  @@index([siteId])
+  @@index([operatorId])
+  @@index([machineId])
+  @@index([dateTime])
+  @@index([status])
+  @@map("transactions")
+}
+
+model WashStage {
+  id            String          @id @default(cuid())
+  transactionId String          @map("transaction_id")
+  name          String
+  status        WashStageStatus
+  startTime     DateTime?       @map("start_time")
+  duration      Int?
+
+  transaction Transaction @relation(fields: [transactionId], references: [id])
+
+  @@index([transactionId])
+  @@map("wash_stages")
+}
+
+// ─── Machine & Hardware ───
+
+model Machine {
+  id                  String          @id @default(cuid())
+  siteId              String          @map("site_id")
+  type                MachineType
+  category            MachineCategory
+  model               String
+  serialNumber        String          @unique @map("serial_number")
+  bay                 Int
+  status              MachineStatus
+  installDate         DateTime        @map("install_date")
+  warrantyUntil       DateTime        @map("warranty_until")
+  firmwareVersion     String          @map("firmware_version")
+  totalWashCycles     Int             @default(0) @map("total_wash_cycles")
+  lastServiceDate     DateTime        @map("last_service_date")
+  nextMaintenanceDate DateTime        @map("next_maintenance_date")
+  healthScore         Int             @default(100) @map("health_score")
+  createdAt           DateTime        @default(now()) @map("created_at")
+  updatedAt           DateTime        @updatedAt @map("updated_at")
+
+  site Site @relation(fields: [siteId], references: [id])
+
+  sensors            MachineSensor[]
+  alerts             MachineAlert[]
+  maintenanceRecords MaintenanceRecord[]
+  transactions       Transaction[]
+  tickets            Ticket[]
+
+  @@index([siteId])
+  @@index([status])
+  @@map("machines")
+}
+
+model MachineSensor {
+  id           String       @id @default(cuid())
+  machineId    String       @map("machine_id")
+  label        String
+  value        String
+  unit         String
+  numericValue Float        @map("numeric_value")
+  status       SensorStatus
+  thresholds   Json?
+
+  machine Machine @relation(fields: [machineId], references: [id])
+
+  @@index([machineId])
+  @@map("machine_sensors")
+}
+
+model MachineAlert {
+  id                     String        @id @default(cuid())
+  machineId              String        @map("machine_id")
+  siteId                 String        @map("site_id")
+  severity               AlertSeverity
+  title                  String
+  description            String
+  triggeredAt            DateTime      @map("triggered_at")
+  acknowledged           Boolean       @default(false)
+  acknowledgedBy         String?       @map("acknowledged_by")
+  resolvedAt             DateTime?     @map("resolved_at")
+  resolvedBy             String?       @map("resolved_by")
+  status                 AlertStatus
+  estimatedRevenueLoss   Float?        @map("estimated_revenue_loss")
+  affectedCustomersCount Int?          @map("affected_customers_count")
+
+  machine Machine @relation(fields: [machineId], references: [id])
+  site    Site    @relation(fields: [siteId], references: [id])
+
+  @@index([machineId])
+  @@index([siteId])
+  @@index([status])
+  @@map("machine_alerts")
+}
+
+model MaintenanceRecord {
+  id          String                  @id @default(cuid())
+  machineId   String                  @map("machine_id")
+  date        DateTime
+  type        MaintenanceType
+  description String
+  technician  String?
+  cost        Float?
+  status      MaintenanceRecordStatus
+
+  machine Machine @relation(fields: [machineId], references: [id])
+
+  @@index([machineId])
+  @@map("maintenance_records")
+}
+
+// ─── Tickets ───
+
+model Ticket {
+  id               String         @id @default(cuid())
+  subject          String
+  status           TicketStatus
+  priority         TicketPriority
+  category         TicketCategory
+  siteId           String         @map("site_id")
+  machineId        String?        @map("machine_id")
+  assigneeId       String?        @map("assignee_id")
+  createdBy        String         @map("created_by")
+  createdAt        DateTime       @default(now()) @map("created_at")
+  slaDue           DateTime       @map("sla_due")
+  relatedTicketIds String[]       @map("related_ticket_ids")
+  updatedAt        DateTime       @updatedAt @map("updated_at")
+
+  site     Site        @relation(fields: [siteId], references: [id])
+  machine  Machine?    @relation(fields: [machineId], references: [id])
+  assignee TeamMember? @relation(fields: [assigneeId], references: [id])
+
+  messages TicketMessage[]
+
+  @@index([siteId])
+  @@index([machineId])
+  @@index([assigneeId])
+  @@index([status])
+  @@index([priority])
+  @@map("tickets")
+}
+
+model TicketMessage {
+  id           String      @id @default(cuid())
+  ticketId     String      @map("ticket_id")
+  authorName   String      @map("author_name")
+  authorRole   String      @map("author_role")
+  authorAvatar String      @map("author_avatar")
+  type         MessageType
+  body         String
+  attachments  Json        @default("[]")
+  createdAt    DateTime    @default(now()) @map("created_at")
+
+  ticket Ticket @relation(fields: [ticketId], references: [id])
+
+  @@index([ticketId])
+  @@map("ticket_messages")
+}
+
+// ─── Membership ───
+
+model MembershipPlan {
+  id                String       @id @default(cuid())
+  name              String
+  description       String
+  tier              PlanTier
+  tierColor         String       @map("tier_color")
+  status            PlanStatus
+  basePrice         Float        @map("base_price")
+  billingCycle      BillingCycle @map("billing_cycle")
+  annualDiscountPct Float        @default(0) @map("annual_discount_pct")
+  scope             PlanScope
+  washesPerMonth    Int          @default(-1) @map("washes_per_month")
+  addonDiscountPct  Float        @default(0) @map("addon_discount_pct")
+  pointsMultiplier  Float        @default(1) @map("points_multiplier")
+  benefits          String[]
+  createdAt         DateTime     @default(now()) @map("created_at")
+  updatedAt         DateTime     @updatedAt @map("updated_at")
+
+  features      PlanFeature[]
+  siteConfigs   PlanSiteConfig[]
+  subscriptions Subscription[]
+
+  @@map("membership_plans")
+}
+
+model PlanFeature {
+  id      String  @id @default(cuid())
+  planId  String  @map("plan_id")
+  key     String
+  label   String
+  enabled Boolean @default(true)
+
+  plan MembershipPlan @relation(fields: [planId], references: [id])
+
+  @@index([planId])
+  @@map("plan_features")
+}
+
+model PlanSiteConfig {
+  id              String  @id @default(cuid())
+  planId          String  @map("plan_id")
+  siteId          String  @map("site_id")
+  siteName        String  @map("site_name")
+  enabled         Boolean @default(true)
+  priceOverride   Float?  @map("price_override")
+
+  plan MembershipPlan @relation(fields: [planId], references: [id])
+  site Site           @relation(fields: [siteId], references: [id])
+
+  @@index([planId])
+  @@index([siteId])
+  @@map("plan_site_configs")
+}
+
+model Subscription {
+  id                  String             @id @default(cuid())
+  customerId          String             @map("customer_id")
+  planId              String             @map("plan_id")
+  siteId              String             @map("site_id")
+  status              SubscriptionStatus
+  startDate           DateTime           @map("start_date")
+  renewalDate         DateTime           @map("renewal_date")
+  autoRenewal         Boolean            @default(true) @map("auto_renewal")
+  billingDay          Int                @map("billing_day")
+  paymentMethod       String             @map("payment_method")
+  monthlyAmount       Float              @map("monthly_amount")
+  washesUsedThisMonth Int                @default(0) @map("washes_used_this_month")
+  cancelReason        CancelReason?      @map("cancel_reason")
+  createdAt           DateTime           @default(now()) @map("created_at")
+  updatedAt           DateTime           @updatedAt @map("updated_at")
+
+  customer Customer       @relation(fields: [customerId], references: [id])
+  plan     MembershipPlan @relation(fields: [planId], references: [id])
+  site     Site           @relation(fields: [siteId], references: [id])
+
+  billingRecords BillingRecord[]
+
+  @@index([customerId])
+  @@index([planId])
+  @@index([siteId])
+  @@index([status])
+  @@map("subscriptions")
+}
+
+model BillingRecord {
+  id             String              @id @default(cuid())
+  subscriptionId String              @map("subscription_id")
+  date           DateTime
+  amount         Float
+  status         BillingRecordStatus
+  paymentMethod  String              @map("payment_method")
+  invoiceUrl     String?             @map("invoice_url")
+
+  subscription Subscription @relation(fields: [subscriptionId], references: [id])
+
+  @@index([subscriptionId])
+  @@map("billing_records")
+}
+
+// ─── Pricing ───
+
+model PricingTemplate {
+  id                String                @id @default(cuid())
+  name              String
+  description       String
+  status            PricingTemplateStatus
+  isDefault         Boolean               @default(false) @map("is_default")
+  currency          String                @default("TWD")
+  memberDiscountPct Float                 @default(0) @map("member_discount_pct")
+  createdAt         DateTime              @default(now()) @map("created_at")
+  updatedAt         DateTime              @updatedAt @map("updated_at")
+
+  washPrices          WashPrice[]
+  addonPrices         AddonPrice[]
+  comboPackages       ComboPackage[]
+  dynamicPricingRules DynamicPricingRule[]
+  siteAssignments     PricingSiteAssignment[]
+  sites               Site[]
+
+  @@map("pricing_templates")
+}
+
+model WashPrice {
+  id          String      @id @default(cuid())
+  templateId  String      @map("template_id")
+  serviceType ServiceType @map("service_type")
+  name        String
+  description String
+  price       Float
+  includes    String[]
+
+  template PricingTemplate @relation(fields: [templateId], references: [id])
+
+  @@index([templateId])
+  @@map("wash_prices")
+}
+
+model AddonPrice {
+  id           String        @id @default(cuid())
+  templateId   String        @map("template_id")
+  name         String
+  category     AddonCategory
+  regularPrice Float         @map("regular_price")
+  memberPrice  Float         @map("member_price")
+
+  template PricingTemplate @relation(fields: [templateId], references: [id])
+
+  @@index([templateId])
+  @@map("addon_prices")
+}
+
+model ComboPackage {
+  id           String   @id @default(cuid())
+  templateId   String   @map("template_id")
+  name         String
+  addonIds     String[] @map("addon_ids")
+  regularPrice Float    @map("regular_price")
+  memberPrice  Float    @map("member_price")
+  savings      Float
+
+  template PricingTemplate @relation(fields: [templateId], references: [id])
+
+  @@index([templateId])
+  @@map("combo_packages")
+}
+
+model DynamicPricingRule {
+  id            String             @id @default(cuid())
+  templateId    String             @map("template_id")
+  name          String
+  description   String
+  type          DynamicPricingType
+  triggerType   DynamicTriggerType @map("trigger_type")
+  adjustmentPct Float              @map("adjustment_pct")
+  enabled       Boolean            @default(true)
+  conditions    String
+  schedule      String?
+  siteCount     Int?               @map("site_count")
+
+  template PricingTemplate @relation(fields: [templateId], references: [id])
+
+  @@index([templateId])
+  @@map("dynamic_pricing_rules")
+}
+
+model PricingSiteAssignment {
+  id            String   @id @default(cuid())
+  templateId    String   @map("template_id")
+  siteId        String   @map("site_id")
+  siteName      String   @map("site_name")
+  enabled       Boolean  @default(true)
+  priceOverride Float?   @map("price_override")
+  assignedAt    DateTime @default(now()) @map("assigned_at")
+
+  template PricingTemplate @relation(fields: [templateId], references: [id])
+  site     Site            @relation(fields: [siteId], references: [id])
+
+  @@index([templateId])
+  @@index([siteId])
+  @@map("pricing_site_assignments")
+}
+
+// ─── Promo Codes ───
+
+model PromoCode {
+  id                String          @id @default(cuid())
+  code              String          @unique
+  description       String
+  discountType      DiscountType    @map("discount_type")
+  discountValue     Float           @map("discount_value")
+  usesCount         Int             @default(0) @map("uses_count")
+  usesLimit         Int?            @map("uses_limit")
+  validFrom         DateTime        @map("valid_from")
+  validUntil        DateTime        @map("valid_until")
+  status            PromoCodeStatus
+  autoApply         Boolean         @default(false) @map("auto_apply")
+  autoApplyTrigger  Json?           @map("auto_apply_trigger")
+  minPurchaseAmount Float?          @map("min_purchase_amount")
+  campaignId        String?         @map("campaign_id")
+  createdAt         DateTime        @default(now()) @map("created_at")
+
+  campaign     Campaign?     @relation(fields: [campaignId], references: [id])
+  transactions Transaction[]
+  sites        Site[]        @relation("PromoCodeSites")
+
+  @@index([code])
+  @@index([campaignId])
+  @@index([status])
+  @@map("promo_codes")
+}
+
+// ─── Marketing & Campaigns ───
+
+model Campaign {
+  id             String           @id @default(cuid())
+  name           String
+  type           CampaignType
+  category       CampaignCategory
+  status         CampaignStatus
+  targetAudience String           @map("target_audience")
+  targetSegment  TargetSegment    @map("target_segment")
+  startDate      DateTime         @map("start_date")
+  endDate        DateTime         @map("end_date")
+  sent           Int              @default(0)
+  opened         Int              @default(0)
+  converted      Int              @default(0)
+  budget         Float            @default(0)
+  roi            Float            @default(0)
+  offerType      OfferType        @map("offer_type")
+  offerValue     String           @map("offer_value")
+  appliesTo      AppliesTo        @map("applies_to")
+  createdAt      DateTime         @default(now()) @map("created_at")
+  updatedAt      DateTime         @updatedAt @map("updated_at")
+
+  promoCodes       PromoCode[]
+  eligibilityRules EligibilityRule[]
+  siteOptOuts      CampaignSiteOptOut[]
+  sites            Site[]           @relation("CampaignSites")
+
+  @@index([status])
+  @@map("campaigns")
+}
+
+model EligibilityRule {
+  id         String             @id @default(cuid())
+  campaignId String             @map("campaign_id")
+  type       EligibilityRuleType
+  operator   RuleOperator
+  value      String
+
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+
+  @@index([campaignId])
+  @@map("eligibility_rules")
+}
+
+model CampaignSiteOptOut {
+  id         String  @id @default(cuid())
+  campaignId String  @map("campaign_id")
+  siteId     String  @map("site_id")
+  optedOut   Boolean @default(true) @map("opted_out")
+  reason     String?
+
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+  site     Site     @relation(fields: [siteId], references: [id])
+
+  @@index([campaignId])
+  @@index([siteId])
+  @@map("campaign_site_opt_outs")
+}
+
+model NotificationTemplate {
+  id           String                   @id @default(cuid())
+  name         String
+  type         NotificationTemplateType
+  channel      NotificationChannel
+  subject      String
+  body         String
+  triggerType  NotificationTriggerType  @map("trigger_type")
+  triggerEvent String?                  @map("trigger_event")
+  enabled      Boolean                  @default(true)
+  createdAt    DateTime                 @default(now()) @map("created_at")
+
+  @@map("notification_templates")
+}
+
+// ─── Team & Access Control ───
+
+model TeamMember {
+  id               String           @id @default(cuid())
+  name             String
+  email            String           @unique
+  phone            String
+  role             TeamRole
+  avatar           String
+  status           TeamMemberStatus
+  lastActive       DateTime         @map("last_active")
+  twoFactorEnabled Boolean          @default(false) @map("two_factor_enabled")
+  twoFactorMethod  TwoFactorMethod? @map("two_factor_method")
+  createdAt        DateTime         @default(now()) @map("created_at")
+  updatedAt        DateTime         @updatedAt @map("updated_at")
+
+  sites            Site[]           @relation("TeamMemberSites")
+  activityLogs     ActivityLog[]
+  invitationsSent  Invitation[]
+  tickets          Ticket[]
+  loginSessions    LoginSession[]
+  securitySettings SecuritySettings?
+
+  @@index([email])
+  @@index([role])
+  @@index([status])
+  @@map("team_members")
+}
+
+model Role {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String
+  isSystem    Boolean  @default(false) @map("is_system")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  permissions RolePermission[]
+
+  @@map("roles")
+}
+
+model RolePermission {
+  id      String          @id @default(cuid())
+  roleId  String          @map("role_id")
+  module  String
+  level   PermissionLevel
+
+  role Role @relation(fields: [roleId], references: [id])
+
+  @@unique([roleId, module])
+  @@index([roleId])
+  @@map("role_permissions")
+}
+
+model Invitation {
+  id        String           @id @default(cuid())
+  email     String
+  role      TeamRole
+  invitedBy String           @map("invited_by")
+  sentDate  DateTime         @default(now()) @map("sent_date")
+  expiresAt DateTime         @map("expires_at")
+  status    InvitationStatus
+
+  inviter TeamMember @relation(fields: [invitedBy], references: [id])
+
+  @@index([invitedBy])
+  @@index([email])
+  @@map("invitations")
+}
+
+model ActivityLog {
+  id          String         @id @default(cuid())
+  userId      String         @map("user_id")
+  userName    String         @map("user_name")
+  action      ActivityAction
+  entityType  String         @map("entity_type")
+  entityId    String?        @map("entity_id")
+  description String
+  ipAddress   String         @map("ip_address")
+  timestamp   DateTime       @default(now())
+
+  user TeamMember @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([timestamp])
+  @@index([entityType])
+  @@map("activity_logs")
+}
+
+model LoginSession {
+  id           String      @id @default(cuid())
+  userId       String      @map("user_id")
+  device       String
+  browser      String
+  os           String
+  ipAddress    String      @map("ip_address")
+  location     String
+  loginStatus  LoginStatus @map("login_status")
+  loginAt      DateTime    @default(now()) @map("login_at")
+  lastActiveAt DateTime?   @map("last_active_at")
+  isCurrent    Boolean     @default(false) @map("is_current")
+
+  user TeamMember @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@map("login_sessions")
+}
+
+model SecuritySettings {
+  id                   String          @id @default(cuid())
+  userId               String          @unique @map("user_id")
+  twoFactorEnabled     Boolean         @default(false) @map("two_factor_enabled")
+  twoFactorMethod      TwoFactorMethod? @map("two_factor_method")
+  backupCodesRemaining Int             @default(0) @map("backup_codes_remaining")
+  totalBackupCodes     Int             @default(0) @map("total_backup_codes")
+
+  user TeamMember @relation(fields: [userId], references: [id])
+
+  @@map("security_settings")
+}
+
+// ─── CCTV & Monitoring ───
+
+model Camera {
+  id           String       @id @default(cuid())
+  siteId       String       @map("site_id")
+  name         String
+  status       CameraStatus
+  resolution   String
+  fps          Int
+  label        String
+  detail       String       @default("")
+  isActive     Boolean      @default(true) @map("is_active")
+  lastMotionAt DateTime?    @map("last_motion_at")
+
+  site       Site            @relation(fields: [siteId], references: [id])
+  recordings CCTVRecording[]
+
+  @@index([siteId])
+  @@map("cameras")
+}
+
+model CCTVRecording {
+  id            String             @id @default(cuid())
+  cameraId      String             @map("camera_id")
+  siteId        String             @map("site_id")
+  startTime     DateTime           @map("start_time")
+  endTime       DateTime           @map("end_time")
+  duration      Int
+  tags          String[]
+  severity      RecordingSeverity?
+  incidentTitle String?            @map("incident_title")
+  thumbnailUrl  String?            @map("thumbnail_url")
+
+  camera Camera @relation(fields: [cameraId], references: [id])
+  site   Site   @relation(fields: [siteId], references: [id])
+
+  @@index([cameraId])
+  @@index([siteId])
+  @@index([startTime])
+  @@map("cctv_recordings")
+}
+
+model CCTVStorage {
+  id            String @id @default(cuid())
+  siteId        String @unique @map("site_id")
+  usedBytes     BigInt @map("used_bytes")
+  totalBytes    BigInt @map("total_bytes")
+  retentionDays Int    @map("retention_days")
+
+  site Site @relation(fields: [siteId], references: [id])
+
+  @@map("cctv_storage")
+}
+
+// ─── Knowledge Base ───
+
+model KnowledgeArticle {
+  id            String          @id @default(cuid())
+  title         String
+  category      ArticleCategory
+  content       String
+  views         Int             @default(0)
+  helpfulCount  Int             @default(0) @map("helpful_count")
+  contentType   ContentType     @map("content_type")
+  videoDuration String?         @map("video_duration")
+  videoLevel    VideoLevel?     @map("video_level")
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime        @updatedAt @map("updated_at")
+
+  @@index([category])
+  @@index([contentType])
+  @@map("knowledge_articles")
+}
+
+// ─── Reports ───
+
+model ScheduledReport {
+  id         String          @id @default(cuid())
+  name       String
+  reportType ReportType      @map("report_type")
+  frequency  ReportFrequency
+  recipients String[]
+  format     ReportFormat
+  nextRun    DateTime        @map("next_run")
+  lastRun    DateTime?       @map("last_run")
+  status     ReportStatus
+  filters    Json
+  createdAt  DateTime        @default(now()) @map("created_at")
+
+  deliveries ReportDelivery[]
+
+  @@map("scheduled_reports")
+}
+
+model ReportDelivery {
+  id          String               @id @default(cuid())
+  reportId    String               @map("report_id")
+  deliveredAt DateTime             @map("delivered_at")
+  status      ReportDeliveryStatus
+  recipients  String[]
+  fileUrl     String?              @map("file_url")
+  error       String?
+
+  report ScheduledReport @relation(fields: [reportId], references: [id])
+
+  @@index([reportId])
+  @@map("report_deliveries")
+}
+
+// ─── Settings & Integrations ───
+
+model APIKey {
+  id          String            @id @default(cuid())
+  name        String
+  keyPrefix   String            @map("key_prefix")
+  keyHash     String            @unique @map("key_hash")
+  environment ApiKeyEnvironment
+  permissions String[]
+  rateLimit   Int               @map("rate_limit")
+  status      ApiKeyStatus
+  lastUsed    DateTime?         @map("last_used")
+  createdAt   DateTime          @default(now()) @map("created_at")
+  expiresAt   DateTime?         @map("expires_at")
+
+  @@map("api_keys")
+}
+
+model Integration {
+  id           String              @id @default(cuid())
+  name         String
+  category     IntegrationCategory
+  status       IntegrationStatus
+  description  String
+  icon         String              @default("")
+  connectedAt  DateTime?           @map("connected_at")
+  configuredBy String?             @map("configured_by")
+
+  @@map("integrations")
+}
+
+model Webhook {
+  id            String        @id @default(cuid())
+  name          String
+  url           String
+  events        String[]
+  secret        String
+  status        WebhookStatus
+  lastTriggered DateTime?     @map("last_triggered")
+  failureCount  Int           @default(0) @map("failure_count")
+  createdAt     DateTime      @default(now()) @map("created_at")
+
+  @@map("webhooks")
+}
+
+model UserPreferences {
+  id                      String @id @default(cuid())
+  userId                  String @unique @map("user_id")
+  language                String @default("en")
+  timezone                String @default("Asia/Taipei")
+  dateFormat              String @default("YYYY-MM-DD") @map("date_format")
+  currency                String @default("TWD")
+  theme                   String @default("light")
+  notificationPreferences Json   @map("notification_preferences")
+
+  @@map("user_preferences")
+}
