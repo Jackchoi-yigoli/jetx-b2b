@@ -2999,5 +2999,83 @@
         "waiting": "等待中..."
       }
     }
+  },
+  "auth": {
+    "copyright": "© 2025 JetX B2B 平台。保留所有權利。",
+    "login": {
+      "title": "登入您的帳戶",
+      "subtitle": "歡迎回來！請輸入您的憑證以繼續。",
+      "emailLabel": "電子郵件",
+      "emailPlaceholder": "you@company.com",
+      "passwordLabel": "密碼",
+      "passwordPlaceholder": "輸入您的密碼",
+      "rememberMe": "記住我",
+      "forgotPassword": "忘記密碼？",
+      "signIn": "登入",
+      "orContinueWith": "或使用以下方式繼續",
+      "googleWorkspace": "使用 Google Workspace 繼續",
+      "microsoft": "使用 Microsoft 繼續",
+      "noAccount": "還沒有帳戶？",
+      "contactAdmin": "聯繫您的管理員"
+    },
+    "forgotPassword": {
+      "title": "忘記密碼？",
+      "subtitle": "輸入您的電子郵件地址，我們將發送密碼重設連結給您。",
+      "emailLabel": "電子郵件",
+      "emailPlaceholder": "you@company.com",
+      "sendResetLink": "發送重設連結",
+      "backToLogin": "返回登入",
+      "successTitle": "請查看您的電子郵件",
+      "successMessage": "我們已將密碼重設連結發送至 {email}。此連結將於 24 小時後失效。",
+      "didNotReceive": "沒有收到電子郵件？",
+      "resendEmail": "重新發送郵件"
+    },
+    "resetPassword": {
+      "title": "重設您的密碼",
+      "subtitle": "為您的帳戶設定新密碼。",
+      "newPasswordLabel": "新密碼",
+      "newPasswordPlaceholder": "輸入新密碼",
+      "confirmPasswordLabel": "確認密碼",
+      "confirmPasswordPlaceholder": "確認新密碼",
+      "resetPassword": "重設密碼",
+      "backToLogin": "返回登入",
+      "requireAtLeast8": "至少 8 個字元",
+      "requireUppercase": "包含大寫字母",
+      "requireLowercase": "包含小寫字母",
+      "requireNumber": "包含數字",
+      "requireSpecial": "包含特殊字元"
+    },
+    "acceptInvite": {
+      "title": "您已受邀！",
+      "subtitle": "您已被邀請加入 JetX B2B 平台。",
+      "invitedBy": "邀請者：{name}",
+      "assignedRole": "角色：{role}",
+      "firstNameLabel": "名字",
+      "firstNamePlaceholder": "輸入您的名字",
+      "lastNameLabel": "姓氏",
+      "lastNamePlaceholder": "輸入您的姓氏",
+      "passwordLabel": "密碼",
+      "passwordPlaceholder": "建立密碼",
+      "confirmPasswordLabel": "確認密碼",
+      "confirmPasswordPlaceholder": "確認您的密碼",
+      "acceptInvitation": "接受邀請",
+      "requireAtLeast8": "至少 8 個字元",
+      "requireUppercase": "包含大寫字母",
+      "requireLowercase": "包含小寫字母",
+      "requireNumber": "包含數字",
+      "requireSpecial": "包含特殊字元",
+      "alreadyHaveAccount": "已經有帳戶？",
+      "signIn": "登入"
+    },
+    "verifyEmail": {
+      "pendingTitle": "驗證您的電子郵件",
+      "pendingSubtitle": "我們已將驗證連結發送至 {email}。",
+      "pendingMessage": "請點擊電子郵件中的連結以驗證您的帳戶。此連結將於 24 小時後失效。",
+      "resendEmail": "重新發送驗證郵件",
+      "successTitle": "電子郵件已驗證！",
+      "successMessage": "您的電子郵件已成功驗證。您現在可以登入您的帳戶。",
+      "continueToLogin": "繼續登入",
+      "backToLogin": "返回登入"
+    }
   }
 }

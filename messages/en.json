@@ -2999,5 +2999,83 @@
         "waiting": "Waiting..."
       }
     }
+  },
+  "auth": {
+    "copyright": "\u00a9 2025 JetX B2B Platform. All rights reserved.",
+    "login": {
+      "title": "Sign in to your account",
+      "subtitle": "Welcome back! Enter your credentials to continue.",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@company.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "signIn": "Sign In",
+      "orContinueWith": "or continue with",
+      "googleWorkspace": "Continue with Google Workspace",
+      "microsoft": "Continue with Microsoft",
+      "noAccount": "Don't have an account?",
+      "contactAdmin": "Contact your administrator"
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "subtitle": "Enter your email address and we'll send you a link to reset your password.",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@company.com",
+      "sendResetLink": "Send Reset Link",
+      "backToLogin": "Back to login",
+      "successTitle": "Check your email",
+      "successMessage": "We've sent a password reset link to {email}. The link will expire in 24 hours.",
+      "didNotReceive": "Didn't receive the email?",
+      "resendEmail": "Resend email"
+    },
+    "resetPassword": {
+      "title": "Reset your password",
+      "subtitle": "Enter a new password for your account.",
+      "newPasswordLabel": "New Password",
+      "newPasswordPlaceholder": "Enter new password",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm new password",
+      "resetPassword": "Reset Password",
+      "backToLogin": "Back to login",
+      "requireAtLeast8": "At least 8 characters",
+      "requireUppercase": "Uppercase letter",
+      "requireLowercase": "Lowercase letter",
+      "requireNumber": "Contains number",
+      "requireSpecial": "Special character"
+    },
+    "acceptInvite": {
+      "title": "You're invited!",
+      "subtitle": "You've been invited to join JetX B2B Platform.",
+      "invitedBy": "Invited by {name}",
+      "assignedRole": "Role: {role}",
+      "firstNameLabel": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNameLabel": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Create a password",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "acceptInvitation": "Accept Invitation",
+      "requireAtLeast8": "At least 8 characters",
+      "requireUppercase": "Uppercase letter",
+      "requireLowercase": "Lowercase letter",
+      "requireNumber": "Contains number",
+      "requireSpecial": "Special character",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "verifyEmail": {
+      "pendingTitle": "Verify your email",
+      "pendingSubtitle": "We've sent a verification link to {email}.",
+      "pendingMessage": "Click the link in your email to verify your account. The link will expire in 24 hours.",
+      "resendEmail": "Resend verification email",
+      "successTitle": "Email verified!",
+      "successMessage": "Your email address has been successfully verified. You can now sign in to your account.",
+      "continueToLogin": "Continue to login",
+      "backToLogin": "Back to login"
+    }
   }
 }
