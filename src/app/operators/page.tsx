@@ -2,47 +2,13 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import { operators } from '@/lib/data';
 import { getTranslations } from 'next-intl/server';
-
-function formatJoinDate(dateStr: string) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-}
-
-function formatRevenue(amount: number) {
-  return '$' + amount.toLocaleString('en-US');
-}
-
-function capitalize(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+import OperatorsTable from './OperatorsTable';
 
 export default async function OperatorsPage() {
   const t = await getTranslations('operators');
   const tc = await getTranslations('common');
 
   const totalOperators = operators.length;
-
-  function statusBadge(status: string) {
-    if (status === 'active') {
-      return (
-        <span className="badge-pill badge-success">
-          <span className="status-dot online"></span>{tc('status.active')}
-        </span>
-      );
-    }
-    if (status === 'suspended') {
-      return (
-        <span className="badge-pill badge-danger">
-          <span className="status-dot offline"></span>{tc('status.suspended')}
-        </span>
-      );
-    }
-    return (
-      <span className="badge-pill badge-warning">
-        <span className="status-dot alert"></span>{tc('status.pending')}
-      </span>
-    );
-  }
 
   return (
     <DashboardLayout>
@@ -98,80 +64,7 @@ export default async function OperatorsPage() {
         </div>
       </div>
 
-      <div className="table-container">
-        <div className="table-filters">
-          <div className="search-input" style={{ width: 250 }}>
-            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-            <input type="text" placeholder={t('searchPlaceholder')} />
-          </div>
-          <select className="filter-input">
-            <option>{tc('filters.allStatus')}</option>
-            <option>{tc('status.active')}</option>
-            <option>{tc('status.pending')}</option>
-            <option>{tc('status.suspended')}</option>
-          </select>
-          <select className="filter-input">
-            <option>{tc('filters.allRegions')}</option>
-            <option>{t('filters.north')}</option>
-            <option>{t('filters.central')}</option>
-            <option>{t('filters.south')}</option>
-            <option>{t('filters.east')}</option>
-          </select>
-          <select className="filter-input">
-            <option>{t('filters.allContractTypes')}</option>
-            <option>{t('filters.franchise')}</option>
-            <option>{t('filters.license')}</option>
-            <option>{t('filters.partnership')}</option>
-          </select>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('table.operatorName')}</th>
-                <th>{t('table.contactPerson')}</th>
-                <th>{t('table.region')}</th>
-                <th>{t('table.sites')}</th>
-                <th>{t('table.mtdRevenue')}</th>
-                <th>{t('table.contract')}</th>
-                <th>{tc('table.status')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {operators.map((operator) => (
-                <tr key={operator.id} className="clickable">
-                  <td>
-                    <Link href={`/operators/${operator.id}`} style={{ display: 'contents' }}>
-                      <div className="list-item-title">{operator.name}</div>
-                      <div className="list-item-subtitle">{t('table.since')} {formatJoinDate(operator.createdAt)}</div>
-                    </Link>
-                  </td>
-                  <td>
-                    <div className="list-item-title">{operator.contact.name}</div>
-                    <div className="list-item-subtitle">{operator.contact.email}</div>
-                  </td>
-                  <td>{operator.territory}</td>
-                  <td>{operator.siteLimit}</td>
-                  <td><strong>{formatRevenue(operator.revenueSharePct * 10000)}</strong></td>
-                  <td>{capitalize(operator.contractType)}</td>
-                  <td>{statusBadge(operator.status)}</td>
-                  <td><button className="btn btn-icon btn-ghost sm">...</button></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="table-pagination">
-          <span>{t('pagination.showing', { from: 1, to: operators.length, total: totalOperators })}</span>
-          <div className="pagination-pages">
-            <button className="active">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-          </div>
-        </div>
-      </div>
+      <OperatorsTable data={operators} />
     </DashboardLayout>
   );
 }

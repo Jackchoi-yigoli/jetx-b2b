@@ -166,7 +166,8 @@
   "topbar": {
     "searchPlaceholder": "Search anything...",
     "userRole": "Area Rep",
-    "notifications": "Notifications"
+    "notifications": "Notifications",
+    "toggleTheme": "Toggle dark mode"
   },
   "dashboard": {
     "breadcrumb": "Welcome",

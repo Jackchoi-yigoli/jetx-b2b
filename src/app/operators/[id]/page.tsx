@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getOperatorById, getSitesByOperator } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import BarChart from '@/components/ui/BarChart';
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -234,7 +235,14 @@ export default async function OperatorDetailPage({ params }: Props) {
             <h3 className="card-title">{t('detail.revenueTrend.title')}</h3>
           </div>
           <div className="card-body">
-            <div className="chart-placeholder">{t('detail.revenueTrend.chartPlaceholder')}</div>
+            <BarChart bars={[
+              { label: 'Jul', value: 185000 },
+              { label: 'Aug', value: 198000 },
+              { label: 'Sep', value: 210000 },
+              { label: 'Oct', value: 225000 },
+              { label: 'Nov', value: 238000 },
+              { label: 'Dec', value: 245000 },
+            ]} height={180} showValues />
           </div>
         </div>
 

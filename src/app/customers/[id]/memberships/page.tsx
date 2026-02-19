@@ -2,6 +2,7 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import BarChart from '@/components/ui/BarChart';
 
 export default async function CustomerMembershipsPage() {
   const t = await getTranslations('customers');
@@ -184,7 +185,14 @@ export default async function CustomerMembershipsPage() {
             <div className="card-title">{t('memberships.monthlyUsageChart')}</div>
           </div>
           <div className="card-body">
-            <div className="chart-placeholder">{t('memberships.monthlyUsageChartPlaceholder')}</div>
+            <BarChart bars={[
+              { label: 'Jul', value: 8 },
+              { label: 'Aug', value: 10 },
+              { label: 'Sep', value: 9 },
+              { label: 'Oct', value: 11 },
+              { label: 'Nov', value: 14 },
+              { label: 'Dec', value: 12 },
+            ]} height={160} />
           </div>
         </div>
       </div>

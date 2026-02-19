@@ -1,6 +1,7 @@
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import BarChart from '@/components/ui/BarChart';
 import {
   getCustomerById,
   getVehiclesByCustomer,
@@ -214,7 +215,15 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
             <div className="card-title">{t('detail.visitFrequencyChart')}</div>
           </div>
           <div className="card-body">
-            <div className="chart-placeholder">{t('detail.visitFrequencyChartPlaceholder')}</div>
+            <BarChart bars={[
+              { label: 'Mon', value: 3 },
+              { label: 'Tue', value: 2 },
+              { label: 'Wed', value: 4 },
+              { label: 'Thu', value: 3 },
+              { label: 'Fri', value: 5 },
+              { label: 'Sat', value: 6 },
+              { label: 'Sun', value: 4 },
+            ]} height={160} />
           </div>
         </div>
 

@@ -2,6 +2,8 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import { membershipPlans } from '@/data/membership-plans';
 import { getTranslations } from 'next-intl/server';
+import DonutChart from '@/components/ui/DonutChart';
+import BarChart from '@/components/ui/BarChart';
 
 const SITE_PLAN_ASSIGNMENTS = [
   {
@@ -306,28 +308,17 @@ export default async function MembershipsPage() {
           <div className="card-header">
             <h3 className="card-title">{t('charts.subscriberDistribution')}</h3>
           </div>
-          <div className="chart-placeholder" style={{ minHeight: 80, display: 'flex', alignItems: 'center', padding: '1rem 1.25rem' }}>
-            <div style={{ width: '100%' }}>
-              <div style={{ display: 'flex', height: 40, borderRadius: 6, overflow: 'hidden', gap: 2 }}>
-                <div style={{ width: '19%', background: '#6b7280', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 600 }}>19%</span>
-                </div>
-                <div style={{ width: '47%', background: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 600 }}>47%</span>
-                </div>
-                <div style={{ width: '34%', background: '#8b5cf6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 600 }}>34%</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1.25rem', marginTop: '0.75rem', fontSize: '0.8125rem' }}>
-                {membershipPlans.map((plan, i) => (
-                  <span key={plan.id} style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                    <span style={{ width: 10, height: 10, borderRadius: 2, background: plan.tierColor, display: 'inline-block' }}></span>
-                    {plan.name}: {planActiveMembers[i].toLocaleString()} ({[19, 47, 34][i]}%)
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="card-body">
+            <DonutChart
+              segments={[
+                { value: 2340, color: '#6b7280', label: 'Basic' },
+                { value: 5890, color: '#3b82f6', label: 'Premium' },
+                { value: 4220, color: '#8b5cf6', label: 'Unlimited' },
+              ]}
+              size={160}
+              centerValue="12,450"
+              centerLabel="Total"
+            />
           </div>
         </div>
 
@@ -335,22 +326,15 @@ export default async function MembershipsPage() {
           <div className="card-header">
             <h3 className="card-title">{t('charts.mrrTrend6Months')}</h3>
           </div>
-          <div className="chart-placeholder">
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.5rem', height: '100%', padding: '1rem' }}>
-              {[
-                { label: 'Jul', h: '75%' },
-                { label: 'Aug', h: '80%' },
-                { label: 'Sep', h: '82%' },
-                { label: 'Oct', h: '88%' },
-                { label: 'Nov', h: '92%' },
-                { label: 'Dec', h: '100%', highlight: true },
-              ].map(({ label, h, highlight }) => (
-                <div key={label} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem', height: '100%', justifyContent: 'flex-end' }}>
-                  <div style={{ width: '100%', height: h, background: highlight ? 'var(--color-primary)' : 'var(--color-border)', borderRadius: '4px 4px 0 0', minHeight: 4 }}></div>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>{label}</span>
-                </div>
-              ))}
-            </div>
+          <div className="card-body">
+            <BarChart bars={[
+              { label: 'Jul', value: 510 },
+              { label: 'Aug', value: 545 },
+              { label: 'Sep', value: 558 },
+              { label: 'Oct', value: 600 },
+              { label: 'Nov', value: 628 },
+              { label: 'Dec', value: 685 },
+            ]} height={160} showValues />
           </div>
         </div>
       </div>

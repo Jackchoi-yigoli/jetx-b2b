@@ -2,6 +2,19 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import PromotionsTable from './PromotionsTable';
+import BarChart from '@/components/ui/BarChart';
+
+const promoData = [
+  { id: 'promo-1', code: 'HOLIDAY20', description: 'Holiday 20% off all washes', discount: '20% off', discountBadge: 'badge-success', sites: 'All Sites', usesLimit: '1,234 / 5,000', validPeriod: 'Dec 1 - Dec 31', revenue: '$18,420', status: 'active' },
+  { id: 'promo-2', code: 'FIRSTWASH', description: 'First time customer discount', discount: '50% off', discountBadge: 'badge-success', sites: 'All Sites', usesLimit: '5,678 / unlimited', validPeriod: 'Ongoing', revenue: '$42,100', status: 'active' },
+  { id: 'promo-3', code: 'AIRPORT15', description: 'Airport exclusive discount', discount: '15% off', discountBadge: 'badge-success', sites: 'Taoyuan Only', sitesBadge: 'badge-warning', usesLimit: '456 / 1,000', validPeriod: 'Ongoing', revenue: '$8,920', status: 'active' },
+  { id: 'promo-4', code: 'BIRTHDAY', description: 'Free wash on your birthday', discount: 'Free Wash', discountBadge: 'badge-premium', sites: 'All Sites', usesLimit: '234 / 1 per user', validPeriod: 'Ongoing', revenue: '$5,850', status: 'active' },
+  { id: 'promo-5', code: 'MEMBER10', description: 'Membership sign-up bonus', discount: '$10 off', discountBadge: 'badge-success', sites: 'All Sites', usesLimit: '890 / unlimited', validPeriod: 'Ongoing', revenue: '$15,200', status: 'active' },
+  { id: 'promo-6', code: 'REFERRAL', description: 'Refer a friend reward', discount: 'Free Wash', discountBadge: 'badge-premium', sites: 'All Sites', usesLimit: '1,456 / unlimited', validPeriod: 'Ongoing', revenue: '$28,400', status: 'active' },
+  { id: 'promo-7', code: 'NEWYEAR25', description: 'New Year 2025 celebration', discount: '25% off', discountBadge: 'badge-success', sites: 'All Sites', usesLimit: '0 / 10,000', validPeriod: 'Jan 1 - Jan 7', revenue: '-', status: 'scheduled' },
+  { id: 'promo-8', code: 'FLASH30', description: 'Flash sale 30% off', discount: '30% off', discountBadge: 'badge-success', sites: '3 Sites', sitesBadge: 'badge-warning', usesLimit: '2,100 / 2,500', validPeriod: 'Nov 20 - Nov 30', revenue: '$12,600', status: 'expired' },
+];
 
 export default async function PromotionsPage() {
   const t = await getTranslations('marketing');
@@ -71,126 +84,8 @@ export default async function PromotionsPage() {
       <div className="card">
         <div className="card-header">
           <h3>{t('promoCodes.cardTitle')}</h3>
-          <div className="filter-group">
-            <select className="form-select-sm">
-              <option>{tc('filters.allTypes')}</option>
-              <option>{t('promotions.types.percentageOff')}</option>
-              <option>{t('promotions.types.fixedAmount')}</option>
-              <option>{t('promotions.types.freeService')}</option>
-            </select>
-            <select className="form-select-sm">
-              <option>{tc('filters.allSites')}</option>
-              <option>{t('promotions.types.siteSpecific')}</option>
-            </select>
-          </div>
         </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('promoCodes.table.code')}</th>
-                <th>{tc('table.description')}</th>
-                <th>{t('promoCodes.table.discount')}</th>
-                <th>{t('promoCodes.table.sites')}</th>
-                <th>{t('promotions.table.usesLimit')}</th>
-                <th>{t('promotions.table.validPeriod')}</th>
-                <th>{t('addons.catalog.table.revenue')}</th>
-                <th>{tc('table.status')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span className="promo-code">HOLIDAY20</span></td>
-                <td>Holiday 20% off all washes</td>
-                <td><span className="badge badge-success">20% off</span></td>
-                <td><span className="badge badge-info">{t('promoCodes.allSites')}</span></td>
-                <td>1,234 / 5,000</td>
-                <td>Dec 1 - Dec 31</td>
-                <td>$18,420</td>
-                <td><span className="badge badge-success">{tc('status.active')}</span></td>
-                <td><Link href="/marketing/1/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">FIRSTWASH</span></td>
-                <td>First time customer discount</td>
-                <td><span className="badge badge-success">50% off</span></td>
-                <td><span className="badge badge-info">{t('promoCodes.allSites')}</span></td>
-                <td>5,678 / {t('promoCodes.unlimited')}</td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>$42,100</td>
-                <td><span className="badge badge-success">{tc('status.active')}</span></td>
-                <td><Link href="/marketing/2/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">AIRPORT15</span></td>
-                <td>Airport exclusive discount</td>
-                <td><span className="badge badge-success">15% off</span></td>
-                <td><span className="badge badge-warning">Taoyuan Only</span></td>
-                <td>456 / 1,000</td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>$8,920</td>
-                <td><span className="badge badge-success">{tc('status.active')}</span></td>
-                <td><Link href="/marketing/3/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">BIRTHDAY</span></td>
-                <td>Free wash on your birthday</td>
-                <td><span className="badge badge-premium">{t('promotions.freeWash')}</span></td>
-                <td><span className="badge badge-info">{t('promoCodes.allSites')}</span></td>
-                <td>234 / {t('promoCodes.onePerUser')}</td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>$5,850</td>
-                <td><span className="badge badge-success">{tc('status.active')}</span></td>
-                <td><Link href="/marketing/4/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">MEMBER10</span></td>
-                <td>Membership sign-up bonus</td>
-                <td><span className="badge badge-success">$10 off</span></td>
-                <td><span className="badge badge-info">{t('promoCodes.allSites')}</span></td>
-                <td>890 / {t('promoCodes.unlimited')}</td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>$15,200</td>
-                <td><span className="badge badge-success">{tc('status.active')}</span></td>
-                <td><Link href="/marketing/5/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">REFERRAL</span></td>
-                <td>Refer a friend reward</td>
-                <td><span className="badge badge-premium">{t('promotions.freeWash')}</span></td>
-                <td><span className="badge badge-info">{t('promoCodes.allSites')}</span></td>
-                <td>1,456 / {t('promoCodes.unlimited')}</td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>$28,400</td>
-                <td><span className="badge badge-success">{tc('status.active')}</span></td>
-                <td><Link href="/marketing/6/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">NEWYEAR25</span></td>
-                <td>New Year 2025 celebration</td>
-                <td><span className="badge badge-success">25% off</span></td>
-                <td><span className="badge badge-info">{t('promoCodes.allSites')}</span></td>
-                <td>0 / 10,000</td>
-                <td>Jan 1 - Jan 7</td>
-                <td>-</td>
-                <td><span className="badge badge-warning">{tc('status.scheduled')}</span></td>
-                <td><Link href="/marketing/7/edit" className="btn btn-sm">{tc('actions.edit')}</Link></td>
-              </tr>
-              <tr>
-                <td><span className="promo-code">FLASH30</span></td>
-                <td>Flash sale 30% off</td>
-                <td><span className="badge badge-success">30% off</span></td>
-                <td><span className="badge badge-warning">3 Sites</span></td>
-                <td>2,100 / 2,500</td>
-                <td>Nov 20 - Nov 30</td>
-                <td>$12,600</td>
-                <td><span className="badge badge-muted">{tc('status.expired')}</span></td>
-                <td><button className="btn btn-sm">{t('actions.clone')}</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <PromotionsTable data={promoData} />
       </div>
 
       <div className="grid-2">
@@ -222,13 +117,13 @@ export default async function PromotionsPage() {
           <div className="card-header">
             <h3>{t('promotions.redemptionTrend.cardTitle')}</h3>
           </div>
-          <div className="chart-placeholder">
-            <div className="chart-bars">
-              <div className="chart-bar" style={{ height: '45%' }}><span>W1</span></div>
-              <div className="chart-bar" style={{ height: '62%' }}><span>W2</span></div>
-              <div className="chart-bar" style={{ height: '78%' }}><span>W3</span></div>
-              <div className="chart-bar highlight" style={{ height: '100%' }}><span>W4</span></div>
-            </div>
+          <div className="card-body">
+            <BarChart bars={[
+              { label: 'W1', value: 342 },
+              { label: 'W2', value: 478 },
+              { label: 'W3', value: 612 },
+              { label: 'W4', value: 756 },
+            ]} height={160} showValues />
           </div>
           <div className="chart-legend">
             <span>{t('promotions.redemptionTrend.legendDesc')}</span>

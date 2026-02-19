@@ -2,6 +2,8 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import { teamMembers, rolePermissions } from '@/data/team';
 import { getTranslations } from 'next-intl/server';
+import TeamTable from './TeamTable';
+import type { TeamRow } from './TeamTable';
 
 const roleBadgeClass: Record<string, string> = {
   admin: 'badge badge-premium',
@@ -63,6 +65,14 @@ export default async function TeamPage() {
   const t = await getTranslations('team');
   const tc = await getTranslations('common');
 
+  const teamRows: TeamRow[] = teamMembers.map((member) => ({
+    ...member,
+    siteAccess: siteAccessLabels[member.id] ?? 'All Sites',
+    lastActive: lastActiveLabels[member.id] ?? 'Unknown',
+    roleLabel: roleLabels[member.role] ?? member.role,
+    roleBadgeClass: roleBadgeClass[member.role] ?? 'badge badge-secondary',
+  }));
+
   return (
     <DashboardLayout>
       <div className="page-header">
@@ -115,100 +125,7 @@ export default async function TeamPage() {
         </div>
       </div>
 
-      <div className="card" style={{ marginBottom: 24 }}>
-        <div className="filters-row">
-          <div className="filter-group">
-            <label>{t('filters.role')}</label>
-            <select>
-              <option value="">{tc('filters.allRoles')}</option>
-              {rolePermissions.map((rp) => (
-                <option key={rp.role} value={rp.role}>{roleLabels[rp.role] ?? rp.role}</option>
-              ))}
-            </select>
-          </div>
-          <div className="filter-group">
-            <label>{tc('table.status')}</label>
-            <select>
-              <option value="">{tc('filters.allStatus')}</option>
-              <option value="active">{tc('status.active')}</option>
-              <option value="inactive">{tc('status.inactive')}</option>
-              <option value="pending">{tc('status.pending')}</option>
-            </select>
-          </div>
-          <div className="filter-group">
-            <label>{t('filters.siteAccess')}</label>
-            <select>
-              <option value="">{tc('filters.allSites')}</option>
-              <option value="all">{t('filters.allSitesAccess')}</option>
-              <option value="xinyi">JetX Xinyi Station</option>
-              <option value="daan">JetX Daan Station</option>
-            </select>
-          </div>
-          <button className="btn btn-secondary">{tc('actions.apply')} {t('filters.label')}</button>
-        </div>
-      </div>
-
-      <div className="card" style={{ marginBottom: 24 }}>
-        <div className="card-header">
-          <h3 className="card-title">{t('sections.teamMembers')}</h3>
-          <div className="card-actions">
-            <button className="btn btn-sm btn-secondary">{tc('actions.export')}</button>
-          </div>
-        </div>
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>{t('table.user')}</th>
-              <th>{t('table.role')}</th>
-              <th>{t('table.siteAccess')}</th>
-              <th>{t('table.lastActive')}</th>
-              <th>{tc('table.status')}</th>
-              <th>{tc('table.actions')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {teamMembers.map((member) => {
-              const isOnline = lastActiveLabels[member.id] === 'Online now';
-              const isInactive = member.status === 'inactive';
-              return (
-                <tr key={member.id} className={isInactive ? 'inactive-row' : undefined}>
-                  <td>
-                    <div className="user-cell">
-                      <span className="user-avatar">{member.avatar}</span>
-                      <div className="user-info">
-                        <div className="cell-primary">{member.name}</div>
-                        <div className="cell-secondary">{member.email}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <span className={roleBadgeClass[member.role] ?? 'badge badge-secondary'}>
-                      {roleLabels[member.role] ?? member.role}
-                    </span>
-                  </td>
-                  <td>{siteAccessLabels[member.id] ?? 'All Sites'}</td>
-                  <td>
-                    {isOnline && <span className="status-dot online"></span>}
-                    {lastActiveLabels[member.id] ?? 'Unknown'}
-                  </td>
-                  <td>
-                    {member.status === 'active'
-                      ? <span className="badge badge-success">{tc('status.active')}</span>
-                      : <span className="badge badge-muted">{tc('status.inactive')}</span>
-                    }
-                  </td>
-                  <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div className="pagination">
-          <button className="btn btn-sm btn-secondary" disabled>{tc('actions.previous')}</button>
-          <span className="pagination-info">{t('pagination.pageOf', { page: 1, total: 3 })}</span>
-          <button className="btn btn-sm btn-secondary">{tc('actions.next')}</button>
-        </div>
-      </div>
+      <TeamTable data={teamRows} />
 
       <div className="card">
         <div className="card-header">

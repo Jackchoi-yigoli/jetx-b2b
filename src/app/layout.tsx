@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
+import { Providers } from './providers';
 import "./globals.css";
 
 const outfit = Outfit({
@@ -24,11 +24,18 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('jetx-theme')||'light';document.documentElement.setAttribute('data-theme',t)})();`,
+          }}
+        />
+      </head>
       <body className={`${outfit.variable} antialiased`}>
-        <NextIntlClientProvider messages={messages}>
+        <Providers locale={locale} messages={messages}>
           {children}
-        </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );

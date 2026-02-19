@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { machines, tickets, operators, sites } from '@/lib/data';
+import BarChart from '@/components/ui/BarChart';
 
 // ─── Derived data from shared data layer ───
 
@@ -98,7 +99,14 @@ export default async function DashboardPage() {
             <a href="/reports" className="card-link">{tc('actions.viewFullReport')}</a>
           </div>
           <div className="card-body">
-            <div className="chart-placeholder tall">Revenue Chart</div>
+            <BarChart bars={[
+              { label: 'Jul', value: 198000 },
+              { label: 'Aug', value: 215000 },
+              { label: 'Sep', value: 228000 },
+              { label: 'Oct', value: 245000 },
+              { label: 'Nov', value: 262000 },
+              { label: 'Dec', value: 284500 },
+            ]} height={220} showValues />
           </div>
         </div>
 

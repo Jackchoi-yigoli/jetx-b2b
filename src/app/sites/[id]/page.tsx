@@ -2,6 +2,7 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import BarChart from '@/components/ui/BarChart';
 
 export default async function SiteDetailPage() {
   const t = await getTranslations('sites');
@@ -150,7 +151,15 @@ export default async function SiteDetailPage() {
             <a href="/reports" className="card-link">{tc('actions.viewFullReport')}</a>
           </div>
           <div className="card-body">
-            <div className="chart-placeholder tall">Revenue Chart</div>
+            <BarChart bars={[
+              { label: 'Mon', value: 2100 },
+              { label: 'Tue', value: 1980 },
+              { label: 'Wed', value: 2250 },
+              { label: 'Thu', value: 2180 },
+              { label: 'Fri', value: 2680 },
+              { label: 'Sat', value: 3200 },
+              { label: 'Sun', value: 2340 },
+            ]} height={220} showValues />
           </div>
         </div>
 

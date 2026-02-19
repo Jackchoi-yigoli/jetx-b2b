@@ -3,62 +3,7 @@ import Link from 'next/link';
 import { campaigns, notificationTemplates } from '@/data/marketing';
 import { promoCodes } from '@/data/promo-codes';
 import { getTranslations } from 'next-intl/server';
-
-const TOTAL_SITES = 12;
-
-const categoryLabels: Record<string, string> = {
-  seasonal: 'Seasonal',
-  referral: 'Referral',
-  recurring: 'Recurring',
-  'flash-sale': 'Flash Sale',
-  loyalty: 'Loyalty',
-};
-
-const categoryColors: Record<string, string> = {
-  seasonal: 'var(--color-success)',
-  referral: 'var(--color-info)',
-  recurring: '#e5e7eb',
-  'flash-sale': 'var(--color-primary)',
-  loyalty: '#9333ea',
-};
-
-const categoryTextColors: Record<string, string> = {
-  recurring: '#111827',
-};
-
-function getOfferDisplay(campaign: (typeof campaigns)[number]): string {
-  const v = campaign.offerValue;
-  if (campaign.offerType === 'percentage-off') return `${v}% off`;
-  if (campaign.offerType === 'free-service') return String(v);
-  if (campaign.offerType === 'free-upgrade') return String(v);
-  return String(v);
-}
-
-function getDurationDisplay(campaign: (typeof campaigns)[number]): string {
-  if (campaign.endDate === '2099-12-31') return 'Ongoing';
-  const start = new Date(campaign.startDate);
-  const end = new Date(campaign.endDate);
-  const startStr = start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  const endStr = end.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  if (campaign.category === 'recurring') return 'Every Sat-Sun';
-  return `${startStr} - ${endStr}`;
-}
-
-function getSitesBadge(campaign: (typeof campaigns)[number]) {
-  const active = campaign.siteIds.length - (campaign.siteOptOuts?.length ?? 0);
-  const label = `${active}/${TOTAL_SITES} sites`;
-  if (active === TOTAL_SITES) return <span className="badge-pill badge-info">{label}</span>;
-  if (active >= 10) return <span className="badge-pill badge-info">{label}</span>;
-  if (active >= 8) return <span className="badge-pill badge-warning">{label}</span>;
-  return <span className="badge-pill">{label}</span>;
-}
-
-function getStatusBadge(status: string, activeLabel: string, scheduledLabel: string, pausedLabel: string) {
-  if (status === 'active') return <span className="badge-pill badge-success">{activeLabel}</span>;
-  if (status === 'scheduled') return <span className="badge-pill badge-warning">{scheduledLabel}</span>;
-  if (status === 'paused') return <span className="badge-pill badge-warning">{pausedLabel}</span>;
-  return <span className="badge-pill">{status}</span>;
-}
+import CampaignsTable from './CampaignsTable';
 
 function getPromoSitesBadge(code: (typeof promoCodes)[number], allSitesLabel: string) {
   if (code.siteIds.includes('all')) return <span className="badge-pill badge-info">{allSitesLabel}</span>;
@@ -174,52 +119,7 @@ export default async function MarketingPage() {
           <h3 className="card-title">{t('campaigns.cardTitle')}</h3>
           <p className="card-body" style={{ margin: 0, fontSize: '0.875rem' }}>{t('campaigns.cardDesc')}</p>
         </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('campaigns.table.campaign')}</th>
-                <th>{tc('table.type')}</th>
-                <th>{t('campaigns.table.offer')}</th>
-                <th>{t('campaigns.table.duration')}</th>
-                <th>{t('campaigns.table.sitesActive')}</th>
-                <th>{t('campaigns.table.redemptions')}</th>
-                <th>{tc('table.status')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {campaigns.map((campaign) => {
-                const initial = campaign.name.charAt(0);
-                const bg = categoryColors[campaign.category] ?? 'var(--color-primary)';
-                const color = categoryTextColors[campaign.category] ?? '#fff';
-                return (
-                  <tr key={campaign.id}>
-                    <td>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 32, height: 32, borderRadius: 8, background: bg, color, fontWeight: 700, fontSize: '0.875rem', flexShrink: 0 }}>{initial}</span>
-                        <div>
-                          <div className="list-item-title">{campaign.name}</div>
-                          <div className="list-item-subtitle">{campaign.targetAudience}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>{categoryLabels[campaign.category] ?? campaign.category}</td>
-                    <td>{getOfferDisplay(campaign)}</td>
-                    <td>{getDurationDisplay(campaign)}</td>
-                    <td>{getSitesBadge(campaign)}</td>
-                    <td>{campaign.converted > 0 ? campaign.converted.toLocaleString() : '-'}</td>
-                    <td>{getStatusBadge(campaign.status, tc('status.active'), tc('status.scheduled'), tc('status.paused'))}</td>
-                    <td style={{ display: 'flex', gap: '0.5rem' }}>
-                      <Link href="/marketing/campaign-edit" className="btn btn-secondary">{tc('actions.edit')}</Link>
-                      <Link href="/marketing/sites" className="btn btn-secondary">{t('campaigns.table.viewSites')}</Link>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+        <CampaignsTable data={campaigns} />
       </div>
 
       <div className="card">

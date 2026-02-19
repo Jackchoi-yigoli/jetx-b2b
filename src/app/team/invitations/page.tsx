@@ -2,6 +2,19 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import InvitationsTable from './InvitationsTable';
+
+const invitationData = [
+  { id: 'inv-1', email: 'jennifer.liu@cleanwash.com', role: 'Operator', siteAccess: 'CleanWash Sites (12)', invitedBy: 'John Chen', sentDate: 'Dec 6, 2025', expires: 'Dec 13, 2025', status: 'pending', result: '' },
+  { id: 'inv-2', email: 'alex.chen@quickshine.com', role: 'Site Manager', siteAccess: 'QuickShine Daan', invitedBy: 'Sarah Wong', sentDate: 'Dec 5, 2025', expires: 'Dec 12, 2025', status: 'pending', result: '' },
+  { id: 'inv-3', email: 'marketing@jetx.com', role: 'Viewer', siteAccess: 'All Sites (Read Only)', invitedBy: 'John Chen', sentDate: 'Dec 4, 2025', expires: 'Dec 11, 2025', status: 'pending', result: '' },
+  { id: 'inv-4', email: 'lisa.wang@jetx.com', role: 'Site Manager', siteAccess: '', invitedBy: 'John Chen', sentDate: 'Nov 28, 2025', expires: '', status: 'accepted', result: 'Joined Nov 29, 2025' },
+  { id: 'inv-5', email: 'david.lee@quickshine.com', role: 'Operator', siteAccess: '', invitedBy: 'Sarah Wong', sentDate: 'Nov 25, 2025', expires: '', status: 'accepted', result: 'Joined Nov 26, 2025' },
+  { id: 'inv-6', email: 'tech.team@metroauto.com', role: 'Support', siteAccess: '', invitedBy: 'John Chen', sentDate: 'Nov 20, 2025', expires: '', status: 'accepted', result: 'Joined Nov 21, 2025' },
+  { id: 'inv-7', email: 'james.wu@oldpartner.com', role: 'Operator', siteAccess: '', invitedBy: 'Sarah Wong', sentDate: 'Nov 15, 2025', expires: '', status: 'expired', result: '' },
+  { id: 'inv-8', email: 'test@example.com', role: 'Viewer', siteAccess: '', invitedBy: 'John Chen', sentDate: 'Nov 10, 2025', expires: '', status: 'revoked', result: '' },
+  { id: 'inv-9', email: 'amy.zhang@jetx.com', role: 'Viewer', siteAccess: '', invitedBy: 'John Chen', sentDate: 'Nov 5, 2025', expires: '', status: 'accepted', result: 'Joined Nov 5, 2025' },
+];
 
 export default async function TeamInvitationsPage() {
   const t = await getTranslations('team');
@@ -63,154 +76,7 @@ export default async function TeamInvitationsPage() {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-header">
-          <h3>{t('invitations.sections.pendingInvitations')}</h3>
-          <span className="badge badge-warning">3 {t('invitations.pending')}</span>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{tc('table.email')}</th>
-                <th>{t('table.role')}</th>
-                <th>{t('table.siteAccess')}</th>
-                <th>{t('invitations.table.invitedBy')}</th>
-                <th>{t('invitations.table.sent')}</th>
-                <th>{t('invitations.table.expires')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div className="cell-primary">jennifer.liu@cleanwash.com</div>
-                </td>
-                <td><span className="badge badge-secondary">Operator</span></td>
-                <td>CleanWash Sites (12)</td>
-                <td>John Chen</td>
-                <td>Dec 6, 2025</td>
-                <td><span style={{ color: 'var(--warning)' }}>Dec 13, 2025</span></td>
-                <td>
-                  <button className="btn btn-sm">{t('invitations.actions.resend')}</button>
-                  <button className="btn btn-sm" style={{ borderColor: 'var(--danger)', color: 'var(--danger)', marginLeft: '0.25rem' }}>{t('invitations.actions.revoke')}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">alex.chen@quickshine.com</div>
-                </td>
-                <td><span className="badge badge-secondary">Site Manager</span></td>
-                <td>QuickShine Daan</td>
-                <td>Sarah Wong</td>
-                <td>Dec 5, 2025</td>
-                <td><span style={{ color: 'var(--warning)' }}>Dec 12, 2025</span></td>
-                <td>
-                  <button className="btn btn-sm">{t('invitations.actions.resend')}</button>
-                  <button className="btn btn-sm" style={{ borderColor: 'var(--danger)', color: 'var(--danger)', marginLeft: '0.25rem' }}>{t('invitations.actions.revoke')}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">marketing@jetx.com</div>
-                </td>
-                <td><span className="badge badge-muted">Viewer</span></td>
-                <td>All Sites (Read Only)</td>
-                <td>John Chen</td>
-                <td>Dec 4, 2025</td>
-                <td><span style={{ color: 'var(--danger)' }}>Dec 11, 2025</span></td>
-                <td>
-                  <button className="btn btn-sm">{t('invitations.actions.resend')}</button>
-                  <button className="btn btn-sm" style={{ borderColor: 'var(--danger)', color: 'var(--danger)', marginLeft: '0.25rem' }}>{t('invitations.actions.revoke')}</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-header">
-          <h3>{t('invitations.sections.invitationHistory')}</h3>
-          <div className="card-actions">
-            <select className="form-select-sm">
-              <option>{tc('filters.allStatus')}</option>
-              <option>{tc('status.active')}</option>
-              <option>{tc('status.expired')}</option>
-              <option>{tc('status.revoked')}</option>
-            </select>
-          </div>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{tc('table.email')}</th>
-                <th>{t('table.role')}</th>
-                <th>{t('invitations.table.invitedBy')}</th>
-                <th>{t('invitations.table.sent')}</th>
-                <th>{tc('table.status')}</th>
-                <th>{t('invitations.table.result')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><div className="cell-primary">lisa.wang@jetx.com</div></td>
-                <td><span className="badge badge-secondary">Site Manager</span></td>
-                <td>John Chen</td>
-                <td>Nov 28, 2025</td>
-                <td><span className="badge badge-success">{t('invitations.status.accepted')}</span></td>
-                <td><span style={{ color: 'var(--success)' }}>Joined Nov 29, 2025</span></td>
-              </tr>
-              <tr>
-                <td><div className="cell-primary">david.lee@quickshine.com</div></td>
-                <td><span className="badge badge-secondary">Operator</span></td>
-                <td>Sarah Wong</td>
-                <td>Nov 25, 2025</td>
-                <td><span className="badge badge-success">{t('invitations.status.accepted')}</span></td>
-                <td><span style={{ color: 'var(--success)' }}>Joined Nov 26, 2025</span></td>
-              </tr>
-              <tr>
-                <td><div className="cell-primary">tech.team@metroauto.com</div></td>
-                <td><span className="badge badge-warning">Support</span></td>
-                <td>John Chen</td>
-                <td>Nov 20, 2025</td>
-                <td><span className="badge badge-success">{t('invitations.status.accepted')}</span></td>
-                <td><span style={{ color: 'var(--success)' }}>Joined Nov 21, 2025</span></td>
-              </tr>
-              <tr style={{ opacity: 0.6 }}>
-                <td><div className="cell-primary">james.wu@oldpartner.com</div></td>
-                <td><span className="badge badge-secondary">Operator</span></td>
-                <td>Sarah Wong</td>
-                <td>Nov 15, 2025</td>
-                <td><span className="badge badge-muted">{tc('status.expired')}</span></td>
-                <td><span style={{ color: 'var(--text-muted)' }}>{t('invitations.status.neverAccepted')}</span></td>
-              </tr>
-              <tr style={{ opacity: 0.6 }}>
-                <td><div className="cell-primary">test@example.com</div></td>
-                <td><span className="badge badge-muted">Viewer</span></td>
-                <td>John Chen</td>
-                <td>Nov 10, 2025</td>
-                <td><span className="badge badge-danger">{tc('status.revoked')}</span></td>
-                <td><span style={{ color: 'var(--text-muted)' }}>{t('invitations.status.revokedByAdmin')}</span></td>
-              </tr>
-              <tr>
-                <td><div className="cell-primary">amy.zhang@jetx.com</div></td>
-                <td><span className="badge badge-muted">Viewer</span></td>
-                <td>John Chen</td>
-                <td>Nov 5, 2025</td>
-                <td><span className="badge badge-success">{t('invitations.status.accepted')}</span></td>
-                <td><span style={{ color: 'var(--success)' }}>Joined Nov 5, 2025</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="pagination">
-          <button className="btn btn-sm" disabled>{tc('actions.previous')}</button>
-          <span className="pagination-info">{t('pagination.pageOf', { page: 1, total: 3 })}</span>
-          <button className="btn btn-sm">{tc('actions.next')}</button>
-        </div>
-      </div>
+      <InvitationsTable data={invitationData} />
 
       <div className="card">
         <div className="card-header">

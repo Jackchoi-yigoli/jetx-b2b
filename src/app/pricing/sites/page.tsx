@@ -2,6 +2,24 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import PricingSitesTable from './PricingSitesTable';
+import type { SitePricingRow } from './PricingSitesTable';
+
+const sitePricingData: SitePricingRow[] = [
+  { id: 'taipei-main', name: 'Taipei Main Station', address: 'No. 1 Zhongxiao E. Rd', operator: 'ABC Car Wash Co.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$18.00', premiumOverride: false, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 0, dynamicRules: 4, monthlyRevenue: '$68,450' },
+  { id: 'xinyi', name: 'Xinyi District', address: 'No. 88 Songren Rd', operator: 'ABC Car Wash Co.', template: 'Premium', basicPrice: '$15.00', basicOverride: false, premiumPrice: '$24.00', premiumOverride: true, ultimatePrice: '$30.00', ultimateOverride: false, overrides: 1, dynamicRules: 4, monthlyRevenue: '$142,800' },
+  { id: 'daan', name: 'Daan Station', address: 'No. 216 Fuxing S. Rd', operator: 'ABC Car Wash Co.', template: 'Premium', basicPrice: '$15.00', basicOverride: false, premiumPrice: '$22.00', premiumOverride: false, ultimatePrice: '$30.00', ultimateOverride: false, overrides: 0, dynamicRules: 4, monthlyRevenue: '$62,100' },
+  { id: 'taoyuan-airport', name: 'Taoyuan Airport', address: 'Terminal 2, Level B2', operator: 'ABC Car Wash Co.', template: 'Premium', basicPrice: '$18.00', basicOverride: true, premiumPrice: '$26.00', premiumOverride: true, ultimatePrice: '$35.00', ultimateOverride: true, overrides: 3, dynamicRules: 3, monthlyRevenue: '$118,200' },
+  { id: 'banqiao', name: 'Banqiao Station', address: 'No. 3 Xianmin Blvd', operator: 'XYZ Motors', template: 'Budget', basicPrice: '$10.00', basicOverride: false, premiumPrice: '$15.00', premiumOverride: false, ultimatePrice: '$20.00', ultimateOverride: false, overrides: 0, dynamicRules: 2, monthlyRevenue: '$42,100' },
+  { id: 'neihu', name: 'Neihu Tech Park', address: 'No. 178 Ruiguang Rd', operator: 'XYZ Motors', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$20.00', premiumOverride: true, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 1, dynamicRules: 3, monthlyRevenue: '$38,200' },
+  { id: 'zhonghe', name: 'Zhonghe Industrial', address: 'No. 235 Zhongshan Rd', operator: 'XYZ Motors', template: 'Budget', basicPrice: '$9.00', basicOverride: true, premiumPrice: '$14.00', premiumOverride: true, ultimatePrice: '$18.00', ultimateOverride: true, overrides: 3, dynamicRules: 2, monthlyRevenue: '$28,900' },
+  { id: 'nangang', name: 'Nangang Station', address: 'No. 2 Nangang Rd', operator: 'Clean Fleet Inc.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$18.00', premiumOverride: false, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 0, dynamicRules: 4, monthlyRevenue: '$45,600' },
+  { id: 'xindian', name: 'Xindian Riverside', address: 'No. 88 Beiyi Rd', operator: 'Clean Fleet Inc.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$18.00', premiumOverride: false, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 0, dynamicRules: 3, monthlyRevenue: '$36,800' },
+  { id: 'tucheng', name: 'Tucheng Industrial', address: 'No. 156 Jincheng Rd', operator: 'Clean Fleet Inc.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$18.00', premiumOverride: false, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 0, dynamicRules: 3, monthlyRevenue: '$32,400' },
+  { id: 'sanchong', name: 'Sanchong Gateway', address: 'No. 45 Chongxin Rd', operator: 'ABC Car Wash Co.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$18.00', premiumOverride: false, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 0, dynamicRules: 4, monthlyRevenue: '$41,200' },
+  { id: 'yonghe', name: 'Yonghe District', address: 'No. 321 Zhongzheng Rd', operator: 'ABC Car Wash Co.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$18.00', premiumOverride: false, ultimatePrice: '$25.00', ultimateOverride: false, overrides: 0, dynamicRules: 3, monthlyRevenue: '$38,900' },
+  { id: 'linkou', name: 'Linkou Outlet', address: 'No. 1 Wenhua 3rd Rd', operator: 'ABC Car Wash Co.', template: 'Standard', basicPrice: '$12.00', basicOverride: false, premiumPrice: '$20.00', premiumOverride: true, ultimatePrice: '$28.00', ultimateOverride: true, overrides: 2, dynamicRules: 4, monthlyRevenue: '$52,100' },
+];
 
 export default async function PricingSitesPage() {
   const t = await getTranslations('pricing');
@@ -64,260 +82,7 @@ export default async function PricingSitesPage() {
 
       <TabNav tabs={tabs} />
 
-      <div className="filter-bar">
-        <div className="filter-group">
-          <select className="form-select">
-            <option>{t('siteAssignments.allTemplates')}</option>
-            <option>Taiwan Standard</option>
-            <option>Taiwan Premium</option>
-            <option>Taiwan Budget</option>
-          </select>
-          <select className="form-select">
-            <option>{tc('filters.allOperators')}</option>
-            <option>ABC Car Wash Co.</option>
-            <option>XYZ Motors</option>
-            <option>Clean Fleet Inc.</option>
-          </select>
-          <select className="form-select">
-            <option>{t('sites.overrideStatus')}</option>
-            <option>{t('sites.hasOverrides')}</option>
-            <option>{t('siteAssignments.noOverrides')}</option>
-          </select>
-        </div>
-        <div className="filter-actions">
-          <button className="btn btn-text">{t('sites.clearFilters')}</button>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-header">
-          <h3 className="card-title">{t('sites.allSites', { count: 17 })}</h3>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('siteAssignments.table.site')}</th>
-                <th>{t('sites.table.operator')}</th>
-                <th>{t('siteAssignments.table.template')}</th>
-                <th>{t('edit.basicWash')}</th>
-                <th>{t('edit.premiumWash')}</th>
-                <th>{t('edit.ultimateWash')}</th>
-                <th>{t('siteAssignments.table.hasOverrides')}</th>
-                <th>{t('siteAssignments.table.dynamicRules')}</th>
-                <th>{t('siteAssignments.table.monthlyRevenue')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div className="cell-primary">Taipei Main Station</div>
-                  <div className="cell-secondary">No. 1 Zhongxiao E. Rd</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td>$18.00</td>
-                <td>$25.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>4 {t('siteAssignments.active')}</td>
-                <td>$68,450</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Xinyi District</div>
-                  <div className="cell-secondary">No. 88 Songren Rd</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-premium">Premium</span></td>
-                <td>$15.00</td>
-                <td><span className="text-warning">$24.00 ⚙</span></td>
-                <td>$30.00</td>
-                <td><span className="badge-pill badge-warning">{t('siteAssignments.override', { count: 1 })}</span></td>
-                <td>4 {t('siteAssignments.active')}</td>
-                <td>$142,800</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Daan Station</div>
-                  <div className="cell-secondary">No. 216 Fuxing S. Rd</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-premium">Premium</span></td>
-                <td>$15.00</td>
-                <td>$22.00</td>
-                <td>$30.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>4 {t('siteAssignments.active')}</td>
-                <td>$62,100</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Taoyuan Airport</div>
-                  <div className="cell-secondary">Terminal 2, Level B2</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-premium">Premium</span></td>
-                <td><span className="text-warning">$18.00 ⚙</span></td>
-                <td><span className="text-warning">$26.00 ⚙</span></td>
-                <td><span className="text-warning">$35.00 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">{t('siteAssignments.overrides', { count: 3 })}</span></td>
-                <td>3 {t('siteAssignments.active')}</td>
-                <td>$118,200</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Banqiao Station</div>
-                  <div className="cell-secondary">No. 3 Xianmin Blvd</div>
-                </td>
-                <td>XYZ Motors</td>
-                <td><span className="badge-pill badge-muted">Budget</span></td>
-                <td>$10.00</td>
-                <td>$15.00</td>
-                <td>$20.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>2 {t('siteAssignments.active')}</td>
-                <td>$42,100</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Neihu Tech Park</div>
-                  <div className="cell-secondary">No. 178 Ruiguang Rd</div>
-                </td>
-                <td>XYZ Motors</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td><span className="text-warning">$20.00 ⚙</span></td>
-                <td>$25.00</td>
-                <td><span className="badge-pill badge-warning">{t('siteAssignments.override', { count: 1 })}</span></td>
-                <td>3 {t('siteAssignments.active')}</td>
-                <td>$38,200</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Zhonghe Industrial</div>
-                  <div className="cell-secondary">No. 235 Zhongshan Rd</div>
-                </td>
-                <td>XYZ Motors</td>
-                <td><span className="badge-pill badge-muted">Budget</span></td>
-                <td><span className="text-warning">$9.00 ⚙</span></td>
-                <td><span className="text-warning">$14.00 ⚙</span></td>
-                <td><span className="text-warning">$18.00 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">{t('siteAssignments.overrides', { count: 3 })}</span></td>
-                <td>2 {t('siteAssignments.active')}</td>
-                <td>$28,900</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Nangang Station</div>
-                  <div className="cell-secondary">No. 2 Nangang Rd</div>
-                </td>
-                <td>Clean Fleet Inc.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td>$18.00</td>
-                <td>$25.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>4 {t('siteAssignments.active')}</td>
-                <td>$45,600</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Xindian Riverside</div>
-                  <div className="cell-secondary">No. 88 Beiyi Rd</div>
-                </td>
-                <td>Clean Fleet Inc.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td>$18.00</td>
-                <td>$25.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>3 {t('siteAssignments.active')}</td>
-                <td>$36,800</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Tucheng Industrial</div>
-                  <div className="cell-secondary">No. 156 Jincheng Rd</div>
-                </td>
-                <td>Clean Fleet Inc.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td>$18.00</td>
-                <td>$25.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>3 {t('siteAssignments.active')}</td>
-                <td>$32,400</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Sanchong Gateway</div>
-                  <div className="cell-secondary">No. 45 Chongxin Rd</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td>$18.00</td>
-                <td>$25.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>4 {t('siteAssignments.active')}</td>
-                <td>$41,200</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Yonghe District</div>
-                  <div className="cell-secondary">No. 321 Zhongzheng Rd</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td>$18.00</td>
-                <td>$25.00</td>
-                <td><span className="text-muted">{t('siteAssignments.table.none')}</span></td>
-                <td>3 {t('siteAssignments.active')}</td>
-                <td>$38,900</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">Linkou Outlet</div>
-                  <div className="cell-secondary">No. 1 Wenhua 3rd Rd</div>
-                </td>
-                <td>ABC Car Wash Co.</td>
-                <td><span className="badge-pill badge-info">Standard</span></td>
-                <td>$12.00</td>
-                <td><span className="text-warning">$20.00 ⚙</span></td>
-                <td><span className="text-warning">$28.00 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">{t('siteAssignments.overrides', { count: 2 })}</span></td>
-                <td>4 {t('siteAssignments.active')}</td>
-                <td>$52,100</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.configure')}</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="table-footer">
-          <div className="table-info">{t('sites.showing', { shown: 13, total: 17 })}</div>
-          <div className="pagination">
-            <button className="pagination-btn" disabled>{tc('actions.previous')}</button>
-            <button className="pagination-btn active">1</button>
-            <button className="pagination-btn">2</button>
-            <button className="pagination-btn">{tc('actions.next')}</button>
-          </div>
-        </div>
-      </div>
+      <PricingSitesTable data={sitePricingData} />
 
       <div className="grid-2">
         <div className="card">

@@ -166,7 +166,8 @@
   "topbar": {
     "searchPlaceholder": "搜尋任何內容...",
     "userRole": "區域代表",
-    "notifications": "通知"
+    "notifications": "通知",
+    "toggleTheme": "切換深色模式"
   },
   "dashboard": {
     "breadcrumb": "首頁",

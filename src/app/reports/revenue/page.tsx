@@ -2,6 +2,7 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import StackedBarChart from '@/components/ui/StackedBarChart';
 
 export default async function RevenueReportPage() {
   const t = await getTranslations('reports');
@@ -95,40 +96,23 @@ export default async function RevenueReportPage() {
             <button style={{ padding: '0.35rem 0.75rem', fontSize: '0.75rem', background: 'var(--color-bg-tertiary)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-sm)', cursor: 'pointer', color: 'var(--color-text-secondary)' }}>{t('revenue.chart.monthly')}</button>
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px', height: '200px', paddingTop: '1rem' }}>
-          {[
-            { label: 'Dec 1', addons: 15, single: 45, membership: 50 },
-            { label: 'Dec 2', addons: 18, single: 52, membership: 55 },
-            { label: 'Dec 3', addons: 14, single: 48, membership: 52 },
-            { label: 'Dec 4', addons: 16, single: 50, membership: 54 },
-            { label: 'Dec 5', addons: 20, single: 58, membership: 60 },
-            { label: 'Dec 6', addons: 25, single: 72, membership: 68 },
-            { label: 'Dec 7', addons: 28, single: 78, membership: 72 },
-          ].map((bar) => (
-            <div key={bar.label} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <div style={{ width: '100%', maxWidth: '50px', display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <div style={{ width: '100%', height: `${bar.addons}px`, background: 'var(--color-info)', borderRadius: '3px 3px 0 0' }}></div>
-                <div style={{ width: '100%', height: `${bar.single}px`, background: 'var(--color-secondary)', borderRadius: '3px 3px 0 0' }}></div>
-                <div style={{ width: '100%', height: `${bar.membership}px`, background: 'var(--color-primary)', borderRadius: '3px 3px 0 0' }}></div>
-              </div>
-              <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textAlign: 'center' }}>{bar.label}</div>
-            </div>
-          ))}
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--color-border)' }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '3px', background: 'var(--color-primary)', display: 'inline-block' }}></span>
-            {t('revenue.chart.legend.membershipRevenue')}
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '3px', background: 'var(--color-secondary)', display: 'inline-block' }}></span>
-            {t('revenue.chart.legend.singleWashRevenue')}
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '3px', background: 'var(--color-info)', display: 'inline-block' }}></span>
-            {t('revenue.chart.legend.addonRevenue')}
-          </span>
-        </div>
+        <StackedBarChart
+          bars={[
+            { label: 'Dec 1', segments: [{ key: 'addons', value: 15, color: 'var(--color-info)' }, { key: 'single', value: 45, color: 'var(--color-secondary)' }, { key: 'membership', value: 50, color: 'var(--color-primary)' }] },
+            { label: 'Dec 2', segments: [{ key: 'addons', value: 18, color: 'var(--color-info)' }, { key: 'single', value: 52, color: 'var(--color-secondary)' }, { key: 'membership', value: 55, color: 'var(--color-primary)' }] },
+            { label: 'Dec 3', segments: [{ key: 'addons', value: 14, color: 'var(--color-info)' }, { key: 'single', value: 48, color: 'var(--color-secondary)' }, { key: 'membership', value: 52, color: 'var(--color-primary)' }] },
+            { label: 'Dec 4', segments: [{ key: 'addons', value: 16, color: 'var(--color-info)' }, { key: 'single', value: 50, color: 'var(--color-secondary)' }, { key: 'membership', value: 54, color: 'var(--color-primary)' }] },
+            { label: 'Dec 5', segments: [{ key: 'addons', value: 20, color: 'var(--color-info)' }, { key: 'single', value: 58, color: 'var(--color-secondary)' }, { key: 'membership', value: 60, color: 'var(--color-primary)' }] },
+            { label: 'Dec 6', segments: [{ key: 'addons', value: 25, color: 'var(--color-info)' }, { key: 'single', value: 72, color: 'var(--color-secondary)' }, { key: 'membership', value: 68, color: 'var(--color-primary)' }] },
+            { label: 'Dec 7', segments: [{ key: 'addons', value: 28, color: 'var(--color-info)' }, { key: 'single', value: 78, color: 'var(--color-secondary)' }, { key: 'membership', value: 72, color: 'var(--color-primary)' }] },
+          ]}
+          height={220}
+          legend={[
+            { key: 'membership', label: 'Membership Revenue', color: 'var(--color-primary)' },
+            { key: 'single', label: 'Single Wash Revenue', color: 'var(--color-secondary)' },
+            { key: 'addons', label: 'Add-on Revenue', color: 'var(--color-info)' },
+          ]}
+        />
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginBottom: '1.5rem' }}>

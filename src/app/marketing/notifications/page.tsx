@@ -2,6 +2,15 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import NotificationsTable from './NotificationsTable';
+
+const notificationData = [
+  { id: 'notif-1', title: 'Weekend is here! Free upgrade awaits', body: 'Get a free upgrade to Premium wash this weekend only!', type: 'promotional', audience: '8 sites', delivered: '34,560', opened: '23%', clicked: '8.2%', sent: 'Dec 7, 9:00 AM' },
+  { id: 'notif-2', title: 'Your points are expiring soon!', body: 'You have 450 points expiring on Dec 31. Use them now!', type: 'reminder', audience: 'Targeted', delivered: '2,340', opened: '45%', clicked: '12.4%', sent: 'Dec 5, 2:00 PM' },
+  { id: 'notif-3', title: 'Holiday Special: 20% off this month', body: 'Celebrate the holidays with 20% off all premium washes!', type: 'promotional', audience: 'All Users', delivered: '45,230', opened: '31%', clicked: '9.8%', sent: 'Dec 1, 10:00 AM' },
+  { id: 'notif-4', title: 'Your wash is ready!', body: 'Your car is clean and ready for pickup at Bay 3.', type: 'transactional', audience: 'Auto', delivered: '12,450', opened: '72%', clicked: 'N/A', sent: 'ongoing' },
+  { id: 'notif-5', title: 'Membership renewal reminder', body: 'Your Premium membership expires in 3 days. Renew now!', type: 'reminder', audience: 'Auto', delivered: '890', opened: '58%', clicked: '22.1%', sent: 'ongoing' },
+];
 
 export default async function NotificationsPage() {
   const t = await getTranslations('marketing');
@@ -74,121 +83,8 @@ export default async function NotificationsPage() {
       <div className="card">
         <div className="card-header">
           <h3>{t('notifications.recent.cardTitle')}</h3>
-          <div className="filter-group">
-            <select className="form-select-sm">
-              <option>{tc('filters.allTypes')}</option>
-              <option>{t('notifications.types.promotional')}</option>
-              <option>{t('notifications.types.transactional')}</option>
-              <option>{t('notifications.types.reminder')}</option>
-            </select>
-          </div>
         </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('notifications.recent.table.notification')}</th>
-                <th>{tc('table.type')}</th>
-                <th>{t('notifications.recent.table.audience')}</th>
-                <th>{t('notifications.recent.table.delivered')}</th>
-                <th>{t('notifications.recent.table.opened')}</th>
-                <th>{t('notifications.recent.table.clicked')}</th>
-                <th>{t('notifications.recent.table.sent')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div className="notif-preview">
-                    <strong>Weekend is here! Free upgrade awaits</strong>
-                    <span>Get a free upgrade to Premium wash this weekend only!</span>
-                  </div>
-                </td>
-                <td><span className="badge badge-info">{t('notifications.types.promotional')}</span></td>
-                <td>8 sites</td>
-                <td>34,560</td>
-                <td><span className="text-success">23%</span></td>
-                <td><span className="text-success">8.2%</span></td>
-                <td>Dec 7, 9:00 AM</td>
-                <td>
-                  <button className="btn btn-sm">{tc('actions.view')}</button>
-                  <button className="btn btn-sm">{t('actions.clone')}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="notif-preview">
-                    <strong>Your points are expiring soon!</strong>
-                    <span>You have 450 points expiring on Dec 31. Use them now!</span>
-                  </div>
-                </td>
-                <td><span className="badge badge-warning">{t('notifications.types.reminder')}</span></td>
-                <td>{t('notifications.recent.table.targeted')}</td>
-                <td>2,340</td>
-                <td><span className="text-success">45%</span></td>
-                <td><span className="text-success">12.4%</span></td>
-                <td>Dec 5, 2:00 PM</td>
-                <td>
-                  <button className="btn btn-sm">{tc('actions.view')}</button>
-                  <button className="btn btn-sm">{t('actions.clone')}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="notif-preview">
-                    <strong>Holiday Special: 20% off this month</strong>
-                    <span>Celebrate the holidays with 20% off all premium washes!</span>
-                  </div>
-                </td>
-                <td><span className="badge badge-info">{t('notifications.types.promotional')}</span></td>
-                <td>{t('notifications.recent.table.allUsers')}</td>
-                <td>45,230</td>
-                <td><span className="text-success">31%</span></td>
-                <td><span className="text-success">9.8%</span></td>
-                <td>Dec 1, 10:00 AM</td>
-                <td>
-                  <button className="btn btn-sm">{tc('actions.view')}</button>
-                  <button className="btn btn-sm">{t('actions.clone')}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="notif-preview">
-                    <strong>Your wash is ready!</strong>
-                    <span>Your car is clean and ready for pickup at Bay 3.</span>
-                  </div>
-                </td>
-                <td><span className="badge badge-success">{t('notifications.types.transactional')}</span></td>
-                <td>{t('notifications.recent.table.auto')}</td>
-                <td>12,450</td>
-                <td><span className="text-success">72%</span></td>
-                <td><span className="text-muted">N/A</span></td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>
-                  <button className="btn btn-sm">{t('notifications.recent.table.settings')}</button>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="notif-preview">
-                    <strong>Membership renewal reminder</strong>
-                    <span>Your Premium membership expires in 3 days. Renew now!</span>
-                  </div>
-                </td>
-                <td><span className="badge badge-warning">{t('notifications.types.reminder')}</span></td>
-                <td>{t('notifications.recent.table.auto')}</td>
-                <td>890</td>
-                <td><span className="text-success">58%</span></td>
-                <td><span className="text-success">22.1%</span></td>
-                <td>{t('promoCodes.ongoing')}</td>
-                <td>
-                  <button className="btn btn-sm">{t('notifications.recent.table.settings')}</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <NotificationsTable data={notificationData} />
       </div>
 
       <div className="grid-2">

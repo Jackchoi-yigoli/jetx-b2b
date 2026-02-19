@@ -2,36 +2,7 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
-
-const memberGrowthBars = [
-  { month: 'Jan', height: '55%' },
-  { month: 'Feb', height: '60%' },
-  { month: 'Mar', height: '58%' },
-  { month: 'Apr', height: '65%' },
-  { month: 'May', height: '70%' },
-  { month: 'Jun', height: '72%' },
-  { month: 'Jul', height: '78%' },
-  { month: 'Aug', height: '82%' },
-  { month: 'Sep', height: '85%' },
-  { month: 'Oct', height: '90%' },
-  { month: 'Nov', height: '95%' },
-  { month: 'Dec', height: '100%', highlight: true },
-];
-
-const mrrTrendBars = [
-  { month: 'Jan', height: '50%' },
-  { month: 'Feb', height: '55%' },
-  { month: 'Mar', height: '52%' },
-  { month: 'Apr', height: '60%' },
-  { month: 'May', height: '65%' },
-  { month: 'Jun', height: '68%' },
-  { month: 'Jul', height: '75%' },
-  { month: 'Aug', height: '80%' },
-  { month: 'Sep', height: '85%' },
-  { month: 'Oct', height: '88%' },
-  { month: 'Nov', height: '92%' },
-  { month: 'Dec', height: '100%', highlight: true },
-];
+import BarChart from '@/components/ui/BarChart';
 
 export default async function MembershipAnalyticsPage() {
   const t = await getTranslations('memberships');
@@ -109,18 +80,21 @@ export default async function MembershipAnalyticsPage() {
           <div className="card-header">
             <h3>{t('analytics.memberGrowth.title')}</h3>
           </div>
-          <div className="chart-placeholder">
-            <div className="chart-bars">
-              {memberGrowthBars.map((bar) => (
-                <div
-                  key={bar.month}
-                  className={`chart-bar${bar.highlight ? ' highlight' : ''}`}
-                  style={{ height: bar.height }}
-                >
-                  <span>{bar.month}</span>
-                </div>
-              ))}
-            </div>
+          <div className="card-body">
+            <BarChart bars={[
+              { label: 'Jan', value: 6800 },
+              { label: 'Feb', value: 7200 },
+              { label: 'Mar', value: 7100 },
+              { label: 'Apr', value: 7800 },
+              { label: 'May', value: 8400 },
+              { label: 'Jun', value: 8650 },
+              { label: 'Jul', value: 9400 },
+              { label: 'Aug', value: 9800 },
+              { label: 'Sep', value: 10200 },
+              { label: 'Oct', value: 10800 },
+              { label: 'Nov', value: 11400 },
+              { label: 'Dec', value: 12450 },
+            ]} height={180} />
           </div>
           <div className="stat-breakdown" style={{ padding: '16px 20px', borderTop: '1px solid var(--color-border)' }}>
             <div className="breakdown-item">
@@ -138,18 +112,21 @@ export default async function MembershipAnalyticsPage() {
           <div className="card-header">
             <h3>{t('analytics.mrrTrend.title')}</h3>
           </div>
-          <div className="chart-placeholder">
-            <div className="chart-bars">
-              {mrrTrendBars.map((bar) => (
-                <div
-                  key={bar.month}
-                  className={`chart-bar${bar.highlight ? ' highlight' : ''}`}
-                  style={{ height: bar.height }}
-                >
-                  <span>{bar.month}</span>
-                </div>
-              ))}
-            </div>
+          <div className="card-body">
+            <BarChart bars={[
+              { label: 'Jan', value: 340 },
+              { label: 'Feb', value: 375 },
+              { label: 'Mar', value: 355 },
+              { label: 'Apr', value: 410 },
+              { label: 'May', value: 445 },
+              { label: 'Jun', value: 465 },
+              { label: 'Jul', value: 510 },
+              { label: 'Aug', value: 545 },
+              { label: 'Sep', value: 580 },
+              { label: 'Oct', value: 600 },
+              { label: 'Nov', value: 628 },
+              { label: 'Dec', value: 685 },
+            ]} height={180} />
           </div>
           <div className="stat-breakdown" style={{ padding: '16px 20px', borderTop: '1px solid var(--color-border)' }}>
             <div className="breakdown-item">

@@ -2,6 +2,179 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import SiteAssignmentsTable from './SiteAssignmentsTable';
+import type { SiteAssignmentRow } from './SiteAssignmentsTable';
+
+const siteAssignmentRows: SiteAssignmentRow[] = [
+  {
+    id: '1',
+    name: 'Taipei Main Station',
+    address: '12 Zhongxiao E. Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: '$99',
+    unlimitedStatus: 'standard',
+    activeMembers: 1245,
+    siteMrr: '$68,450',
+    siteMrrSort: 68450,
+  },
+  {
+    id: '2',
+    name: 'Xinyi District',
+    address: '88 Songren Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$65',
+    premiumStatus: 'override',
+    unlimitedPrice: '$99',
+    unlimitedStatus: 'standard',
+    activeMembers: 2340,
+    siteMrr: '$142,800',
+    siteMrrSort: 142800,
+  },
+  {
+    id: '3',
+    name: 'Banqiao Station',
+    address: '50 Zhongshan Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: null,
+    unlimitedStatus: 'unavailable',
+    activeMembers: 890,
+    siteMrr: '$42,100',
+    siteMrrSort: 42100,
+  },
+  {
+    id: '4',
+    name: 'Taoyuan Airport',
+    address: 'Terminal 2, Level B2',
+    basicPrice: null,
+    basicStatus: 'unavailable',
+    premiumPrice: '$69',
+    premiumStatus: 'override',
+    unlimitedPrice: '$119',
+    unlimitedStatus: 'override',
+    activeMembers: 1560,
+    siteMrr: '$118,200',
+    siteMrrSort: 118200,
+  },
+  {
+    id: '5',
+    name: 'Zhonghe Industrial',
+    address: '22 Zhonghe Rd',
+    basicPrice: '$25',
+    basicStatus: 'override',
+    premiumPrice: '$49',
+    premiumStatus: 'override',
+    unlimitedPrice: '$79',
+    unlimitedStatus: 'override',
+    activeMembers: 780,
+    siteMrr: '$38,200',
+    siteMrrSort: 38200,
+  },
+  {
+    id: '6',
+    name: 'Neihu Tech Park',
+    address: '168 Ruiguang Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: '$99',
+    unlimitedStatus: 'standard',
+    activeMembers: 1120,
+    siteMrr: '$62,400',
+    siteMrrSort: 62400,
+  },
+  {
+    id: '7',
+    name: 'Shilin Night Market',
+    address: '101 Jihe Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: null,
+    unlimitedStatus: 'unavailable',
+    activeMembers: 650,
+    siteMrr: '$32,100',
+    siteMrrSort: 32100,
+  },
+  {
+    id: '8',
+    name: 'Beitou Hot Springs',
+    address: '45 Guangming Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$65',
+    premiumStatus: 'override',
+    unlimitedPrice: '$109',
+    unlimitedStatus: 'override',
+    activeMembers: 520,
+    siteMrr: '$38,900',
+    siteMrrSort: 38900,
+  },
+  {
+    id: '9',
+    name: 'Tamsui Waterfront',
+    address: '88 Zhongzheng Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: '$99',
+    unlimitedStatus: 'standard',
+    activeMembers: 890,
+    siteMrr: '$48,600',
+    siteMrrSort: 48600,
+  },
+  {
+    id: '10',
+    name: 'Xindian Riverside',
+    address: '200 Beiyi Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: '$99',
+    unlimitedStatus: 'standard',
+    activeMembers: 720,
+    siteMrr: '$41,200',
+    siteMrrSort: 41200,
+  },
+  {
+    id: '11',
+    name: 'Linkou Outlet',
+    address: '1 Wenhua 3rd Rd',
+    basicPrice: '$29',
+    basicStatus: 'standard',
+    premiumPrice: '$59',
+    premiumStatus: 'standard',
+    unlimitedPrice: '$99',
+    unlimitedStatus: 'standard',
+    activeMembers: 980,
+    siteMrr: '$52,800',
+    siteMrrSort: 52800,
+  },
+  {
+    id: '12',
+    name: 'Sanchong Industrial',
+    address: '55 Chongxin Rd',
+    basicPrice: '$25',
+    basicStatus: 'override',
+    premiumPrice: '$49',
+    premiumStatus: 'override',
+    unlimitedPrice: null,
+    unlimitedStatus: 'unavailable',
+    activeMembers: 755,
+    siteMrr: '$34,250',
+    siteMrrSort: 34250,
+  },
+];
 
 export default async function MembershipSitesPage() {
   const t = await getTranslations('memberships');
@@ -71,205 +244,7 @@ export default async function MembershipSitesPage() {
 
       <TabNav tabs={tabs} />
 
-      <div className="card">
-        <div className="card-header">
-          <h3>{t('sitePlanAssignments.cardTitle')}</h3>
-          <p className="card-description">{t('sites.cardDescription')}</p>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('sites.columns.site')}</th>
-                <th>{t('sites.columns.basicWithPrice')}</th>
-                <th>{t('sites.columns.premiumWithPrice')}</th>
-                <th>{t('sites.columns.unlimitedWithPrice')}</th>
-                <th>{t('planTemplates.columns.activeMembers')}</th>
-                <th>{t('sitePlanAssignments.columns.siteMrr')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Taipei Main Station</Link>
-                  </div>
-                  <div className="cell-secondary">12 Zhongxiao E. Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-success">$99</span></td>
-                <td>1,245</td>
-                <td>$68,450</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Xinyi District</Link>
-                  </div>
-                  <div className="cell-secondary">88 Songren Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-warning">$65 ⚙</span></td>
-                <td><span className="badge-pill badge-success">$99</span></td>
-                <td>2,340</td>
-                <td>$142,800</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Banqiao Station</Link>
-                  </div>
-                  <div className="cell-secondary">50 Zhongshan Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-muted">{t('sitePlanAssignments.notAvailable')}</span></td>
-                <td>890</td>
-                <td>$42,100</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Taoyuan Airport</Link>
-                  </div>
-                  <div className="cell-secondary">Terminal 2, Level B2</div>
-                </td>
-                <td><span className="badge-pill badge-muted">{t('sitePlanAssignments.notAvailable')}</span></td>
-                <td><span className="badge-pill badge-warning">$69 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">$119 ⚙</span></td>
-                <td>1,560</td>
-                <td>$118,200</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Zhonghe Industrial</Link>
-                  </div>
-                  <div className="cell-secondary">22 Zhonghe Rd</div>
-                </td>
-                <td><span className="badge-pill badge-warning">$25 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">$49 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">$79 ⚙</span></td>
-                <td>780</td>
-                <td>$38,200</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Neihu Tech Park</Link>
-                  </div>
-                  <div className="cell-secondary">168 Ruiguang Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-success">$99</span></td>
-                <td>1,120</td>
-                <td>$62,400</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Shilin Night Market</Link>
-                  </div>
-                  <div className="cell-secondary">101 Jihe Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-muted">{t('sitePlanAssignments.notAvailable')}</span></td>
-                <td>650</td>
-                <td>$32,100</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Beitou Hot Springs</Link>
-                  </div>
-                  <div className="cell-secondary">45 Guangming Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-warning">$65 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">$109 ⚙</span></td>
-                <td>520</td>
-                <td>$38,900</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Tamsui Waterfront</Link>
-                  </div>
-                  <div className="cell-secondary">88 Zhongzheng Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-success">$99</span></td>
-                <td>890</td>
-                <td>$48,600</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Xindian Riverside</Link>
-                  </div>
-                  <div className="cell-secondary">200 Beiyi Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-success">$99</span></td>
-                <td>720</td>
-                <td>$41,200</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Linkou Outlet</Link>
-                  </div>
-                  <div className="cell-secondary">1 Wenhua 3rd Rd</div>
-                </td>
-                <td><span className="badge-pill badge-success">$29</span></td>
-                <td><span className="badge-pill badge-success">$59</span></td>
-                <td><span className="badge-pill badge-success">$99</span></td>
-                <td>980</td>
-                <td>$52,800</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="cell-primary">
-                    <Link href="/sites/1" className="link-primary">Sanchong Industrial</Link>
-                  </div>
-                  <div className="cell-secondary">55 Chongxin Rd</div>
-                </td>
-                <td><span className="badge-pill badge-warning">$25 ⚙</span></td>
-                <td><span className="badge-pill badge-warning">$49 ⚙</span></td>
-                <td><span className="badge-pill badge-muted">{t('sitePlanAssignments.notAvailable')}</span></td>
-                <td>755</td>
-                <td>$34,250</td>
-                <td><Link href="/sites/1" className="btn btn-sm">{tc('actions.configure')}</Link></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="table-footer">
-          <div className="legend-inline">
-            <span className="badge-pill badge-success">$XX</span> {t('sitePlanAssignments.legend.templatePrice')}
-            <span className="badge-pill badge-warning">$XX ⚙</span> {t('sitePlanAssignments.legend.siteOverride')}
-            <span className="badge-pill badge-muted">{t('sitePlanAssignments.notAvailable')}</span> {t('sitePlanAssignments.legend.planNotOffered')}
-          </div>
-          <span className="result-count">{t('sites.totalSites')}</span>
-        </div>
-      </div>
+      <SiteAssignmentsTable data={siteAssignmentRows} />
 
       <div className="grid-2">
         <div className="card">

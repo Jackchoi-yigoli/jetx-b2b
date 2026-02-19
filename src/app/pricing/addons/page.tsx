@@ -2,6 +2,26 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Link from 'next/link';
 import TabNav from '@/components/ui/TabNav';
 import { getTranslations } from 'next-intl/server';
+import AddonsTable from './AddonsTable';
+import type { AddonRow, ComboRow } from './AddonsTable';
+
+const addonData: AddonRow[] = [
+  { id: 'vacuum', name: 'interiorVacuum', descKey: 'interiorVacuumDesc', category: 'interior', basePrice: 5.00, memberPrice: 4.00, discount: '20%', sitesEnabled: '17 of 17', monthlySales: 8420, revenue: '$38,200', iconType: 'interior' },
+  { id: 'dashboard', name: 'dashboardWipe', descKey: 'dashboardWipeDesc', category: 'interior', basePrice: 4.00, memberPrice: 3.20, discount: '20%', sitesEnabled: '15 of 17', monthlySales: 5280, revenue: '$19,800', iconType: 'interior' },
+  { id: 'tire', name: 'tireShine', descKey: 'tireShineDesc', category: 'exterior', basePrice: 3.00, memberPrice: 2.40, discount: '20%', sitesEnabled: '17 of 17', monthlySales: 12100, revenue: '$34,500', iconType: 'exterior' },
+  { id: 'rain', name: 'rainRepellent', descKey: 'rainRepellentDesc', category: 'protection', basePrice: 6.00, memberPrice: 4.80, discount: '20%', sitesEnabled: '14 of 17', monthlySales: 4890, revenue: '$27,200', iconType: 'protection' },
+  { id: 'ceramic', name: 'ceramicCoating', descKey: 'ceramicCoatingDesc', category: 'protection', basePrice: 15.00, memberPrice: 12.00, discount: '20%', sitesEnabled: '10 of 17', monthlySales: 1240, revenue: '$17,400', iconType: 'protection' },
+  { id: 'freshener', name: 'airFreshener', descKey: 'airFreshenerDesc', category: 'interior', basePrice: 2.00, memberPrice: 1.60, discount: '20%', sitesEnabled: '17 of 17', monthlySales: 9680, revenue: '$18,100', iconType: 'interior' },
+  { id: 'wheel', name: 'wheelCleaner', descKey: 'wheelCleanerDesc', category: 'exterior', basePrice: 4.00, memberPrice: 3.20, discount: '20%', sitesEnabled: '17 of 17', monthlySales: 6890, revenue: '$25,800', iconType: 'exterior' },
+  { id: 'undercarriage', name: 'undercarriageWash', descKey: 'undercarriageWashDesc', category: 'exterior', basePrice: 5.00, memberPrice: 4.00, discount: '20%', sitesEnabled: '12 of 17', monthlySales: 3420, revenue: '$15,800', iconType: 'exterior' },
+];
+
+const comboData: ComboRow[] = [
+  { id: 'interior-detail', nameKey: 'interiorDetailPack', servicesKey: 'interiorDetailPackServices', regularTotal: '$11.00', packagePrice: '$9.00', savings: '18%', monthlySales: 2340, status: 'active' },
+  { id: 'full-protection', nameKey: 'fullProtection', servicesKey: 'fullProtectionServices', regularTotal: '$21.00', packagePrice: '$18.00', savings: '14%', monthlySales: 890, status: 'active' },
+  { id: 'wheel-tire', nameKey: 'wheelTireCombo', servicesKey: 'wheelTireComboServices', regularTotal: '$7.00', packagePrice: '$6.00', savings: '14%', monthlySales: 4120, status: 'active' },
+  { id: 'ultimate', nameKey: 'ultimateAddonPack', servicesKey: 'ultimateAddonPackServices', regularTotal: '$44.00', packagePrice: '$35.00', savings: '20%', monthlySales: 320, status: 'active' },
+];
 
 export default async function PricingAddonsPage() {
   const t = await getTranslations('pricing');
@@ -70,197 +90,7 @@ export default async function PricingAddonsPage() {
 
       <TabNav tabs={tabs} />
 
-      <div className="card">
-        <div className="card-header">
-          <h3 className="card-title">{t('addons.catalog.cardTitle')}</h3>
-          <div className="filter-group">
-            <select className="form-select form-select-sm">
-              <option>{tc('filters.allCategories')}</option>
-              <option>{t('addons.categories.interior')}</option>
-              <option>{t('addons.categories.exterior')}</option>
-              <option>{t('addons.categories.protection')}</option>
-            </select>
-          </div>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('addons.catalog.table.service')}</th>
-                <th>{t('addons.catalog.table.category')}</th>
-                <th>{t('addons.catalog.table.basePrice')}</th>
-                <th>{t('addons.catalog.table.memberPrice')}</th>
-                <th>{t('addons.catalog.table.sitesEnabled')}</th>
-                <th>{t('addons.catalog.table.monthlySales')}</th>
-                <th>{t('addons.catalog.table.revenue')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-interior">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.interiorVacuum')}</strong>
-                      <span className="template-desc">{t('addons.catalog.interiorVacuumDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-info">{t('addons.categories.interior')}</span></td>
-                <td>$5.00</td>
-                <td>$4.00 <span className="text-success">(20% off)</span></td>
-                <td>17 of 17</td>
-                <td>8,420</td>
-                <td>$38,200</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-interior">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.dashboardWipe')}</strong>
-                      <span className="template-desc">{t('addons.catalog.dashboardWipeDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-info">{t('addons.categories.interior')}</span></td>
-                <td>$4.00</td>
-                <td>$3.20 <span className="text-success">(20% off)</span></td>
-                <td>15 of 17</td>
-                <td>5,280</td>
-                <td>$19,800</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-exterior">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.tireShine')}</strong>
-                      <span className="template-desc">{t('addons.catalog.tireShineDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-success">{t('addons.categories.exterior')}</span></td>
-                <td>$3.00</td>
-                <td>$2.40 <span className="text-success">(20% off)</span></td>
-                <td>17 of 17</td>
-                <td>12,100</td>
-                <td>$34,500</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-protection">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.rainRepellent')}</strong>
-                      <span className="template-desc">{t('addons.catalog.rainRepellentDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-warning">{t('addons.categories.protection')}</span></td>
-                <td>$6.00</td>
-                <td>$4.80 <span className="text-success">(20% off)</span></td>
-                <td>14 of 17</td>
-                <td>4,890</td>
-                <td>$27,200</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-protection">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.ceramicCoating')}</strong>
-                      <span className="template-desc">{t('addons.catalog.ceramicCoatingDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-warning">{t('addons.categories.protection')}</span></td>
-                <td>$15.00</td>
-                <td>$12.00 <span className="text-success">(20% off)</span></td>
-                <td>10 of 17</td>
-                <td>1,240</td>
-                <td>$17,400</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-interior">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.airFreshener')}</strong>
-                      <span className="template-desc">{t('addons.catalog.airFreshenerDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-info">{t('addons.categories.interior')}</span></td>
-                <td>$2.00</td>
-                <td>$1.60 <span className="text-success">(20% off)</span></td>
-                <td>17 of 17</td>
-                <td>9,680</td>
-                <td>$18,100</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-exterior">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.wheelCleaner')}</strong>
-                      <span className="template-desc">{t('addons.catalog.wheelCleanerDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-success">{t('addons.categories.exterior')}</span></td>
-                <td>$4.00</td>
-                <td>$3.20 <span className="text-success">(20% off)</span></td>
-                <td>17 of 17</td>
-                <td>6,890</td>
-                <td>$25,800</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="template-name">
-                    <span className="template-icon addon-exterior">
-                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
-                    </span>
-                    <div>
-                      <strong>{t('edit.undercarriageWash')}</strong>
-                      <span className="template-desc">{t('addons.catalog.undercarriageWashDesc')}</span>
-                    </div>
-                  </div>
-                </td>
-                <td><span className="badge-pill badge-success">{t('addons.categories.exterior')}</span></td>
-                <td>$5.00</td>
-                <td>$4.00 <span className="text-success">(20% off)</span></td>
-                <td>12 of 17</td>
-                <td>3,420</td>
-                <td>$15,800</td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <AddonsTable addons={addonData} combos={comboData} />
 
       <div className="grid-2">
         <div className="card">
@@ -359,71 +189,6 @@ export default async function PricingAddonsPage() {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-header">
-          <h3 className="card-title">{t('addons.combos.cardTitle')}</h3>
-          <p className="card-description">{t('addons.combos.cardDesc')}</p>
-          <button className="btn btn-secondary btn-sm">{t('addons.combos.createCombo')}</button>
-        </div>
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>{t('addons.combos.table.packageName')}</th>
-                <th>{t('addons.combos.table.includedServices')}</th>
-                <th>{t('addons.combos.table.regularTotal')}</th>
-                <th>{t('addons.combos.table.packagePrice')}</th>
-                <th>{t('addons.combos.table.savings')}</th>
-                <th>{t('addons.catalog.table.monthlySales')}</th>
-                <th>{tc('table.status')}</th>
-                <th>{tc('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>{t('addons.combos.interiorDetailPack')}</strong></td>
-                <td>{t('addons.combos.interiorDetailPackServices')}</td>
-                <td>$11.00</td>
-                <td>$9.00</td>
-                <td className="text-success">18% off</td>
-                <td>2,340</td>
-                <td><span className="badge-pill badge-success">{tc('status.active')}</span></td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td><strong>{t('addons.combos.fullProtection')}</strong></td>
-                <td>{t('addons.combos.fullProtectionServices')}</td>
-                <td>$21.00</td>
-                <td>$18.00</td>
-                <td className="text-success">14% off</td>
-                <td>890</td>
-                <td><span className="badge-pill badge-success">{tc('status.active')}</span></td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td><strong>{t('addons.combos.wheelTireCombo')}</strong></td>
-                <td>{t('addons.combos.wheelTireComboServices')}</td>
-                <td>$7.00</td>
-                <td>$6.00</td>
-                <td className="text-success">14% off</td>
-                <td>4,120</td>
-                <td><span className="badge-pill badge-success">{tc('status.active')}</span></td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-              <tr>
-                <td><strong>{t('addons.combos.ultimateAddonPack')}</strong></td>
-                <td>{t('addons.combos.ultimateAddonPackServices')}</td>
-                <td>$44.00</td>
-                <td>$35.00</td>
-                <td className="text-success">20% off</td>
-                <td>320</td>
-                <td><span className="badge-pill badge-success">{tc('status.active')}</span></td>
-                <td><button className="btn btn-sm btn-secondary">{tc('actions.edit')}</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </DashboardLayout>
   );
 }
